@@ -108,12 +108,17 @@ public class VolleyballAgent : Agent
     /// </summary>
     void OnCollisionEnter(Collision c)
     {
+        if (c.gameObject.CompareTag("ball"))
+        {
+            envController.UpdateLastHitter(teamId);
+        }
+
         if (c.gameObject.CompareTag("walkableSurface"))
         {
             isGrounded = true;
         }
     }
-
+    
     void OnCollisionExit(Collision c)
     {
         if (c.gameObject.CompareTag("walkableSurface"))

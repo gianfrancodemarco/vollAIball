@@ -15,7 +15,9 @@ public enum Event
     HitBlueGoal = 1,
     HitOutOfBounds = 2,
     HitIntoBlueArea = 3,
-    HitIntoRedArea = 4
+    HitIntoRedArea = 4,
+    HitBlueAgent = 5,
+    HitRedAgent = 6
 }
 
 public class VolleyballEnvController : MonoBehaviour
@@ -51,7 +53,7 @@ public class VolleyballEnvController : MonoBehaviour
 
     void Start()
     {
-        // Time.timeScale = 1f;
+        // Time.timeScale = 2f;
         // Used to control agent & ball starting positions
         blueAgentRb = blueAgent.GetComponent<Rigidbody>();
         redAgentRb = redAgent.GetComponent<Rigidbody>();
@@ -88,8 +90,21 @@ public class VolleyballEnvController : MonoBehaviour
     /// </summary>
     public void ResolveEvent(Event triggerEvent)
     {
+        //Debug.Log("ResolveEvent: " + triggerEvent);
         switch (triggerEvent)
         {
+            case Event.HitRedAgent:
+                // red wins
+                Debug.Log("Red Agent Hit");
+                redAgent.AddReward(0.1f);
+                break;
+
+            case Event.HitBlueAgent:
+                // blue wins
+                Debug.Log("Blue Agent Hit");
+                blueAgent.AddReward(0.1f);
+                break;
+
             case Event.HitOutOfBounds:
                 if (lastHitter == Team.Blue)
                 {

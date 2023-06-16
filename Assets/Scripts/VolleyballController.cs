@@ -17,8 +17,23 @@ public class VolleyballController : MonoBehaviour
         blueGoalCollider = blueGoal.GetComponent<Collider>();
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("blueAgent"))
+        {
+            // ball hit blue goal (red side court)
+            envController.ResolveEvent(Event.HitBlueAgent);
+        }
+        else if (collision.gameObject.CompareTag("redAgent"))
+        {
+            // ball hit blue goal (red side court)
+            envController.ResolveEvent(Event.HitRedAgent);
+        }
+    }
+
     /// <summary>
     /// Detects whether the ball lands in the blue, red, or out of bounds area
+    /// Works by detecting the when the ball enters the trigger collider
     /// </summary>
     void OnTriggerEnter(Collider other)
     {
@@ -40,15 +55,14 @@ public class VolleyballController : MonoBehaviour
         else if (other.gameObject.CompareTag("redGoal"))
         {
             // ball hit red goal (blue side court)
+            Debug.Log("Hit red goal");
             envController.ResolveEvent(Event.HitRedGoal);
         }
         else if (other.gameObject.CompareTag("blueGoal"))
         {
             // ball hit blue goal (red side court)
+            Debug.Log("Hit blue goal");
             envController.ResolveEvent(Event.HitBlueGoal);
         }
-
     }
-
-
 }
