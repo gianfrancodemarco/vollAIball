@@ -55,13 +55,11 @@ public class VolleyballController : MonoBehaviour
         else if (other.gameObject.CompareTag("redGoal"))
         {
             // ball hit red goal (blue side court)
-            Debug.Log("Hit red goal");
             envController.ResolveEvent(Event.HitRedGoal);
         }
         else if (other.gameObject.CompareTag("blueGoal"))
         {
             // ball hit blue goal (red side court)
-            Debug.Log("Hit blue goal");
             envController.ResolveEvent(Event.HitBlueGoal);
         }
     }
