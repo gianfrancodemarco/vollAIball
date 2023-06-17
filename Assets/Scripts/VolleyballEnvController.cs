@@ -95,13 +95,11 @@ public class VolleyballEnvController : MonoBehaviour
         {
             case Event.HitRedAgent:
                 // red wins
-                Debug.Log("Red Agent Hit");
                 redAgent.AddReward(0.1f);
                 break;
 
             case Event.HitBlueAgent:
                 // blue wins
-                Debug.Log("Blue Agent Hit");
                 blueAgent.AddReward(0.1f);
                 break;
 
@@ -109,14 +107,14 @@ public class VolleyballEnvController : MonoBehaviour
                 if (lastHitter == Team.Blue)
                 {
                     // apply penalty to blue agent
-                    blueAgent.AddReward(-0.1f);
-                    redAgent.AddReward(0.1f);
+                    blueAgent.AddReward(-0.5f);
+                    //redAgent.AddReward(0.1f);
                 }
                 else if (lastHitter == Team.Red)
                 {
                     // apply penalty to red agent
-                    redAgent.AddReward(-0.1f);
-                    blueAgent.AddReward(0.1f);
+                    redAgent.AddReward(-0.5f);
+                    // blueAgent.AddReward(0.1f);
                 }
 
                 // end episode
@@ -150,14 +148,14 @@ public class VolleyballEnvController : MonoBehaviour
             case Event.HitIntoBlueArea:
                 if (lastHitter == Team.Red)
                 {
-                    redAgent.AddReward(1);
+                    redAgent.AddReward(0.5f);
                 }
                 break;
 
             case Event.HitIntoRedArea:
                 if (lastHitter == Team.Blue)
                 {
-                    blueAgent.AddReward(1);
+                    blueAgent.AddReward(0.5f);
                 }
                 break;
         }

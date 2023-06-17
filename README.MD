@@ -1,4 +1,4 @@
-## **v1.2.0**
+## **v2.0.0**
 
 Goal: enforce more volleyball rules
 - The same agent should not hit the ball twice in a row
@@ -7,12 +7,9 @@ Goal: enforce more volleyball rules
 
 ## **v1.1.0**
 
-The agents now don't get a negative reward if the opponent throws the ball into its own half. 
 Rewards for hitting the ball into the other half are now more bland.
 
-The agents also get bigger negative reward if they throw the ball out of bounds; the opponent doesn't get a negative reward for this.
-
-The agents that scores keeps getting a positive reward, but the other agent now gets a negative reward.
+The agents also get bigger negative reward if they throw the ball out of bounds; the opponent doesn't get a positive reward for this.
 
 <br>
 
@@ -23,7 +20,7 @@ The agents that scores keeps getting a positive reward, but the other agent now 
   - Hitter: -0.5
 - *Agent throws ball into opponent half*:
   - Hitter: +0.5
-- *Agent scores*:
+- *Agent scores (End Episode)*:
   - Hitter: +1
   - Other: -1
 
@@ -39,9 +36,9 @@ The agents that scores keeps getting a positive reward, but the other agent now 
   - Other: +0.1
 - *Agent throws ball into opponent half*:
   - Hitter: +1
-  - Other: -1
-- *Agent scores*:
+- *Agent scores (End Episode)*:
   - Hitter: +1
+  - Other: -1
 
 
 After 50M steps:
