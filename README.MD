@@ -1,3 +1,10 @@
+## **v1.2.0**
+
+Goal: enforce more volleyball rules
+- The same agent should not hit the ball twice in a row
+- Hitting the wall is not allowed
+- The agents starts from the same position every time, the server in the corner and the receiver in the middle of the court. The ball starts above the server.
+
 ## **v1.1.0**
 
 The agents now don't get a negative reward if the opponent throws the ball into its own half. 
