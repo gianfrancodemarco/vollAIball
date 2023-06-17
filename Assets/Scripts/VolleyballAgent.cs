@@ -42,16 +42,14 @@ public class VolleyballAgent : Agent
         ballRb = ball.GetComponent<Rigidbody>();
         
         // for symmetry between player side
-        // Without this, the agent shoot the ball to the same direction
-        agentRot = 1;
-        // if (teamId == Team.Blue)
-        // {
-        //     agentRot = -1;
-        // }
-        // else
-        // {
-        //     agentRot = 1;
-        // }
+        if (teamId == Team.Blue)
+        {
+            agentRot = -1;
+        }
+        else
+        {
+            agentRot = 1;
+        }
 
         resetParams = Academy.Instance.EnvironmentParameters;
     }

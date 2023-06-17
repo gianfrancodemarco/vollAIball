@@ -53,7 +53,7 @@ public class VolleyballEnvController : MonoBehaviour
 
     void Start()
     {
-        // Time.timeScale = 2f;
+        // Time.timeScale = 1f;
         // Used to control agent & ball starting positions
         blueAgentRb = blueAgent.GetComponent<Rigidbody>();
         redAgentRb = redAgent.GetComponent<Rigidbody>();
@@ -195,7 +195,7 @@ public class VolleyballEnvController : MonoBehaviour
             var randomPosY = Random.Range(0.5f, 3.75f); // depends on jump height
             var randomRot = Random.Range(-45f, 45f);
 
-            agent.transform.localPosition = new Vector3(randomPosX, randomPosY, randomPosZ);
+            agent.transform.localPosition = new Vector3(randomPosX, 0.01f, randomPosZ);
             agent.transform.eulerAngles = new Vector3(0, randomRot, 0);
 
             agent.GetComponent<Rigidbody>().velocity = default(Vector3);

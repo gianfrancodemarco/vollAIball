@@ -2,31 +2,58 @@
     "Volleyball": {
         "checkpoints": [
             {
-                "steps": 1454,
-                "file_path": "results/ppo/Volleyball/Volleyball-1454.onnx",
-                "reward": 0.01629213737637809,
-                "creation_time": 1686903569.184183,
+                "steps": 14999926,
+                "file_path": "results/ppo/Volleyball/Volleyball-14999926.onnx",
+                "reward": 0.851789958917298,
+                "creation_time": 1686922463.8902729,
                 "auxillary_file_paths": [
-                    "results/ppo/Volleyball/Volleyball-1454.pt"
+                    "results/ppo/Volleyball/Volleyball-14999926.pt"
                 ]
             },
             {
-                "steps": 430441,
-                "file_path": "results/ppo/Volleyball/Volleyball-430441.onnx",
-                "reward": 0.08077689567469505,
-                "creation_time": 1686904278.971056,
+                "steps": 15499993,
+                "file_path": "results/ppo/Volleyball/Volleyball-15499993.onnx",
+                "reward": 0.950254649417206,
+                "creation_time": 1686923264.1517632,
                 "auxillary_file_paths": [
-                    "results/ppo/Volleyball/Volleyball-430441.pt"
+                    "results/ppo/Volleyball/Volleyball-15499993.pt"
+                ]
+            },
+            {
+                "steps": 15999996,
+                "file_path": "results/ppo/Volleyball/Volleyball-15999996.onnx",
+                "reward": 1.011920509600876,
+                "creation_time": 1686924041.3956993,
+                "auxillary_file_paths": [
+                    "results/ppo/Volleyball/Volleyball-15999996.pt"
+                ]
+            },
+            {
+                "steps": 16186171,
+                "file_path": "results/ppo/Volleyball/Volleyball-16186171.onnx",
+                "reward": 0.8882262837312637,
+                "creation_time": 1686924321.384948,
+                "auxillary_file_paths": [
+                    "results/ppo/Volleyball/Volleyball-16186171.pt"
+                ]
+            },
+            {
+                "steps": 16210333,
+                "file_path": "results/ppo/Volleyball/Volleyball-16210333.onnx",
+                "reward": 0.9023437320429366,
+                "creation_time": 1686924667.8061728,
+                "auxillary_file_paths": [
+                    "results/ppo/Volleyball/Volleyball-16210333.pt"
                 ]
             }
         ],
         "final_checkpoint": {
-            "steps": 430441,
+            "steps": 16210333,
             "file_path": "results/ppo/Volleyball.onnx",
-            "reward": 0.08077689567469505,
-            "creation_time": 1686904278.971056,
+            "reward": 0.9023437320429366,
+            "creation_time": 1686924667.8061728,
             "auxillary_file_paths": [
-                "results/ppo/Volleyball/Volleyball-430441.pt"
+                "results/ppo/Volleyball/Volleyball-16210333.pt"
             ]
         }
     },
