@@ -168,10 +168,10 @@ public class VolleyballEnvController : MonoBehaviour
     private void HandleHitAgentEvent(VolleyballAgent currentAgent, KeyValuePair<Team, int> lastHitter) {
         if (lastHitter.Key == currentAgent.teamId && lastHitter.Value == currentAgent.UUID) {
             // same player double toch
-            redAgent.AddReward(-0.1f);
+            currentAgent.AddReward(-0.1f);
         } else {
             // agent wins
-            redAgent.AddReward(0.1f);
+            currentAgent.AddReward(0.1f);
         }
     }
 
