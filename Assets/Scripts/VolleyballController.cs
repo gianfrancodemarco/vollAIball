@@ -64,5 +64,9 @@ public class VolleyballController : MonoBehaviour
             // ball hit blue goal (red side court)
             envController.ResolveEvent(Event.HitBlueGoal);
         }
+        else if (other.gameObject.CompareTag("wall"))
+        {
+            envController.ResolveEvent(Event.HitWall);
+        }
     }
 }

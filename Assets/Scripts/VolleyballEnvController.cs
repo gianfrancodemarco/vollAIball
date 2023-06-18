@@ -18,6 +18,7 @@ public enum Event
     HitIntoRedArea = 4,
     HitBlueAgent = 5,
     HitRedAgent = 6
+    HitWall = 7
 }
 
 public class VolleyballEnvController : MonoBehaviour
@@ -101,6 +102,7 @@ public class VolleyballEnvController : MonoBehaviour
                     // same player double toch
                     lastHitter.AddReward(-0.1f);
                     EndAllAgentsEpisode();
+                    ResetScene();
                 } else {
                     // agent wins
                     lastHitter.AddReward(0.1f);
@@ -152,6 +154,11 @@ public class VolleyballEnvController : MonoBehaviour
                 {
                     blueAgent.AddReward(0.5f);
                 }
+                break;
+            case Event.HitWall:
+                lastHitter.AddReward(-0.2f);
+                EndAllAgentsEpisode();
+                ResetScene();
                 break;
         }
     }
