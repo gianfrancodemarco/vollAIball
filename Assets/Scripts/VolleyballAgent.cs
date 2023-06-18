@@ -28,7 +28,6 @@ public class VolleyballAgent : Agent
         get { return playerUUID; }
     }
 
-    
     void Start()
     {
         isGrounded = false;

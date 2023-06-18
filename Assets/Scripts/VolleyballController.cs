@@ -31,6 +31,10 @@ public class VolleyballController : MonoBehaviour
             envController.AppendToHitterHistory(collision.gameObject.GetComponent<VolleyballAgent>());
             envController.ResolveEvent(Event.HitRedAgent);
         }
+        else if (collision.gameObject.CompareTag("wall"))
+        {
+            envController.ResolveEvent(Event.HitWall);
+        }
     }
 
     /// <summary>
@@ -63,10 +67,6 @@ public class VolleyballController : MonoBehaviour
         {
             // ball hit blue goal (red side court)
             envController.ResolveEvent(Event.HitBlueGoal);
-        }
-        else if (other.gameObject.CompareTag("wall"))
-        {
-            envController.ResolveEvent(Event.HitWall);
         }
     }
 }

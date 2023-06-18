@@ -17,7 +17,7 @@ public enum Event
     HitIntoBlueArea = 3,
     HitIntoRedArea = 4,
     HitBlueAgent = 5,
-    HitRedAgent = 6
+    HitRedAgent = 6,
     HitWall = 7
 }
 
@@ -109,13 +109,13 @@ public class VolleyballEnvController : MonoBehaviour
                 } 
                 break;
             case Event.HitOutOfBounds:
-                if (lastHitter.teamId == Team.Blue)
+                if (lastHitter != null && lastHitter.teamId == Team.Blue)
                 {
                     // apply penalty to blue agent
                     blueAgent.AddReward(-0.5f);
                     //redAgent.AddReward(0.1f);
                 }
-                else if (lastHitter.teamId == Team.Red)
+                else if (lastHitter != null && lastHitter.teamId == Team.Red)
                 {
                     // apply penalty to red agent
                     redAgent.AddReward(-0.5f);
@@ -143,22 +143,24 @@ public class VolleyballEnvController : MonoBehaviour
                 break;
 
             case Event.HitIntoBlueArea:
-                if (lastHitter.teamId == Team.Red)
+                if (lastHitter != null && lastHitter.teamId == Team.Red)
                 {
                     redAgent.AddReward(0.5f);
                 }
                 break;
 
             case Event.HitIntoRedArea:
-                if (lastHitter.teamId == Team.Blue)
+                if (lastHitter != null && lastHitter.teamId == Team.Blue)
                 {
                     blueAgent.AddReward(0.5f);
                 }
                 break;
             case Event.HitWall:
-                lastHitter.AddReward(-0.2f);
-                EndAllAgentsEpisode();
-                ResetScene();
+                if(lastHitter != null) {
+                    lastHitter.AddReward(-1f);
+                    EndAllAgentsEpisode();
+                    ResetScene();
+                }
                 break;
         }
     }
