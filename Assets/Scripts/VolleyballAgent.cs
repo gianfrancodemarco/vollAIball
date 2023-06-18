@@ -7,30 +7,33 @@ using Unity.MLAgents.Policies;
 public class VolleyballAgent : Agent
 {
     public GameObject area;
-    Rigidbody agentRb;
-    BehaviorParameters behaviorParameters;
     public Team teamId;
-
-    // To get ball's location for observations
     public GameObject ball;
-    Rigidbody ballRb;
-
-    VolleyballSettings volleyballSettings;
-    VolleyballEnvController envController;
-
-    Vector3 jumpTargetPos;
-    Vector3 jumpStartingPos;
-    float agentRot;
-
     public Collider[] hitGroundColliders = new Collider[3];
-    EnvironmentParameters resetParams;
+  
+    private Rigidbody agentRb;
+    private Rigidbody ballRb;
+    private BehaviorParameters behaviorParameters;    
+    private VolleyballSettings volleyballSettings;
+    private VolleyballEnvController envController;
+    private Vector3 jumpTargetPos;
+    private Vector3 jumpStartingPos;
+    private EnvironmentParameters resetParams;
 
-    bool isGrounded;
- 
+    private bool isGrounded;
+    private float agentRot;
+    private int playerUUID;
+    public int UUID
+    {
+        get { return playerUUID; }
+    }
+
+    
     void Start()
     {
         isGrounded = false;
         envController = area.GetComponent<VolleyballEnvController>();
+        playerUUID = transform.GetInstanceID();
     }
 
     public override void Initialize()
@@ -62,7 +65,7 @@ public class VolleyballAgent : Agent
     /// <param name="targetVel">The velocity to target during the
     ///  motion.</param>
     /// <param name="maxVel">The maximum velocity posible.</param>
-    void MoveTowards(
+    private void MoveTowards(
         Vector3 targetPos, Rigidbody rb, float targetVel, float maxVel)
     {
         var moveToPos = targetPos - rb.worldCenterOfMass;
@@ -104,11 +107,11 @@ public class VolleyballAgent : Agent
     /// <summary>
     /// Called when agent collides with the ball
     /// </summary>
-    void OnCollisionEnter(Collision c)
+    private void OnCollisionEnter(Collision c)
     {
         if (c.gameObject.CompareTag("ball"))
         {
-            envController.UpdateLastHitter(teamId);
+            envController.UpdateHitterHistory(teamId, playerUUID);
         }
 
         if (c.gameObject.CompareTag("walkableSurface"))
@@ -117,7 +120,7 @@ public class VolleyballAgent : Agent
         }
     }
     
-    void OnCollisionExit(Collision c)
+    private void OnCollisionExit(Collision c)
     {
         if (c.gameObject.CompareTag("walkableSurface"))
         {
