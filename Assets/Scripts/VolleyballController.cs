@@ -18,15 +18,17 @@ public class VolleyballController : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision)
-    {
+    {   
         if (collision.gameObject.CompareTag("blueAgent"))
         {
             // ball hit blue goal (red side court)
+            envController.AppendToHitterHistory(collision.gameObject.GetComponent<VolleyballAgent>());
             envController.ResolveEvent(Event.HitBlueAgent);
         }
         else if (collision.gameObject.CompareTag("redAgent"))
         {
-            // ball hit blue goal (red side court)
+            // ball hit blue goal (red side court)            
+            envController.AppendToHitterHistory(collision.gameObject.GetComponent<VolleyballAgent>());
             envController.ResolveEvent(Event.HitRedAgent);
         }
     }

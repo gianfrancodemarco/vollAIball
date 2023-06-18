@@ -45,7 +45,7 @@ public class VolleyballEnvController : MonoBehaviour
 
     Renderer redGoalRenderer;
 
-    List<KeyValuePair<Team, int> > hitterHistory;
+    private List<VolleyballAgent> hitterHistory = new List<VolleyballAgent>();
 
     // private int resetTimer;
 
@@ -53,7 +53,7 @@ public class VolleyballEnvController : MonoBehaviour
 
     void Start()
     {
-        // Time.timeScale = 1f;
+        Time.timeScale = 0.5f;
         // Used to control agent & ball starting positions
         blueAgentRb = blueAgent.GetComponent<Rigidbody>();
         redAgentRb = redAgent.GetComponent<Rigidbody>();
@@ -71,7 +71,6 @@ public class VolleyballEnvController : MonoBehaviour
         RenderersList.Add(redGoalRenderer);
 
         volleyballSettings = FindObjectOfType<VolleyballSettings>();
-        hitterHistory = new List<KeyValuePair<Team, int>>();
 
         ResetScene();
     }
@@ -79,13 +78,9 @@ public class VolleyballEnvController : MonoBehaviour
     /// <summary>
     /// Tracks which agent last had control of the ball
     /// </summary>
-    public void UpdateHitterHistory(Team team, int playerId)
+    public void AppendToHitterHistory(VolleyballAgent agent)
     {
-        hitterHistory.Add(new KeyValuePair<Team, int>(team, playerId));
-    }
-
-    public KeyValuePair<Team, int> GetLastHistoryEvent() {
-        return hitterHistory[hitterHistory.Count - 1];
+        hitterHistory.Add(agent);
     }
 
     /// <summary>
@@ -95,35 +90,37 @@ public class VolleyballEnvController : MonoBehaviour
     /// </summary>
     public void ResolveEvent(Event triggerEvent)
     {
-        KeyValuePair<Team, int> lastHitter = GetLastHistoryEvent();
+        VolleyballAgent lastHitter = hitterHistory.Count > 0 ? hitterHistory[hitterHistory.Count - 1] : null;
+        VolleyballAgent secondToLastHitter = hitterHistory.Count > 1 ? hitterHistory[hitterHistory.Count - 2] : null;
         //Debug.Log("ResolveEvent: " + triggerEvent);
         switch (triggerEvent)
         {
             case Event.HitRedAgent:
-                HandleHitAgentEvent(redAgent, lastHitter);         
-                break;
-
             case Event.HitBlueAgent:
-                HandleHitAgentEvent(blueAgent, lastHitter);                
+                if (secondToLastHitter != null && lastHitter.UUID == secondToLastHitter.UUID) {
+                    // same player double toch
+                    lastHitter.AddReward(-0.1f);
+                    EndAllAgentsEpisode();
+                } else {
+                    // agent wins
+                    lastHitter.AddReward(0.1f);
+                } 
                 break;
-
             case Event.HitOutOfBounds:
-                if (lastHitter.Key == Team.Blue)
+                if (lastHitter.teamId == Team.Blue)
                 {
                     // apply penalty to blue agent
                     blueAgent.AddReward(-0.5f);
                     //redAgent.AddReward(0.1f);
                 }
-                else if (lastHitter.Key == Team.Red)
+                else if (lastHitter.teamId == Team.Red)
                 {
                     // apply penalty to red agent
                     redAgent.AddReward(-0.5f);
                     // blueAgent.AddReward(0.1f);
                 }
 
-                // end episode
-                blueAgent.EndEpisode();
-                redAgent.EndEpisode();
+                EndAllAgentsEpisode();
                 ResetScene();
                 break;
 
@@ -131,10 +128,7 @@ public class VolleyballEnvController : MonoBehaviour
                 // blue wins
                 blueAgent.AddReward(1f);
                 redAgent.AddReward(-1f);
-
-                // end episode
-                blueAgent.EndEpisode();
-                redAgent.EndEpisode();
+                EndAllAgentsEpisode();
                 ResetScene();
                 break;
 
@@ -142,22 +136,19 @@ public class VolleyballEnvController : MonoBehaviour
                 // red wins
                 redAgent.AddReward(1f);
                 blueAgent.AddReward(-1f);
-
-                // end episode
-                blueAgent.EndEpisode();
-                redAgent.EndEpisode();
+                EndAllAgentsEpisode();
                 ResetScene();
                 break;
 
             case Event.HitIntoBlueArea:
-                if (lastHitter.Key == Team.Red)
+                if (lastHitter.teamId == Team.Red)
                 {
                     redAgent.AddReward(0.5f);
                 }
                 break;
 
             case Event.HitIntoRedArea:
-                if (lastHitter.Key == Team.Blue)
+                if (lastHitter.teamId == Team.Blue)
                 {
                     blueAgent.AddReward(0.5f);
                 }
@@ -165,29 +156,12 @@ public class VolleyballEnvController : MonoBehaviour
         }
     }
 
-    private void HandleHitAgentEvent(VolleyballAgent currentAgent, KeyValuePair<Team, int> lastHitter) {
-        if (lastHitter.Key == currentAgent.teamId && lastHitter.Value == currentAgent.UUID) {
-            // same player double toch
-            redAgent.AddReward(-0.1f);
-        } else {
-            // agent wins
-            redAgent.AddReward(0.1f);
+    private void EndAllAgentsEpisode() {      
+        foreach (var agent in AgentsList)
+        {
+            agent.EndEpisode();
         }
     }
-
-    /// <summary>
-    /// Called every step. Control max env steps.
-    /// </summary>
-    // void FixedUpdate()
-    // {
-    //     resetTimer += 1;
-    //     if (resetTimer >= MaxEnvironmentSteps && MaxEnvironmentSteps > 0)
-    //     {
-    //         blueAgent.EpisodeInterrupted();
-    //         redAgent.EpisodeInterrupted();
-    //         ResetScene();
-    //     }
-    // }
 
     /// <summary>
     /// Reset agent and ball spawn conditions.
@@ -196,7 +170,7 @@ public class VolleyballEnvController : MonoBehaviour
     {
         // resetTimer = 0;
 
-        // hitterHistory.Clear();
+        hitterHistory.Clear();
 
         foreach (var agent in AgentsList)
         {

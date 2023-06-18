@@ -78,42 +78,10 @@ public class VolleyballAgent : Agent
     }
 
     /// <summary>
-    /// Check if agent is on the ground to enable/disable jumping
-    /// </summary>
-    // public bool CheckIfGrounded()
-    // {
-    //     hitGroundColliders = new Collider[3];
-    //     var o = gameObject;
-    //     Physics.OverlapBoxNonAlloc(
-    //         o.transform.localPosition + new Vector3(0, -0.05f, 0),
-    //         new Vector3(0.95f / 2f, 0.5f, 0.95f / 2f),
-    //         hitGroundColliders,
-    //         o.transform.rotation);
-    //     var grounded = false;
-    //     foreach (var col in hitGroundColliders)
-    //     {
-    //         if (col != null && col.transform != transform &&
-    //             (col.CompareTag("walkableSurface") ||
-    //              col.CompareTag("redGoal") ||
-    //              col.CompareTag("blueGoal")))
-    //         {
-    //             grounded = true; //then we're grounded
-    //             break;
-    //         }
-    //     }
-    //     return grounded;
-    // }
-
-    /// <summary>
     /// Called when agent collides with the ball
     /// </summary>
     private void OnCollisionEnter(Collision c)
     {
-        if (c.gameObject.CompareTag("ball"))
-        {
-            envController.UpdateHitterHistory(teamId, playerUUID);
-        }
-
         if (c.gameObject.CompareTag("walkableSurface"))
         {
             isGrounded = true;
