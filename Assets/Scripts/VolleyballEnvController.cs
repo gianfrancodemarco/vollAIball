@@ -190,11 +190,12 @@ public class VolleyballEnvController : MonoBehaviour
             // randomise starting positions and rotations
             var randomPosX = Random.Range(-2f, 2f);
             var randomPosZ = Random.Range(-2f, 2f);
-            var randomPosY = Random.Range(0.5f, 3.75f); // depends on jump height
-            var randomRot = Random.Range(-45f, 45f);
+            var randomPosY = 0f; // depends on jump height
+            var randomRot = 0f;
 
-            agent.transform.localPosition = new Vector3(randomPosX, 0.01f, randomPosZ);
+            agent.transform.localPosition = new Vector3(randomPosX, randomPosY, randomPosZ);
             agent.transform.eulerAngles = new Vector3(0, randomRot, 0);
+
 
             agent.GetComponent<Rigidbody>().velocity = default(Vector3);
         }
@@ -208,14 +209,23 @@ public class VolleyballEnvController : MonoBehaviour
     /// </summary>
     void ResetBall()
     {
-        var randomPosX = Random.Range(-2f, 2f);
-        var randomPosZ = Random.Range(6f, 10f);
-        var randomPosY = Random.Range(6f, 8f);
+        //var randomPosX = Random.Range(-2f, 2f);
+        //var randomPosZ = Random.Range(6f, 10f);
+        //var randomPosY = Random.Range(6f, 8f);
 
         // alternate ball spawn sàide
         // -1 = spawn blue side, 1 = spawn red side
         ballSpawnSide = -1 * ballSpawnSide;
-        ball.transform.localPosition = new Vector3(randomPosX, randomPosY, ballSpawnSide * randomPosZ);
+        
+        //Ball spawn position is hover one of the agents
+        VolleyballAgent server = null;
+        if (ballSpawnSide == 1){
+            server = AgentsList[0];
+        } else {
+            server = AgentsList[1];
+        }
+        
+        ball.transform.position = server.transform.position + new Vector3(0, 8f, 0);
 
         ballRb.angularVelocity = Vector3.zero;
         ballRb.velocity = Vector3.zero;
