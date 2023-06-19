@@ -24,29 +24,24 @@ public enum Event
 
 public class VolleyballEnvController : MonoBehaviour
 {
-    int ballSpawnSide;
-
-    VolleyballSettings volleyballSettings;
+    [HideInInspector]
+    public TensorBoardController tensorBoardController;
 
     public VolleyballAgent blueAgent;
     public VolleyballAgent redAgent;
-
     public List<VolleyballAgent> AgentsList = new List<VolleyballAgent>();
-    List<Renderer> RenderersList = new List<Renderer>();
-
-    Rigidbody blueAgentRb;
-    Rigidbody redAgentRb;
-
     public GameObject ball;
-    Rigidbody ballRb;
-
     public GameObject blueGoal;
     public GameObject redGoal;
 
-    Renderer blueGoalRenderer;
-
-    Renderer redGoalRenderer;
-
+    private int ballSpawnSide;
+    private VolleyballSettings volleyballSettings;
+    private List<Renderer> RenderersList = new List<Renderer>();
+    private Rigidbody blueAgentRb;
+    private Rigidbody redAgentRb;
+    private Rigidbody ballRb;
+    private Renderer blueGoalRenderer;
+    private Renderer redGoalRenderer;
     private List<VolleyballAgent> hitterHistory = new List<VolleyballAgent>();
 
     // private int resetTimer;
@@ -73,6 +68,8 @@ public class VolleyballEnvController : MonoBehaviour
         RenderersList.Add(redGoalRenderer);
 
         volleyballSettings = FindObjectOfType<VolleyballSettings>();
+
+        tensorBoardController = FindObjectOfType<TensorBoardController>();
 
         ResetScene();
     }
@@ -107,38 +104,42 @@ public class VolleyballEnvController : MonoBehaviour
                 } else {
                     // agent wins
                     lastHitter.AddReward(0.1f);
-                } 
+                }
+                tensorBoardController.ResolveEvent(triggerEvent);    
                 break;
             case Event.HitOutOfBounds:
-                if (lastHitter != null && lastHitter.teamId == Team.Blue)
-                {
-                    // apply penalty to blue agent
-                    blueAgent.AddReward(-0.5f);
-                    //redAgent.AddReward(0.1f);
+                if (lastHitter != null) {
+                    if (lastHitter.teamId == Team.Blue) {
+                        // apply penalty to blue agent
+                        blueAgent.AddReward(-0.5f);
+                        //redAgent.AddReward(0.1f);
+                    }  else if (lastHitter != null && lastHitter.teamId == Team.Red) {
+                        // apply penalty to red agent
+                        redAgent.AddReward(-0.5f);
+                        // blueAgent.AddReward(0.1f);
+                     }
+                     tensorBoardController.ResolveEvent(triggerEvent);
                 }
-                else if (lastHitter != null && lastHitter.teamId == Team.Red)
-                {
-                    // apply penalty to red agent
-                    redAgent.AddReward(-0.5f);
-                    // blueAgent.AddReward(0.1f);
-                }
-
                 EndAllAgentsEpisode();
                 ResetScene();
                 break;
 
             case Event.HitBlueGoal:
-                // blue wins
-                blueAgent.AddReward(1f);
-                redAgent.AddReward(-1f);
+                if (lastHitter != null) {
+                    blueAgent.AddReward(1f);
+                    redAgent.AddReward(-1f);
+                    tensorBoardController.ResolveEvent(triggerEvent);
+                }
                 EndAllAgentsEpisode();
                 ResetScene();
                 break;
 
             case Event.HitRedGoal:
-                // red wins
-                redAgent.AddReward(1f);
-                blueAgent.AddReward(-1f);
+                if (lastHitter != null) {
+                    redAgent.AddReward(1f);
+                    blueAgent.AddReward(-1f);
+                    tensorBoardController.ResolveEvent(triggerEvent);
+                }
                 EndAllAgentsEpisode();
                 ResetScene();
                 break;
@@ -147,6 +148,7 @@ public class VolleyballEnvController : MonoBehaviour
                 if (lastHitter != null && lastHitter.teamId == Team.Red)
                 {
                     redAgent.AddReward(0.5f);
+                    tensorBoardController.ResolveEvent(triggerEvent);
                 }
                 break;
 
@@ -154,11 +156,13 @@ public class VolleyballEnvController : MonoBehaviour
                 if (lastHitter != null && lastHitter.teamId == Team.Blue)
                 {
                     blueAgent.AddReward(0.5f);
+                    tensorBoardController.ResolveEvent(triggerEvent);
                 }
                 break;
             case Event.HitWall:
                 if(lastHitter != null) {
                     lastHitter.AddReward(-1f);
+                    tensorBoardController.ResolveEvent(triggerEvent);
                     EndAllAgentsEpisode();
                     ResetScene();
                 }
