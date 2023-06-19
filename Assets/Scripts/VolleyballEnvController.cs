@@ -1,5 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public enum Team
@@ -54,7 +54,7 @@ public class VolleyballEnvController : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = 0.5f;
+        // Time.timeScale = 0.5f;
         // Used to control agent & ball starting positions
         blueAgentRb = blueAgent.GetComponent<Rigidbody>();
         redAgentRb = redAgent.GetComponent<Rigidbody>();
@@ -202,7 +202,7 @@ public class VolleyballEnvController : MonoBehaviour
     /// <summary>
     /// Reset ball spawn conditions
     /// </summary>
-    void ResetBall()
+    private void ResetBall()
     {
         var randomPosX = Random.Range(-2f, 2f);
         var randomPosZ = Random.Range(6f, 10f);
@@ -215,5 +215,9 @@ public class VolleyballEnvController : MonoBehaviour
 
         ballRb.angularVelocity = Vector3.zero;
         ballRb.velocity = Vector3.zero;
+    }
+
+    public IEnumerable<VolleyballAgent> GetOpponentAgents(Team teamId) {
+        return AgentsList.Where(agent => agent.teamId != teamId);
     }
 }

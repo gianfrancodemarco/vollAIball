@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
@@ -20,6 +22,7 @@ public class VolleyballAgent : Agent
     private Vector3 jumpStartingPos;
     private EnvironmentParameters resetParams;
 
+    private IEnumerable<VolleyballAgent> OppositeAgents;
     private bool isGrounded;
     private float agentRot;
     private int playerUUID;
@@ -33,6 +36,7 @@ public class VolleyballAgent : Agent
         isGrounded = false;
         envController = area.GetComponent<VolleyballEnvController>();
         playerUUID = transform.GetInstanceID();
+        OppositeAgents = envController.GetOpponentAgents(teamId);
     }
 
     public override void Initialize()
@@ -186,6 +190,14 @@ public class VolleyballAgent : Agent
         sensor.AddObservation(ballRb.velocity.y);
         sensor.AddObservation(ballRb.velocity.z*agentRot);
         sensor.AddObservation(ballRb.velocity.x*agentRot);
+
+        // Opposite team agents position
+        foreach (VolleyballAgent oppositeAgent in OppositeAgents) {
+            Rigidbody oppositeAgentRb = oppositeAgent.GetComponent<Rigidbody>();
+            sensor.AddObservation(ballRb.velocity);
+            sensor.AddObservation(ballRb.position);
+        }
+
     }
 
     // For human controller
