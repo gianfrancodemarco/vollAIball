@@ -5,22 +5,10 @@ using Unity.MLAgents;
 public class TensorBoardController : MonoBehaviour {
 
     private StatsRecorder statsRecorder;
-    private int numberOfFields;
-
-    private int numberOfHitRedAgent = 0;
-    private int numberOfHitBlueAgent = 0;
-    private int numberOfHitOutOfBounds = 0;
-    private int numberOfHitBlueGoal = 0;
-    private int numberOfHitRedGoal = 0;
-    private int numberOfHitIntoBlueArea = 0;
-    private int numberOfHitIntoRedArea = 0;
-    private int numberOfHitWall = 0;
 
     void Awake()
     {
         statsRecorder = Academy.Instance.StatsRecorder;
-        numberOfFields = FindObjectsOfType<VolleyballEnvController>().Length;
-        Debug.Log("Number of fields: " + numberOfFields);
     }
 
     public void ResolveEvent(Event triggerEvent) {
@@ -28,36 +16,32 @@ public class TensorBoardController : MonoBehaviour {
         switch (triggerEvent)
         {
             case Event.HitRedAgent:
-                numberOfHitRedAgent += (1 / numberOfFields);
-                statsRecorder.Add("Statistics/numberOfHitRedAgent", numberOfHitRedAgent, StatAggregationMethod.Sum);
+                statsRecorder.Add("Statistics/numberOfHitRedAgent", 1, StatAggregationMethod.Sum);
                 break;
             case Event.HitBlueAgent:
-                numberOfHitBlueAgent += (1 / numberOfFields);
-                statsRecorder.Add("Statistics/numberOfHitBlueAgent", numberOfHitBlueAgent, StatAggregationMethod.Sum);
+                statsRecorder.Add("Statistics/numberOfHitBlueAgent", 1, StatAggregationMethod.Sum);
                 break;
             case Event.HitOutOfBounds:
-                numberOfHitOutOfBounds += (1 / numberOfFields);
-                statsRecorder.Add("Statistics/numberOfHitOutOfBounds", numberOfHitOutOfBounds, StatAggregationMethod.Sum);
+                statsRecorder.Add("Statistics/numberOfHitOutOfBounds", 1, StatAggregationMethod.Sum);
                 break;
             case Event.HitBlueGoal:
-                numberOfHitBlueGoal += (1 / numberOfFields);
-                statsRecorder.Add("Statistics/numberOfHitBlueGoal", numberOfHitBlueGoal, StatAggregationMethod.Sum);
+                statsRecorder.Add("Statistics/numberOfHitBlueGoal", 1, StatAggregationMethod.Sum);
                 break;
             case Event.HitRedGoal:
-                numberOfHitRedGoal += (1 / numberOfFields);
-                statsRecorder.Add("Statistics/numberOfHitRedGoal", numberOfHitRedGoal, StatAggregationMethod.Sum);
+                statsRecorder.Add("Statistics/numberOfHitRedGoal", 1, StatAggregationMethod.Sum);
                 break;
             case Event.HitIntoBlueArea:
-                numberOfHitIntoBlueArea += (1 / numberOfFields);
-                statsRecorder.Add("Statistics/numberOfHitIntoBlueArea", numberOfHitIntoBlueArea, StatAggregationMethod.Sum);
+                statsRecorder.Add("Statistics/numberOfHitIntoBlueArea", 1, StatAggregationMethod.Sum);
                 break;
             case Event.HitIntoRedArea:
-                numberOfHitIntoRedArea += (1 / numberOfFields);
-                statsRecorder.Add("Statistics/numberOfHitIntoRedArea", numberOfHitIntoRedArea, StatAggregationMethod.Sum);
+                statsRecorder.Add("Statistics/numberOfHitIntoRedArea", 1, StatAggregationMethod.Sum);
                 break;
             case Event.HitWall:
-                numberOfHitWall += (1 / numberOfFields);
-                statsRecorder.Add("Statistics/numberOfHitWall", numberOfHitWall, StatAggregationMethod.Sum);
+                statsRecorder.Add("Statistics/numberOfHitWall", 1, StatAggregationMethod.Sum);
+                break;
+            case Event.EpisodeEnd:
+                //Each field will add the same episode 2 times
+                statsRecorder.Add("Statistics/numberOfEndEpisode", 0.5f, StatAggregationMethod.Sum);
                 break;
         }
     }

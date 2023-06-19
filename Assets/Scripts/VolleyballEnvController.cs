@@ -18,7 +18,8 @@ public enum Event
     HitIntoRedArea = 4,
     HitBlueAgent = 5,
     HitRedAgent = 6,
-    HitWall = 7
+    HitWall = 7,
+    EpisodeEnd = 8
 }
 
 public class VolleyballEnvController : MonoBehaviour
