@@ -17,7 +17,7 @@ public class VolleyballController : MonoBehaviour
         envController = GetComponentInParent<VolleyballEnvController>();
         redGoalCollider = redGoal.GetComponent<Collider>();
         blueGoalCollider = blueGoal.GetComponent<Collider>();
-        tensorBoardController = GetComponentInParent<TensorBoardController>();
+        tensorBoardController = FindObjectOfType<TensorBoardController>();
     }
 
     void OnCollisionEnter(Collision collision)
