@@ -1,5 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public enum Team
@@ -17,7 +17,9 @@ public enum Event
     HitIntoBlueArea = 3,
     HitIntoRedArea = 4,
     HitBlueAgent = 5,
-    HitRedAgent = 6
+    HitRedAgent = 6,
+    HitWall = 7,
+    EpisodeEnd = 8
 }
 
 public class VolleyballEnvController : MonoBehaviour
@@ -45,7 +47,7 @@ public class VolleyballEnvController : MonoBehaviour
 
     Renderer redGoalRenderer;
 
-    Team lastHitter;
+    private List<VolleyballAgent> hitterHistory = new List<VolleyballAgent>();
 
     // private int resetTimer;
 
@@ -53,7 +55,7 @@ public class VolleyballEnvController : MonoBehaviour
 
     void Start()
     {
-        // Time.timeScale = 1f;
+        // Time.timeScale = 0.5f;
         // Used to control agent & ball starting positions
         blueAgentRb = blueAgent.GetComponent<Rigidbody>();
         redAgentRb = redAgent.GetComponent<Rigidbody>();
@@ -78,9 +80,9 @@ public class VolleyballEnvController : MonoBehaviour
     /// <summary>
     /// Tracks which agent last had control of the ball
     /// </summary>
-    public void UpdateLastHitter(Team team)
+    public void AppendToHitterHistory(VolleyballAgent agent)
     {
-        lastHitter = team;
+        hitterHistory.Add(agent);
     }
 
     /// <summary>
@@ -90,36 +92,38 @@ public class VolleyballEnvController : MonoBehaviour
     /// </summary>
     public void ResolveEvent(Event triggerEvent)
     {
+        VolleyballAgent lastHitter = hitterHistory.Count > 0 ? hitterHistory[hitterHistory.Count - 1] : null;
+        VolleyballAgent secondToLastHitter = hitterHistory.Count > 1 ? hitterHistory[hitterHistory.Count - 2] : null;
         //Debug.Log("ResolveEvent: " + triggerEvent);
         switch (triggerEvent)
         {
             case Event.HitRedAgent:
-                // red wins
-                redAgent.AddReward(0.1f);
-                break;
-
             case Event.HitBlueAgent:
-                // blue wins
-                blueAgent.AddReward(0.1f);
+                if (secondToLastHitter != null && lastHitter.UUID == secondToLastHitter.UUID) {
+                    // same player double toch
+                    lastHitter.AddReward(-0.1f);
+                    EndAllAgentsEpisode();
+                    ResetScene();
+                } else {
+                    // agent wins
+                    lastHitter.AddReward(0.1f);
+                } 
                 break;
-
             case Event.HitOutOfBounds:
-                if (lastHitter == Team.Blue)
+                if (lastHitter != null && lastHitter.teamId == Team.Blue)
                 {
                     // apply penalty to blue agent
                     blueAgent.AddReward(-0.5f);
                     //redAgent.AddReward(0.1f);
                 }
-                else if (lastHitter == Team.Red)
+                else if (lastHitter != null && lastHitter.teamId == Team.Red)
                 {
                     // apply penalty to red agent
                     redAgent.AddReward(-0.5f);
                     // blueAgent.AddReward(0.1f);
                 }
 
-                // end episode
-                blueAgent.EndEpisode();
-                redAgent.EndEpisode();
+                EndAllAgentsEpisode();
                 ResetScene();
                 break;
 
@@ -127,10 +131,7 @@ public class VolleyballEnvController : MonoBehaviour
                 // blue wins
                 blueAgent.AddReward(1f);
                 redAgent.AddReward(-1f);
-
-                // end episode
-                blueAgent.EndEpisode();
-                redAgent.EndEpisode();
+                EndAllAgentsEpisode();
                 ResetScene();
                 break;
 
@@ -138,43 +139,39 @@ public class VolleyballEnvController : MonoBehaviour
                 // red wins
                 redAgent.AddReward(1f);
                 blueAgent.AddReward(-1f);
-
-                // end episode
-                blueAgent.EndEpisode();
-                redAgent.EndEpisode();
+                EndAllAgentsEpisode();
                 ResetScene();
                 break;
 
             case Event.HitIntoBlueArea:
-                if (lastHitter == Team.Red)
+                if (lastHitter != null && lastHitter.teamId == Team.Red)
                 {
                     redAgent.AddReward(0.5f);
                 }
                 break;
 
             case Event.HitIntoRedArea:
-                if (lastHitter == Team.Blue)
+                if (lastHitter != null && lastHitter.teamId == Team.Blue)
                 {
                     blueAgent.AddReward(0.5f);
+                }
+                break;
+            case Event.HitWall:
+                if(lastHitter != null) {
+                    lastHitter.AddReward(-1f);
+                    EndAllAgentsEpisode();
+                    ResetScene();
                 }
                 break;
         }
     }
 
-
-    /// <summary>
-    /// Called every step. Control max env steps.
-    /// </summary>
-    // void FixedUpdate()
-    // {
-    //     resetTimer += 1;
-    //     if (resetTimer >= MaxEnvironmentSteps && MaxEnvironmentSteps > 0)
-    //     {
-    //         blueAgent.EpisodeInterrupted();
-    //         redAgent.EpisodeInterrupted();
-    //         ResetScene();
-    //     }
-    // }
+    private void EndAllAgentsEpisode() {      
+        foreach (var agent in AgentsList)
+        {
+            agent.EndEpisode();
+        }
+    }
 
     /// <summary>
     /// Reset agent and ball spawn conditions.
@@ -183,7 +180,7 @@ public class VolleyballEnvController : MonoBehaviour
     {
         // resetTimer = 0;
 
-        lastHitter = Team.Default; // reset last hitter
+        hitterHistory.Clear();
 
         foreach (var agent in AgentsList)
         {
@@ -207,7 +204,7 @@ public class VolleyballEnvController : MonoBehaviour
     /// <summary>
     /// Reset ball spawn conditions
     /// </summary>
-    void ResetBall()
+    private void ResetBall()
     {
         //var randomPosX = Random.Range(-2f, 2f);
         //var randomPosZ = Random.Range(6f, 10f);
@@ -229,5 +226,9 @@ public class VolleyballEnvController : MonoBehaviour
 
         ballRb.angularVelocity = Vector3.zero;
         ballRb.velocity = Vector3.zero;
+    }
+
+    public IEnumerable<VolleyballAgent> GetOpponentAgents(Team teamId) {
+        return AgentsList.Where(agent => agent.teamId != teamId);
     }
 }

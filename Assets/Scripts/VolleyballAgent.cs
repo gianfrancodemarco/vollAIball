@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
@@ -7,30 +9,43 @@ using Unity.MLAgents.Policies;
 public class VolleyballAgent : Agent
 {
     public GameObject area;
-    Rigidbody agentRb;
-    BehaviorParameters behaviorParameters;
     public Team teamId;
-
-    // To get ball's location for observations
     public GameObject ball;
-    Rigidbody ballRb;
-
-    VolleyballSettings volleyballSettings;
-    VolleyballEnvController envController;
-
-    Vector3 jumpTargetPos;
-    Vector3 jumpStartingPos;
-    float agentRot;
-
     public Collider[] hitGroundColliders = new Collider[3];
-    EnvironmentParameters resetParams;
+  
+    private Rigidbody agentRb;
+    private Rigidbody ballRb;
+    private BehaviorParameters behaviorParameters;    
+    private VolleyballSettings volleyballSettings;
+    private VolleyballEnvController envController;
+    
+    private TensorBoardController tensorBoardController; 
+    private Vector3 jumpTargetPos;
+    private Vector3 jumpStartingPos;
+    private EnvironmentParameters resetParams;
 
-    bool isGrounded;
- 
+    private IEnumerable<VolleyballAgent> OppositeAgents;
+    private bool isGrounded;
+    private float agentRot;
+    private int playerUUID;
+    public int UUID
+    {
+        get { return playerUUID; }
+    }
+
     void Start()
     {
         isGrounded = false;
         envController = area.GetComponent<VolleyballEnvController>();
+        tensorBoardController = FindObjectOfType<TensorBoardController>();
+        playerUUID = transform.GetInstanceID();
+        OppositeAgents = envController.GetOpponentAgents(teamId);
+    }
+
+    public new void EndEpisode()
+    {
+        base.EndEpisode();
+        tensorBoardController.ResolveEvent(Event.EpisodeEnd);
     }
 
     public override void Initialize()
@@ -62,7 +77,7 @@ public class VolleyballAgent : Agent
     /// <param name="targetVel">The velocity to target during the
     ///  motion.</param>
     /// <param name="maxVel">The maximum velocity posible.</param>
-    void MoveTowards(
+    private void MoveTowards(
         Vector3 targetPos, Rigidbody rb, float targetVel, float maxVel)
     {
         var moveToPos = targetPos - rb.worldCenterOfMass;
@@ -75,49 +90,17 @@ public class VolleyballAgent : Agent
     }
 
     /// <summary>
-    /// Check if agent is on the ground to enable/disable jumping
-    /// </summary>
-    // public bool CheckIfGrounded()
-    // {
-    //     hitGroundColliders = new Collider[3];
-    //     var o = gameObject;
-    //     Physics.OverlapBoxNonAlloc(
-    //         o.transform.localPosition + new Vector3(0, -0.05f, 0),
-    //         new Vector3(0.95f / 2f, 0.5f, 0.95f / 2f),
-    //         hitGroundColliders,
-    //         o.transform.rotation);
-    //     var grounded = false;
-    //     foreach (var col in hitGroundColliders)
-    //     {
-    //         if (col != null && col.transform != transform &&
-    //             (col.CompareTag("walkableSurface") ||
-    //              col.CompareTag("redGoal") ||
-    //              col.CompareTag("blueGoal")))
-    //         {
-    //             grounded = true; //then we're grounded
-    //             break;
-    //         }
-    //     }
-    //     return grounded;
-    // }
-
-    /// <summary>
     /// Called when agent collides with the ball
     /// </summary>
-    void OnCollisionEnter(Collision c)
+    private void OnCollisionEnter(Collision c)
     {
-        if (c.gameObject.CompareTag("ball"))
-        {
-            envController.UpdateLastHitter(teamId);
-        }
-
         if (c.gameObject.CompareTag("walkableSurface"))
         {
             isGrounded = true;
         }
     }
     
-    void OnCollisionExit(Collision c)
+    private void OnCollisionExit(Collision c)
     {
         if (c.gameObject.CompareTag("walkableSurface"))
         {
@@ -216,6 +199,14 @@ public class VolleyballAgent : Agent
         sensor.AddObservation(ballRb.velocity.y);
         sensor.AddObservation(ballRb.velocity.z*agentRot);
         sensor.AddObservation(ballRb.velocity.x*agentRot);
+
+        // Opposite team agents position
+        foreach (VolleyballAgent oppositeAgent in OppositeAgents) {
+            Rigidbody oppositeAgentRb = oppositeAgent.GetComponent<Rigidbody>();
+            sensor.AddObservation(ballRb.velocity);
+            sensor.AddObservation(ballRb.position);
+        }
+
     }
 
     // For human controller
