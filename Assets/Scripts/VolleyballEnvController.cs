@@ -231,4 +231,8 @@ public class VolleyballEnvController : MonoBehaviour
     public IEnumerable<VolleyballAgent> GetOpponentAgents(Team teamId) {
         return AgentsList.Where(agent => agent.teamId != teamId);
     }
+
+    public List<VolleyballAgent> GetHitterHistory() {
+        return hitterHistory;
+    }
 }

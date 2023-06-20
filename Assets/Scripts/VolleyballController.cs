@@ -84,10 +84,10 @@ public class VolleyballController : MonoBehaviour
         }
     }
 
-    private void TrackTensorBoardEvent(Event event)
+    private void TrackTensorBoardEvent(Event triggerEvent)
     {
-        if (envController.hitterHistory.Any()) {
-            tensorBoardController.ResolveEvent(event);
+        if (envController.GetHitterHistory().Count > 0) {
+            tensorBoardController.ResolveEvent(triggerEvent);
         }
     }
 }
