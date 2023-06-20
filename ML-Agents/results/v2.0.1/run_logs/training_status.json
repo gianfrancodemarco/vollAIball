@@ -1,0 +1,56 @@
+{
+    "Volleyball": {
+        "checkpoints": [
+            {
+                "steps": 499975,
+                "file_path": "results/v2.0.1/Volleyball/Volleyball-499975.onnx",
+                "reward": -0.193927118109788,
+                "creation_time": 1687280082.8535092,
+                "auxillary_file_paths": [
+                    "results/v2.0.1/Volleyball/Volleyball-499975.pt"
+                ]
+            },
+            {
+                "steps": 999998,
+                "file_path": "results/v2.0.1/Volleyball/Volleyball-999998.onnx",
+                "reward": 0.2372973061574472,
+                "creation_time": 1687280760.9616103,
+                "auxillary_file_paths": [
+                    "results/v2.0.1/Volleyball/Volleyball-999998.pt"
+                ]
+            },
+            {
+                "steps": 1499982,
+                "file_path": "results/v2.0.1/Volleyball/Volleyball-1499982.onnx",
+                "reward": 0.5742424344926169,
+                "creation_time": 1687281438.6987243,
+                "auxillary_file_paths": [
+                    "results/v2.0.1/Volleyball/Volleyball-1499982.pt"
+                ]
+            },
+            {
+                "steps": 1863591,
+                "file_path": "results/v2.0.1/Volleyball/Volleyball-1863591.onnx",
+                "reward": 0.642334505448358,
+                "creation_time": 1687281928.3270872,
+                "auxillary_file_paths": [
+                    "results/v2.0.1/Volleyball/Volleyball-1863591.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1863591,
+            "file_path": "results/v2.0.1/Volleyball.onnx",
+            "reward": 0.642334505448358,
+            "creation_time": 1687281928.3270872,
+            "auxillary_file_paths": [
+                "results/v2.0.1/Volleyball/Volleyball-1863591.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.8.1+cu102"
+    }
+}
