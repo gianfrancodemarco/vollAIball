@@ -4,6 +4,7 @@ using Unity.MLAgents;
 
 public class TensorBoardController : MonoBehaviour {
 
+    private VolleyballEnvController envController;
     private StatsRecorder statsRecorder;
 
     void Awake()
