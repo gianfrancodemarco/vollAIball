@@ -49,7 +49,7 @@ public class VolleyballEnvController : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = 0.5f;
+        // Time.timeScale = 0.5f;
         // Used to control agent & ball starting positions
         ballRb = ball.GetComponent<Rigidbody>();
 
@@ -192,7 +192,6 @@ public class VolleyballEnvController : MonoBehaviour
             agent.transform.localPosition = new Vector3(randomPosX, randomPosY, randomPosZ);
             agent.transform.eulerAngles = new Vector3(0, randomRot, 0);
 
-
             agent.GetComponent<Rigidbody>().velocity = default(Vector3);
         }
 
@@ -216,9 +215,9 @@ public class VolleyballEnvController : MonoBehaviour
         //Ball spawn position is hover one of the agents
         VolleyballAgent server = null;
         if (ballSpawnSide == 1){
-            server = AgentsList[0];
-        } else {
             server = AgentsList[1];
+        } else {
+            server = AgentsList[3];
         }
         
         ball.transform.position = server.transform.position + new Vector3(0, 8f, 0);
