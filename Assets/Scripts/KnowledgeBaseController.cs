@@ -1,8 +1,4 @@
 using UnityEngine;
-using Unity.MLAgents;
-using UnityEngine.Networking;
-using System.Collections;
-using System.Text;
 
 public class AssertDTO
 {
@@ -11,9 +7,19 @@ public class AssertDTO
 
 public class KnowledgeBaseController : MonoBehaviour
 {
-    void Awake() { 
-        StartCoroutine(SaveFact());
-        StartCoroutine(QueryFact());   
+
+    void Awake() {
+        StartCoroutine(KnowledgeBaseClient.Instance.Reset());
+        System.Threading.Thread.Sleep(5);
+        StartCoroutine(KnowledgeBaseClient.Instance.SaveFact("player(redAgent1)"));
+        System.Threading.Thread.Sleep(5);
+        StartCoroutine(KnowledgeBaseClient.Instance.SaveFact("player(redAgent2)"));
+        System.Threading.Thread.Sleep(5);
+        StartCoroutine(KnowledgeBaseClient.Instance.SaveFact("player(blueAgent1)"));
+        System.Threading.Thread.Sleep(5);
+        StartCoroutine(KnowledgeBaseClient.Instance.SaveFact("player(blueAgent2)"));
+        System.Threading.Thread.Sleep(5);
+        StartCoroutine(KnowledgeBaseClient.Instance.QueryFact("player(X)"));   
     }
 
     public void ResolveEvent(Event triggerEvent)
@@ -40,54 +46,4 @@ public class KnowledgeBaseController : MonoBehaviour
                 break;
         }
     }
-
-    public IEnumerator SaveFact()
-    {
-        // post request to the server:
-        // curl -X POST -H "Content-Type: application/json" -d '{"fact": "hitRedAgent"}' http://localhost:5000/fact
-        UnityWebRequest request = new UnityWebRequest("localhost:5000/assert", "POST");
-        byte[] jsonToSend = Encoding.UTF8.GetBytes("{\"fact\": \"hitRedAgent\"}");
-        request.uploadHandler = (UploadHandler) new UploadHandlerRaw(jsonToSend);
-        request.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
-        request.SetRequestHeader("Content-Type", "application/json"); //important
-
-        {
-            yield return request.SendWebRequest();
-        
-            if (request.result == UnityWebRequest.Result.ConnectionError)
-            {
-                Debug.Log(request.error);
-            }
-            else
-            {
-                Debug.Log("Form upload complete!");
-            }
-        }
-
-    }
-
-    public IEnumerator QueryFact()
-    {
-        // post request to the server:
-        // curl -X POST -H "Content-Type: application/json" -d '{"fact": "hitRedAgent"}' http://localhost:5000/fact
-        UnityWebRequest request = new UnityWebRequest("localhost:5000/query", "POST");
-        byte[] jsonToSend = Encoding.UTF8.GetBytes("{\"query\": \"hit(X)\"}");
-        request.uploadHandler = (UploadHandler) new UploadHandlerRaw(jsonToSend);
-        request.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
-        request.SetRequestHeader("Content-Type", "application/json"); //important
-
-        {
-            yield return request.SendWebRequest();
-        
-            if (request.result == UnityWebRequest.Result.ConnectionError)
-            {
-                Debug.Log(request.error);
-            }
-            else
-            {
-                Debug.Log(request.result.ToString());
-            }
-        }
-    }
-
 }
