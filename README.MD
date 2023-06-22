@@ -1,3 +1,37 @@
+## **v3.0.0**
+
+Goal: set 2v2 game enviroment
+- Add incremental reward for team pass: 
+- Add negative reward and end episode for numberOfTeamTouches > 3
+
+### Rewards
+
+- *Agent do team pass*:
+  - number of pass <= 3
+    - Hitter: 0.25f + (0.25f * number of pass)
+  - number of pass > 3 (End episode)
+    - Hitter: -1 
+- *Agent double touch ball* (End episode): 
+  - Hitter: -1 
+- *Agent throws ball on wall*: 
+  - Hitter: -1 (End episode)
+- *Agent hits ball*: +0.1
+- *Agent throws ball out of bounds (End Episode)*: 
+  - Hitter: -0.5
+- *Agent throws ball into opponent half*:
+  - Hitter: +0.5
+- *Agent scores (End Episode)*:
+  - Hitter: +1
+  - Other: -1
+  
+<br>
+
+## **v2.0.1**
+
+Goal: Removed statistics tracking when ball spawns and no agents touch it.
+
+<br>
+
 ## **v2.0.0**
 
 Goal: enforce more volleyball rules
@@ -5,6 +39,22 @@ Goal: enforce more volleyball rules
 - Hitting the wall is not allowed
 - Add opponent position to observations
 - Add tracking w/ Tensorboard of reward events per number of steps (e.g. number of hits, number of out of bounds, etc.) to have a better understanding of the reward function and its changes over time.
+
+### Rewards
+
+- *Agent double touch ball*: -0.1 (End episode)
+- *Agent throws ball on wall*: -1 (End episode)
+- *Agent hits ball*: +0.1
+- *Agent throws ball out of bounds (End Episode)*: 
+  - Hitter: -0.5
+- *Agent throws ball into opponent half*:
+  - Hitter: +0.5
+- *Agent scores (End Episode)*:
+  - Hitter: +1
+  - Other: -1
+
+
+<br>
 
 ## **v1.1.0**
 
@@ -29,6 +79,8 @@ From 26,5M steps:
   - Other: -1
 
 <br><br>
+
+<br>
 
 ## **v1.0.0**
 
