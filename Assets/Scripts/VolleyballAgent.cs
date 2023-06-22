@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
@@ -10,23 +9,19 @@ public class VolleyballAgent : Agent
 {
     public GameObject area;
     public Team teamId;
-    
-    public string team {
-        get { return TeamMap.teamMap[teamId]; }
-    }
-    
     public GameObject ball;
     public Collider[] hitGroundColliders = new Collider[3];
+
     private Rigidbody agentRb;
     private Rigidbody ballRb;
-    private BehaviorParameters behaviorParameters;
+    private BehaviorParameters behaviorParameters;    
     private VolleyballSettings volleyballSettings;
     private VolleyballEnvController envController;
-    private TensorBoardController tensorBoardController;
+    
+    private TensorBoardController tensorBoardController; 
     private Vector3 jumpTargetPos;
     private Vector3 jumpStartingPos;
     private EnvironmentParameters resetParams;
-    private IEnumerable<VolleyballAgent> OppositeAgents;
     private bool isGrounded;
     private float agentRot;
     private int playerUUID;
@@ -41,7 +36,6 @@ public class VolleyballAgent : Agent
         envController = area.GetComponent<VolleyballEnvController>();
         tensorBoardController = FindObjectOfType<TensorBoardController>();
         playerUUID = transform.GetInstanceID();
-        OppositeAgents = envController.GetOpponentAgents(teamId);
     }
 
     public new void EndEpisode()
@@ -200,31 +194,28 @@ public class VolleyballAgent : Agent
         sensor.AddObservation(this.transform.rotation.y);
 
         // Vector from agent to ball (direction to ball) (3 floats)
-        Vector3 toBall = new Vector3(
-            (ballRb.transform.position.x - this.transform.position.x) * agentRot,
-            (ballRb.transform.position.y - this.transform.position.y),
-            (ballRb.transform.position.z - this.transform.position.z) * agentRot
-        );
+        Vector3 toBall = new Vector3((ballRb.transform.position.x - this.transform.position.x)*agentRot, 
+        (ballRb.transform.position.y - this.transform.position.y),
+        (ballRb.transform.position.z - this.transform.position.z)*agentRot);
 
         sensor.AddObservation(toBall.normalized);
 
         // Distance from the ball (1 float)
+        sensor.AddObservation(toBall.normalized);
         sensor.AddObservation(toBall.magnitude);
-
-        // Agent velocity (3 floats)
-        sensor.AddObservation(agentRb.velocity);
 
         // Ball velocity (3 floats)
         sensor.AddObservation(ballRb.velocity.y);
         sensor.AddObservation(ballRb.velocity.z * agentRot);
         sensor.AddObservation(ballRb.velocity.x * agentRot);
 
-        // Opposite team agents position
-        foreach (VolleyballAgent oppositeAgent in OppositeAgents)
+        // Add position, velocity and rotation for all agents
+        foreach (VolleyballAgent agent in envController.GetAgents())
         {
-            Rigidbody oppositeAgentRb = oppositeAgent.GetComponent<Rigidbody>();
-            sensor.AddObservation(ballRb.velocity);
-            sensor.AddObservation(ballRb.position);
+            Rigidbody oppositeAgentRb = agent.GetComponent<Rigidbody>();
+            sensor.AddObservation(agent.GetComponent<Rigidbody>().position);
+            sensor.AddObservation(agent.GetComponent<Rigidbody>().velocity);
+            sensor.AddObservation(agent.GetComponent<Rigidbody>().rotation);
         }
     }
 

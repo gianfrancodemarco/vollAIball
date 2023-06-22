@@ -34,18 +34,13 @@ public enum Event
 
 public class VolleyballEnvController : MonoBehaviour
 {
+    public float timeScale;
     int ballSpawnSide;
 
     VolleyballSettings volleyballSettings;
 
-    public VolleyballAgent blueAgent;
-    public VolleyballAgent redAgent;
-
     public List<VolleyballAgent> AgentsList = new List<VolleyballAgent>();
     List<Renderer> RenderersList = new List<Renderer>();
-
-    Rigidbody blueAgentRb;
-    Rigidbody redAgentRb;
 
     public GameObject ball;
     Rigidbody ballRb;
@@ -63,22 +58,14 @@ public class VolleyballEnvController : MonoBehaviour
 
     void Start()
     {
-        // Time.timeScale = 0.5f;
+        Time.timeScale = timeScale;
         // Used to control agent & ball starting positions
-        blueAgentRb = blueAgent.GetComponent<Rigidbody>();
-        redAgentRb = redAgent.GetComponent<Rigidbody>();
         ballRb = ball.GetComponent<Rigidbody>();
 
         // Starting ball spawn side
         // -1 = spawn blue side, 1 = spawn red side
         var spawnSideList = new List<int> { -1, 1 };
         ballSpawnSide = spawnSideList[Random.Range(0, 2)];
-
-        // Render ground to visualise which agent scored
-        blueGoalRenderer = blueGoal.GetComponent<Renderer>();
-        redGoalRenderer = redGoal.GetComponent<Renderer>();
-        RenderersList.Add(blueGoalRenderer);
-        RenderersList.Add(redGoalRenderer);
 
         volleyballSettings = FindObjectOfType<VolleyballSettings>();
 
@@ -100,72 +87,84 @@ public class VolleyballEnvController : MonoBehaviour
     /// </summary>
     public void ResolveEvent(Event triggerEvent)
     {
-        VolleyballAgent lastHitter = hitterHistory.Count > 0 ? hitterHistory[hitterHistory.Count - 1] : null;
-        VolleyballAgent secondToLastHitter = hitterHistory.Count > 1 ? hitterHistory[hitterHistory.Count - 2] : null;
-        //Debug.Log("ResolveEvent: " + triggerEvent);
+        VolleyballAgent lastHitter = hitterHistory.Count > 0 ? hitterHistory[^1] : null;
+        // VolleyballAgent secondToLastHitter = hitterHistory.Count > 1 ? hitterHistory[hitterHistory.Count - 2] : null;
         switch (triggerEvent)
         {
             case Event.HitRedAgent:
             case Event.HitBlueAgent:
-                if (secondToLastHitter != null && lastHitter.UUID == secondToLastHitter.UUID) {
-                    // same player double toch
-                    lastHitter.AddReward(-0.1f);
+                if (IsDoubleTouch())
+                {
+                    lastHitter.AddReward(-1f);
                     EndAllAgentsEpisode();
                     ResetScene();
-                } else {
-                    // agent wins
-                    lastHitter.AddReward(0.1f);
-                } 
+                }
+                else
+                {
+                    int numberOfTeamTouches = GetNumberOfTeamTouches();
+                    if (numberOfTeamTouches > 3){
+                        // NOTE: Second to last hitter is the one who should have hit the ball in the other field, so he gets a negative reward
+                        VolleyballAgent secondToLastHitter = hitterHistory[hitterHistory.Count - 2];
+                        secondToLastHitter.AddReward(-1f);
+                        EndAllAgentsEpisode();
+                        ResetScene();
+                    } else {
+                        lastHitter.AddReward(0.25f + 0.25f * numberOfTeamTouches);
+                    }
+                }
                 break;
             case Event.HitOutOfBounds:
-                if (lastHitter != null && lastHitter.teamId == Team.Blue)
+                if (lastHitter != null)
                 {
-                    // apply penalty to blue agent
-                    blueAgent.AddReward(-0.5f);
-                    //redAgent.AddReward(0.1f);
+                    // apply penalty to agent
+                    lastHitter.AddReward(-0.5f);
                 }
-                else if (lastHitter != null && lastHitter.teamId == Team.Red)
-                {
-                    // apply penalty to red agent
-                    redAgent.AddReward(-0.5f);
-                    // blueAgent.AddReward(0.1f);
-                }
-
                 EndAllAgentsEpisode();
                 ResetScene();
                 break;
 
             case Event.HitBlueGoal:
-                // blue wins
-                blueAgent.AddReward(1f);
-                redAgent.AddReward(-1f);
+                // Red took the goal, so it will be penalized
+                // Blue will get a reward only if it did something
+                ApplyRewardToTeam(Team.Red, -1f);
+                if (PlayerOfTeamHitBall(Team.Blue))
+                {
+                    ApplyRewardToTeam(Team.Blue, 1f);
+                }
                 EndAllAgentsEpisode();
                 ResetScene();
                 break;
 
             case Event.HitRedGoal:
-                // red wins
-                redAgent.AddReward(1f);
-                blueAgent.AddReward(-1f);
+                // Blue took the goal, so it will be penalized
+                // Red will get a reward only if it did something
+                ApplyRewardToTeam(Team.Blue, -1f);
+                if (PlayerOfTeamHitBall(Team.Red))
+                {
+                    ApplyRewardToTeam(Team.Red, 1f);
+                }
                 EndAllAgentsEpisode();
                 ResetScene();
                 break;
 
             case Event.HitIntoBlueArea:
+                // NOTE: we probably can remove the check on the team id here
                 if (lastHitter != null && lastHitter.teamId == Team.Red)
                 {
-                    redAgent.AddReward(0.5f);
+                    lastHitter.AddReward(0.5f);
                 }
                 break;
 
             case Event.HitIntoRedArea:
+                // NOTE: we probably can remove the check on the team id here
                 if (lastHitter != null && lastHitter.teamId == Team.Blue)
                 {
-                    blueAgent.AddReward(0.5f);
+                    lastHitter.AddReward(0.5f);
                 }
                 break;
             case Event.HitWall:
-                if(lastHitter != null) {
+                if (lastHitter != null)
+                {
                     lastHitter.AddReward(-1f);
                     EndAllAgentsEpisode();
                     ResetScene();
@@ -174,7 +173,8 @@ public class VolleyballEnvController : MonoBehaviour
         }
     }
 
-    private void EndAllAgentsEpisode() {      
+    private void EndAllAgentsEpisode()
+    {
         foreach (var agent in AgentsList)
         {
             agent.EndEpisode();
@@ -190,17 +190,15 @@ public class VolleyballEnvController : MonoBehaviour
 
         hitterHistory.Clear();
 
+        // TODO: Discriminate between server and not-server
         foreach (var agent in AgentsList)
         {
-            // randomise starting positions and rotations
-            var randomPosX = Random.Range(-2f, 2f);
-            var randomPosZ = Random.Range(-2f, 2f);
-            var randomPosY = 0f; // depends on jump height
-            var randomRot = 0f;
+            // randomise starting positions
+            var randomPosX = Random.Range(-4f, 4f);
+            var randomPosZ = Random.Range(-4f, 4f);
 
-            agent.transform.localPosition = new Vector3(randomPosX, randomPosY, randomPosZ);
-            agent.transform.eulerAngles = new Vector3(0, randomRot, 0);
-
+            agent.transform.localPosition = new Vector3(randomPosX, 0, randomPosZ);
+            agent.transform.eulerAngles = new Vector3(0, 0, 0);
 
             agent.GetComponent<Rigidbody>().velocity = default(Vector3);
         }
@@ -221,26 +219,77 @@ public class VolleyballEnvController : MonoBehaviour
         // alternate ball spawn sàide
         // -1 = spawn blue side, 1 = spawn red side
         ballSpawnSide = -1 * ballSpawnSide;
-        
+
         //Ball spawn position is hover one of the agents
         VolleyballAgent server = null;
-        if (ballSpawnSide == 1){
+        if (ballSpawnSide == 1)
+        {
+            // 0 and 2 must be on serving position
             server = AgentsList[0];
-        } else {
-            server = AgentsList[1];
         }
-        
+        else
+        {
+            server = AgentsList[2];
+        }
+
         ball.transform.position = server.transform.position + new Vector3(0, 8f, 0);
 
         ballRb.angularVelocity = Vector3.zero;
         ballRb.velocity = Vector3.zero;
     }
 
-    public IEnumerable<VolleyballAgent> GetOpponentAgents(Team teamId) {
+    public IEnumerable<VolleyballAgent> GetAgents()
+    {
+        return AgentsList;
+    }
+
+    public IEnumerable<VolleyballAgent> GetAgentsInTeam(Team teamId)
+    {
+        return AgentsList.Where(agent => agent.teamId == teamId);
+    }
+
+    public IEnumerable<VolleyballAgent> GetAgentsNotInTeam(Team teamId)
+    {
         return AgentsList.Where(agent => agent.teamId != teamId);
     }
 
-    public List<VolleyballAgent> GetHitterHistory() {
+    public List<VolleyballAgent> GetHitterHistory()
+    {
         return hitterHistory;
+    }
+
+    public bool PlayerOfTeamHitBall(Team teamId)
+    {
+        return hitterHistory.Count > 0 && hitterHistory.Any(agent => agent.teamId == teamId);
+    }
+
+    private bool IsDoubleTouch()
+    {
+        return hitterHistory.Count > 1 && hitterHistory[^1].UUID == hitterHistory[^2].UUID;
+    }
+
+    private void ApplyRewardToTeam(Team teamId, float reward)
+    {
+        foreach (var agent in GetAgentsInTeam(teamId))
+        {
+            agent.AddReward(reward);
+        }
+    }
+
+    private int GetNumberOfTeamTouches()
+    {
+        //This function is called after a touch, so we start from 1
+        int teamTouches = 1;
+        Team currentTeamId = hitterHistory[^1].teamId;
+        
+        if (hitterHistory.Count > 1 && currentTeamId == hitterHistory[^2].teamId){
+            teamTouches += 1;
+        }
+
+        if (hitterHistory.Count > 2 && currentTeamId == hitterHistory[^3].teamId){
+            teamTouches += 1;
+        }
+
+        return teamTouches;
     }
 }
