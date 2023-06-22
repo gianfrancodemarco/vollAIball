@@ -9,6 +9,16 @@ public enum Team
     Default = 2
 }
 
+public static class TeamMap
+{
+    public static Dictionary<Team, string> teamMap = new Dictionary<Team, string>()
+    {
+        {Team.Blue, "blue"},
+        {Team.Red, "red"},
+        {Team.Default, "default"}
+    };
+}
+
 public enum Event
 {
     HitRedGoal = 0,
@@ -48,8 +58,6 @@ public class VolleyballEnvController : MonoBehaviour
     Renderer redGoalRenderer;
 
     private List<VolleyballAgent> hitterHistory = new List<VolleyballAgent>();
-
-    // private int resetTimer;
 
     public int MaxEnvironmentSteps;
 

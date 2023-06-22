@@ -6,6 +6,8 @@ public class VolleyballController : MonoBehaviour
     public VolleyballEnvController envController;
     [HideInInspector]
     public TensorBoardController tensorBoardController;
+    [HideInInspector]
+    public KnowledgeBaseController knowledgeBaseController;
 
     public GameObject redGoal;
     public GameObject blueGoal;
@@ -19,6 +21,7 @@ public class VolleyballController : MonoBehaviour
         redGoalCollider = redGoal.GetComponent<Collider>();
         blueGoalCollider = blueGoal.GetComponent<Collider>();
         tensorBoardController = FindObjectOfType<TensorBoardController>();
+        knowledgeBaseController = FindObjectOfType<KnowledgeBaseController>();
     }
 
     void OnCollisionEnter(Collision collision)
@@ -30,7 +33,7 @@ public class VolleyballController : MonoBehaviour
             envController.AppendToHitterHistory(collision.gameObject.GetComponent<VolleyballAgent>());
             TrackTensorBoardEvent(Event.HitBlueAgent);
             envController.ResolveEvent(Event.HitBlueAgent);
-
+            knowledgeBaseController.ResolveEvent(Event.HitBlueAgent);
         }
         else if (collision.gameObject.CompareTag("redAgent"))
         {
@@ -38,11 +41,13 @@ public class VolleyballController : MonoBehaviour
             envController.AppendToHitterHistory(collision.gameObject.GetComponent<VolleyballAgent>());
             TrackTensorBoardEvent(Event.HitRedAgent);
             envController.ResolveEvent(Event.HitRedAgent);
+            knowledgeBaseController.ResolveEvent(Event.HitRedAgent);    
         }
         else if (collision.gameObject.CompareTag("wall"))
         {
             TrackTensorBoardEvent(Event.HitWall);
             envController.ResolveEvent(Event.HitWall);
+            knowledgeBaseController.ResolveEvent(Event.HitWall);
         }
     }
 
@@ -57,30 +62,35 @@ public class VolleyballController : MonoBehaviour
             // ball went out of bounds
             TrackTensorBoardEvent(Event.HitOutOfBounds);
             envController.ResolveEvent(Event.HitOutOfBounds);
+            knowledgeBaseController.ResolveEvent(Event.HitOutOfBounds);
         }
         else if (other.gameObject.CompareTag("blueBoundary"))
         {
             // ball hit into blue side
             TrackTensorBoardEvent(Event.HitIntoBlueArea);
             envController.ResolveEvent(Event.HitIntoBlueArea);
+            knowledgeBaseController.ResolveEvent(Event.HitIntoBlueArea);
         }
         else if (other.gameObject.CompareTag("redBoundary"))
         {
             // ball hit into red side
             TrackTensorBoardEvent(Event.HitIntoRedArea);
             envController.ResolveEvent(Event.HitIntoRedArea);
+            knowledgeBaseController.ResolveEvent(Event.HitIntoRedArea);
         }
         else if (other.gameObject.CompareTag("redGoal"))
         {
             // ball hit red goal (blue side court)
             TrackTensorBoardEvent(Event.HitRedGoal);
             envController.ResolveEvent(Event.HitRedGoal);
+            knowledgeBaseController.ResolveEvent(Event.HitRedGoal);
         }
         else if (other.gameObject.CompareTag("blueGoal"))
         {
             // ball hit blue goal (red side court)
             TrackTensorBoardEvent(Event.HitBlueGoal);
             envController.ResolveEvent(Event.HitBlueGoal);
+            knowledgeBaseController.ResolveEvent(Event.HitBlueGoal);
         }
     }
 

@@ -10,20 +10,22 @@ public class VolleyballAgent : Agent
 {
     public GameObject area;
     public Team teamId;
+    
+    public string team {
+        get { return TeamMap.teamMap[teamId]; }
+    }
+    
     public GameObject ball;
     public Collider[] hitGroundColliders = new Collider[3];
-  
     private Rigidbody agentRb;
     private Rigidbody ballRb;
-    private BehaviorParameters behaviorParameters;    
+    private BehaviorParameters behaviorParameters;
     private VolleyballSettings volleyballSettings;
     private VolleyballEnvController envController;
-    
-    private TensorBoardController tensorBoardController; 
+    private TensorBoardController tensorBoardController;
     private Vector3 jumpTargetPos;
     private Vector3 jumpStartingPos;
     private EnvironmentParameters resetParams;
-
     private IEnumerable<VolleyballAgent> OppositeAgents;
     private bool isGrounded;
     private float agentRot;
@@ -55,7 +57,7 @@ public class VolleyballAgent : Agent
 
         agentRb = GetComponent<Rigidbody>();
         ballRb = ball.GetComponent<Rigidbody>();
-        
+
         // for symmetry between player side
         if (teamId == Team.Blue)
         {
@@ -77,15 +79,13 @@ public class VolleyballAgent : Agent
     /// <param name="targetVel">The velocity to target during the
     ///  motion.</param>
     /// <param name="maxVel">The maximum velocity posible.</param>
-    private void MoveTowards(
-        Vector3 targetPos, Rigidbody rb, float targetVel, float maxVel)
+    private void MoveTowards(Vector3 targetPos, Rigidbody rb, float targetVel, float maxVel)
     {
         var moveToPos = targetPos - rb.worldCenterOfMass;
         var velocityTarget = Time.fixedDeltaTime * targetVel * moveToPos;
         if (float.IsNaN(velocityTarget.x) == false)
         {
-            rb.velocity = Vector3.MoveTowards(
-                rb.velocity, velocityTarget, maxVel);
+            rb.velocity = Vector3.MoveTowards(rb.velocity, velocityTarget, maxVel);
         }
     }
 
@@ -99,7 +99,7 @@ public class VolleyballAgent : Agent
             isGrounded = true;
         }
     }
-    
+
     private void OnCollisionExit(Collision c)
     {
         if (c.gameObject.CompareTag("walkableSurface"))
@@ -114,13 +114,19 @@ public class VolleyballAgent : Agent
     public void Jump(Vector3 dirToGo)
     {
         jumpTargetPos =
-        new Vector3(agentRb.position.x,
-            jumpStartingPos.y + volleyballSettings.agentJumpHeight,
-            agentRb.position.z) + agentRot*dirToGo;
+            new Vector3(
+                agentRb.position.x,
+                jumpStartingPos.y + volleyballSettings.agentJumpHeight,
+                agentRb.position.z
+            )
+            + agentRot * dirToGo;
 
-        MoveTowards(jumpTargetPos, agentRb, volleyballSettings.agentJumpVelocity,
-        volleyballSettings.agentJumpVelocityMaxChange);
-
+        MoveTowards(
+            jumpTargetPos,
+            agentRb,
+            volleyballSettings.agentJumpVelocity,
+            volleyballSettings.agentJumpVelocityMaxChange
+        );
     }
 
     /// <summary>
@@ -136,31 +142,40 @@ public class VolleyballAgent : Agent
         var jumpAction = act[3];
 
         float baseVelocity = 1f;
-        if (!isGrounded){
+        if (!isGrounded)
+        {
             baseVelocity = 0.5f;
         }
 
-        if (dirToGoForwardAction == 1){ //forward
-            dirToGo = baseVelocity * transform.forward * 1f; 
-        } else if (dirToGoForwardAction == 2) { //backward
+        if (dirToGoForwardAction == 1)
+        { //forward
+            dirToGo = baseVelocity * transform.forward * 1f;
+        }
+        else if (dirToGoForwardAction == 2)
+        { //backward
             dirToGo = baseVelocity * transform.forward * volleyballSettings.speedReductionFactor * -1f;
         }
 
-
-        if (dirToGoSideAction == 1){ //right
+        if (dirToGoSideAction == 1)
+        { //right
             dirToGo = baseVelocity * transform.right * volleyballSettings.speedReductionFactor * -1f;
-        } else if (dirToGoSideAction == 2){ //left
+        }
+        else if (dirToGoSideAction == 2)
+        { //left
             dirToGo = baseVelocity * transform.right * volleyballSettings.speedReductionFactor;
         }
 
-
-        if (rotateDirAction == 1){ //rotate right
+        if (rotateDirAction == 1)
+        { //rotate right
             rotateDir = transform.up * -1f;
-        } else if (rotateDirAction == 2){ //rotate left
+        }
+        else if (rotateDirAction == 2)
+        { //rotate left
             rotateDir = transform.up * 1f;
         }
 
-        if (jumpAction == 1){
+        if (jumpAction == 1)
+        {
             if (isGrounded)
             {
                 Jump(dirToGo);
@@ -168,8 +183,10 @@ public class VolleyballAgent : Agent
         }
 
         transform.Rotate(rotateDir, Time.fixedDeltaTime * 200f);
-        agentRb.AddForce(agentRot * dirToGo * volleyballSettings.agentRunSpeed,
-            ForceMode.VelocityChange);
+        agentRb.AddForce(
+            agentRot * dirToGo * volleyballSettings.agentRunSpeed,
+            ForceMode.VelocityChange
+        );
     }
 
     public override void OnActionReceived(ActionBuffers actionBuffers)
@@ -183,9 +200,11 @@ public class VolleyballAgent : Agent
         sensor.AddObservation(this.transform.rotation.y);
 
         // Vector from agent to ball (direction to ball) (3 floats)
-        Vector3 toBall = new Vector3((ballRb.transform.position.x - this.transform.position.x)*agentRot, 
-        (ballRb.transform.position.y - this.transform.position.y),
-        (ballRb.transform.position.z - this.transform.position.z)*agentRot);
+        Vector3 toBall = new Vector3(
+            (ballRb.transform.position.x - this.transform.position.x) * agentRot,
+            (ballRb.transform.position.y - this.transform.position.y),
+            (ballRb.transform.position.z - this.transform.position.z) * agentRot
+        );
 
         sensor.AddObservation(toBall.normalized);
 
@@ -197,16 +216,16 @@ public class VolleyballAgent : Agent
 
         // Ball velocity (3 floats)
         sensor.AddObservation(ballRb.velocity.y);
-        sensor.AddObservation(ballRb.velocity.z*agentRot);
-        sensor.AddObservation(ballRb.velocity.x*agentRot);
+        sensor.AddObservation(ballRb.velocity.z * agentRot);
+        sensor.AddObservation(ballRb.velocity.x * agentRot);
 
         // Opposite team agents position
-        foreach (VolleyballAgent oppositeAgent in OppositeAgents) {
+        foreach (VolleyballAgent oppositeAgent in OppositeAgents)
+        {
             Rigidbody oppositeAgentRb = oppositeAgent.GetComponent<Rigidbody>();
             sensor.AddObservation(ballRb.velocity);
             sensor.AddObservation(ballRb.position);
         }
-
     }
 
     // For human controller

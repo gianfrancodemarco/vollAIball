@@ -42,11 +42,7 @@ public class KnowledgeBaseClient
 
             if (request.result == UnityWebRequest.Result.ConnectionError)
             {
-                Debug.Log("Error: " + request.error);
-            }
-            else
-            {
-                Debug.Log("Result:" + request.downloadHandler.text);
+                Debug.LogError("Error: " + request.error);
             }
         }
     }
@@ -66,7 +62,7 @@ public class KnowledgeBaseClient
 
             if (request.result == UnityWebRequest.Result.ConnectionError)
             {
-                Debug.Log("Error: " + request.error);
+                Debug.LogError("Error: " + request.error);
             }
             else
             {
