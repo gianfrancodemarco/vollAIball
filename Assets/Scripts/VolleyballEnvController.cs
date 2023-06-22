@@ -49,7 +49,7 @@ public class VolleyballEnvController : MonoBehaviour
 
     void Start()
     {
-        // Time.timeScale = 0.5f;
+        //Time.timeScale = 0.5f;
         // Used to control agent & ball starting positions
         ballRb = ball.GetComponent<Rigidbody>();
 
@@ -86,7 +86,7 @@ public class VolleyballEnvController : MonoBehaviour
             case Event.HitBlueAgent:
                 if (IsDoubleTouch())
                 {
-                    lastHitter.AddReward(-0.1f);
+                    lastHitter.AddReward(-1f);
                     EndAllAgentsEpisode();
                     ResetScene();
                 }
@@ -181,16 +181,15 @@ public class VolleyballEnvController : MonoBehaviour
 
         hitterHistory.Clear();
 
+        // TODO: Discriminate between server and not-server
         foreach (var agent in AgentsList)
         {
-            // randomise starting positions and rotations
-            var randomPosX = Random.Range(-2f, 2f);
-            var randomPosZ = Random.Range(-2f, 2f);
-            var randomPosY = 0f; // depends on jump height
-            var randomRot = 0f;
+            // randomise starting positions
+            var randomPosX = Random.Range(-4f, 4f);
+            var randomPosZ = Random.Range(-4f, 4f);
 
-            agent.transform.localPosition = new Vector3(randomPosX, randomPosY, randomPosZ);
-            agent.transform.eulerAngles = new Vector3(0, randomRot, 0);
+            agent.transform.localPosition = new Vector3(randomPosX, 0, randomPosZ);
+            agent.transform.eulerAngles = new Vector3(0, 0, 0);
 
             agent.GetComponent<Rigidbody>().velocity = default(Vector3);
         }
@@ -216,7 +215,8 @@ public class VolleyballEnvController : MonoBehaviour
         VolleyballAgent server = null;
         if (ballSpawnSide == 1)
         {
-            server = AgentsList[1];
+            // 0 and 2 must be on serving position
+            server = AgentsList[0];
         }
         else
         {
@@ -268,11 +268,11 @@ public class VolleyballEnvController : MonoBehaviour
         int teamTouches = 1;
         Team currentTeamId = hitterHistory[^1].teamId;
         
-        if (currentTeamId == hitterHistory[^2].teamId){
+        if (hitterHistory.Count > 1 && currentTeamId == hitterHistory[^2].teamId){
             teamTouches += 1;
         }
 
-        if (currentTeamId == hitterHistory[^3].teamId){
+        if (hitterHistory.Count > 2 && currentTeamId == hitterHistory[^3].teamId){
             teamTouches += 1;
         }
 
