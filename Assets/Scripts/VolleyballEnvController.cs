@@ -13,9 +13,9 @@ public static class TeamMap
 {
     public static Dictionary<Team, string> teamMap = new Dictionary<Team, string>()
     {
-        {Team.Blue, "blue"},
-        {Team.Red, "red"},
-        {Team.Default, "default"}
+        { Team.Blue, "blue" },
+        { Team.Red, "red" },
+        { Team.Default, "default" }
     };
 }
 
@@ -102,13 +102,16 @@ public class VolleyballEnvController : MonoBehaviour
                 else
                 {
                     int numberOfTeamTouches = GetNumberOfTeamTouches();
-                    if (numberOfTeamTouches > 3){
+                    if (numberOfTeamTouches > 3)
+                    {
                         // NOTE: Second to last hitter is the one who should have hit the ball in the other field, so he gets a negative reward
                         VolleyballAgent secondToLastHitter = hitterHistory[hitterHistory.Count - 2];
                         secondToLastHitter.AddReward(-1f);
                         EndAllAgentsEpisode();
                         ResetScene();
-                    } else {
+                    }
+                    else
+                    {
                         lastHitter.AddReward(0.25f + 0.25f * numberOfTeamTouches);
                     }
                 }
@@ -117,7 +120,7 @@ public class VolleyballEnvController : MonoBehaviour
                 if (lastHitter != null)
                 {
                     // apply penalty to agent
-                    lastHitter.AddReward(-0.5f);
+                    lastHitter.AddReward(-1.0f);
                 }
                 EndAllAgentsEpisode();
                 ResetScene();
@@ -216,7 +219,7 @@ public class VolleyballEnvController : MonoBehaviour
         //var randomPosZ = Random.Range(6f, 10f);
         //var randomPosY = Random.Range(6f, 8f);
 
-        // alternate ball spawn sàide
+        // alternate ball spawn side
         // -1 = spawn blue side, 1 = spawn red side
         ballSpawnSide = -1 * ballSpawnSide;
 
@@ -281,12 +284,14 @@ public class VolleyballEnvController : MonoBehaviour
         //This function is called after a touch, so we start from 1
         int teamTouches = 1;
         Team currentTeamId = hitterHistory[^1].teamId;
-        
-        if (hitterHistory.Count > 1 && currentTeamId == hitterHistory[^2].teamId){
+
+        if (hitterHistory.Count > 1 && currentTeamId == hitterHistory[^2].teamId)
+        {
             teamTouches += 1;
         }
 
-        if (hitterHistory.Count > 2 && currentTeamId == hitterHistory[^3].teamId){
+        if (hitterHistory.Count > 2 && currentTeamId == hitterHistory[^3].teamId)
+        {
             teamTouches += 1;
         }
 
