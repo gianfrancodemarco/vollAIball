@@ -62,7 +62,7 @@ engine_settings:
   no_graphics: false
 environment_parameters: null
 checkpoint_settings:
-  run_id: v3.0.0
+  run_id: v3.0.0-remove-last-hitter-check
   initialize_from: null
   load_model: false
   resume: true

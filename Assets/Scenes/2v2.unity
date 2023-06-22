@@ -409,7 +409,7 @@ PrefabInstance:
       objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: TeamId
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BehaviorType
@@ -435,6 +435,10 @@ PrefabInstance:
       propertyPath: redAgent
       value: 
       objectReference: {fileID: 154958472}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: timeScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
       value: 4
@@ -749,7 +753,7 @@ PrefabInstance:
       objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: TeamId
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BehaviorType
@@ -775,6 +779,10 @@ PrefabInstance:
       propertyPath: redAgent
       value: 
       objectReference: {fileID: 220718587}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: timeScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
       value: 4
@@ -1010,7 +1018,7 @@ PrefabInstance:
       objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: TeamId
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BehaviorType
@@ -1036,6 +1044,10 @@ PrefabInstance:
       propertyPath: redAgent
       value: 
       objectReference: {fileID: 355913711}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: timeScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
       value: 4
@@ -1479,7 +1491,7 @@ PrefabInstance:
       objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: TeamId
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BehaviorType
@@ -1505,6 +1517,10 @@ PrefabInstance:
       propertyPath: redAgent
       value: 
       objectReference: {fileID: 498989868}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: timeScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
       value: 4
@@ -1878,7 +1894,7 @@ MonoBehaviour:
   m_InferenceDevice: 3
   m_BehaviorType: 0
   m_BehaviorName: Volleyball
-  TeamId: 1
+  TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_ObservableAttributeHandling: 0
@@ -2309,7 +2325,7 @@ MonoBehaviour:
   m_InferenceDevice: 3
   m_BehaviorType: 0
   m_BehaviorName: Volleyball
-  TeamId: 1
+  TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_ObservableAttributeHandling: 0
@@ -2518,7 +2534,7 @@ MonoBehaviour:
   m_InferenceDevice: 3
   m_BehaviorType: 0
   m_BehaviorName: Volleyball
-  TeamId: 1
+  TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_ObservableAttributeHandling: 0
@@ -2727,7 +2743,7 @@ MonoBehaviour:
   m_InferenceDevice: 3
   m_BehaviorType: 0
   m_BehaviorName: Volleyball
-  TeamId: 1
+  TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_ObservableAttributeHandling: 0
@@ -2843,7 +2859,7 @@ PrefabInstance:
       objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: TeamId
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BehaviorType
@@ -2869,6 +2885,10 @@ PrefabInstance:
       propertyPath: redAgent
       value: 
       objectReference: {fileID: 918092431}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: timeScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
       value: 4
@@ -3214,7 +3234,7 @@ MonoBehaviour:
   m_InferenceDevice: 3
   m_BehaviorType: 0
   m_BehaviorName: Volleyball
-  TeamId: 1
+  TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_ObservableAttributeHandling: 0
@@ -3923,7 +3943,7 @@ PrefabInstance:
       objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: TeamId
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BehaviorType
@@ -3949,6 +3969,10 @@ PrefabInstance:
       propertyPath: redAgent
       value: 
       objectReference: {fileID: 1206202041}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: timeScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
       value: 4
@@ -4272,7 +4296,7 @@ MonoBehaviour:
   m_InferenceDevice: 3
   m_BehaviorType: 0
   m_BehaviorName: Volleyball
-  TeamId: 1
+  TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_ObservableAttributeHandling: 0
@@ -4430,7 +4454,7 @@ MonoBehaviour:
   m_InferenceDevice: 3
   m_BehaviorType: 0
   m_BehaviorName: Volleyball
-  TeamId: 1
+  TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_ObservableAttributeHandling: 0
@@ -4790,7 +4814,7 @@ MonoBehaviour:
   m_InferenceDevice: 3
   m_BehaviorType: 0
   m_BehaviorName: Volleyball
-  TeamId: 1
+  TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
   m_ObservableAttributeHandling: 0
@@ -5480,7 +5504,7 @@ PrefabInstance:
       objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: TeamId
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BehaviorType
@@ -5506,6 +5530,10 @@ PrefabInstance:
       propertyPath: redAgent
       value: 
       objectReference: {fileID: 2048991797}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: timeScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
       value: 4
@@ -5798,7 +5826,7 @@ PrefabInstance:
       objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: TeamId
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BehaviorType
@@ -5824,6 +5852,10 @@ PrefabInstance:
       propertyPath: redAgent
       value: 
       objectReference: {fileID: 1096716531}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: timeScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
       value: 4
