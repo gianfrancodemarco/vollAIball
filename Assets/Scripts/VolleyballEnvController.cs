@@ -28,14 +28,8 @@ public class VolleyballEnvController : MonoBehaviour
 
     VolleyballSettings volleyballSettings;
 
-    public VolleyballAgent blueAgent;
-    public VolleyballAgent redAgent;
-
     public List<VolleyballAgent> AgentsList = new List<VolleyballAgent>();
     List<Renderer> RenderersList = new List<Renderer>();
-
-    Rigidbody blueAgentRb;
-    Rigidbody redAgentRb;
 
     public GameObject ball;
     Rigidbody ballRb;
@@ -57,8 +51,6 @@ public class VolleyballEnvController : MonoBehaviour
     {
         // Time.timeScale = 0.5f;
         // Used to control agent & ball starting positions
-        blueAgentRb = blueAgent.GetComponent<Rigidbody>();
-        redAgentRb = redAgent.GetComponent<Rigidbody>();
         ballRb = ball.GetComponent<Rigidbody>();
 
         // Starting ball spawn side
@@ -92,53 +84,60 @@ public class VolleyballEnvController : MonoBehaviour
     /// </summary>
     public void ResolveEvent(Event triggerEvent)
     {
-        VolleyballAgent lastHitter = hitterHistory.Count > 0 ? hitterHistory[hitterHistory.Count - 1] : null;
-        VolleyballAgent secondToLastHitter = hitterHistory.Count > 1 ? hitterHistory[hitterHistory.Count - 2] : null;
-        //Debug.Log("ResolveEvent: " + triggerEvent);
+        VolleyballAgent lastHitter = hitterHistory.Count > 0 ? hitterHistory[^1] : null;
+        // VolleyballAgent secondToLastHitter = hitterHistory.Count > 1 ? hitterHistory[hitterHistory.Count - 2] : null;
         switch (triggerEvent)
         {
             case Event.HitRedAgent:
             case Event.HitBlueAgent:
-                if (secondToLastHitter != null && lastHitter.UUID == secondToLastHitter.UUID) {
-                    // same player double toch
+                if (IsDoubleToch()) {
                     lastHitter.AddReward(-0.1f);
                     EndAllAgentsEpisode();
                     ResetScene();
                 } else {
-                    // agent wins
-                    lastHitter.AddReward(0.1f);
-                } 
+                    int numberOfTeamPass = GetNumberOfTeamPass();
+                    if (numberOfTeamPass > 0  && numberOfTeamPass <= 3) {
+                        // team players do until 3 passes
+                        lastHitter.AddReward(0.1f + numberOfTeamPass * 0.2f);
+                    } else if(numberOfTeamPass > 3) {
+                        // team players do MORE than 3 passes --> FAULT
+                        lastHitter.AddReward(-(0.2f + numberOfTeamPass * 0.2f));
+                        EndAllAgentsEpisode();
+                        ResetScene();
+                    } else {
+                        // simple agent touch
+                        lastHitter.AddReward(0.1f);
+                    }
+                }
                 break;
             case Event.HitOutOfBounds:
-                if (lastHitter != null && lastHitter.teamId == Team.Blue)
+                if (lastHitter != null)
                 {
-                    // apply penalty to blue agent
-                    blueAgent.AddReward(-0.5f);
-                    //redAgent.AddReward(0.1f);
+                    // apply penalty to agent
+                    lastHitter.AddReward(-0.5f);
                 }
-                else if (lastHitter != null && lastHitter.teamId == Team.Red)
-                {
-                    // apply penalty to red agent
-                    redAgent.AddReward(-0.5f);
-                    // blueAgent.AddReward(0.1f);
-                }
-
                 EndAllAgentsEpisode();
                 ResetScene();
                 break;
 
             case Event.HitBlueGoal:
                 // blue wins
-                blueAgent.AddReward(1f);
-                redAgent.AddReward(-1f);
+                if (lastHitter != null && lastHitter.teamId == Team.Blue)
+                {
+                    lastHitter.AddReward(1f);
+                    applyRewardsToTeam(Team.Red, -1f);
+                }
                 EndAllAgentsEpisode();
                 ResetScene();
                 break;
 
             case Event.HitRedGoal:
                 // red wins
-                redAgent.AddReward(1f);
-                blueAgent.AddReward(-1f);
+                if (lastHitter != null && lastHitter.teamId == Team.Red)
+                {
+                    lastHitter.AddReward(1f);
+                    applyRewardsToTeam(Team.Blue, -1f);
+                }
                 EndAllAgentsEpisode();
                 ResetScene();
                 break;
@@ -146,14 +145,14 @@ public class VolleyballEnvController : MonoBehaviour
             case Event.HitIntoBlueArea:
                 if (lastHitter != null && lastHitter.teamId == Team.Red)
                 {
-                    redAgent.AddReward(0.5f);
+                    lastHitter.AddReward(0.2f);
                 }
                 break;
 
             case Event.HitIntoRedArea:
                 if (lastHitter != null && lastHitter.teamId == Team.Blue)
                 {
-                    blueAgent.AddReward(0.5f);
+                    lastHitter.AddReward(0.2f);
                 }
                 break;
             case Event.HitWall:
@@ -193,7 +192,6 @@ public class VolleyballEnvController : MonoBehaviour
             agent.transform.localPosition = new Vector3(randomPosX, randomPosY, randomPosZ);
             agent.transform.eulerAngles = new Vector3(0, randomRot, 0);
 
-
             agent.GetComponent<Rigidbody>().velocity = default(Vector3);
         }
 
@@ -217,9 +215,9 @@ public class VolleyballEnvController : MonoBehaviour
         //Ball spawn position is hover one of the agents
         VolleyballAgent server = null;
         if (ballSpawnSide == 1){
-            server = AgentsList[0];
-        } else {
             server = AgentsList[1];
+        } else {
+            server = AgentsList[3];
         }
         
         ball.transform.position = server.transform.position + new Vector3(0, 8f, 0);
@@ -232,7 +230,38 @@ public class VolleyballEnvController : MonoBehaviour
         return AgentsList.Where(agent => agent.teamId != teamId);
     }
 
+    public IEnumerable<VolleyballAgent> GetPartnertAgents(Team teamId) {
+        return AgentsList.Where(agent => agent.teamId == teamId);
+    }
+
     public List<VolleyballAgent> GetHitterHistory() {
         return hitterHistory;
     }
+
+    private bool IsDoubleToch() {
+        return 
+            hitterHistory.Count > 1
+            && hitterHistory[^1].UUID == hitterHistory[^2].UUID;
+    }
+
+    private void applyRewardsToTeam(Team teamId, float reward) {
+        foreach (var allie in GetPartnertAgents(teamId)) {
+            allie.AddReward(reward);
+        }
+    }
+
+    private int GetNumberOfTeamPass() {
+        int teamPass = -1;
+        Team currentTeam = hitterHistory[^1].teamId;
+        foreach (var agent in hitterHistory) {
+            if (agent.teamId == currentTeam) {
+                teamPass += 1;
+            }
+            else {
+                break;
+            }
+        }
+        return teamPass;
+    }
+
 }
