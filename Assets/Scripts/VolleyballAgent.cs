@@ -23,7 +23,7 @@ public class VolleyballAgent : Agent
     private Vector3 jumpStartingPos;
     private EnvironmentParameters resetParams;
     private bool isGrounded;
-    private float agentRot;
+    public float agentRot;
     private int playerUUID;
     public int UUID
     {

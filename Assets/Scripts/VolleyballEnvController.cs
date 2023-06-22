@@ -189,16 +189,26 @@ public class VolleyballEnvController : MonoBehaviour
     /// </summary>
     public void ResetScene()
     {
-        // resetTimer = 0;
-
         hitterHistory.Clear();
+        ballSpawnSide = -1 * ballSpawnSide;
 
-        // TODO: Discriminate between server and not-server
+        //Ball spawn position is hover one of the agents
+        VolleyballAgent server = null;
+        if (ballSpawnSide == 1)
+        {
+            // 0 and 2 must be on serving position   
+            server = AgentsList[Random.Range(0, 2)];
+        }
+        else
+        {
+            server = AgentsList[Random.Range(2, 4)];
+        }
+
         foreach (var agent in AgentsList)
         {
             // randomise starting positions
-            var randomPosX = Random.Range(-4f, 4f);
-            var randomPosZ = Random.Range(-4f, 4f);
+            var randomPosX = Random.Range(-2f, 2f);
+            var randomPosZ = Random.Range(-2f, 2f);
 
             agent.transform.localPosition = new Vector3(randomPosX, 0, randomPosZ);
             agent.transform.eulerAngles = new Vector3(0, 0, 0);
@@ -206,39 +216,12 @@ public class VolleyballEnvController : MonoBehaviour
             agent.GetComponent<Rigidbody>().velocity = default(Vector3);
         }
 
-        // reset ball to starting conditions
-        ResetBall();
-    }
-
-    /// <summary>
-    /// Reset ball spawn conditions
-    /// </summary>
-    private void ResetBall()
-    {
-        //var randomPosX = Random.Range(-2f, 2f);
-        //var randomPosZ = Random.Range(6f, 10f);
-        //var randomPosY = Random.Range(6f, 8f);
-
-        // alternate ball spawn side
-        // -1 = spawn blue side, 1 = spawn red side
-        ballSpawnSide = -1 * ballSpawnSide;
-
-        //Ball spawn position is hover one of the agents
-        VolleyballAgent server = null;
-        if (ballSpawnSide == 1)
-        {
-            // 0 and 2 must be on serving position
-            server = AgentsList[0];
-        }
-        else
-        {
-            server = AgentsList[2];
-        }
-
+        server.transform.localPosition = new Vector3(server.agentRot * (-5f), 0, server.agentRot * (-5f));
+        server.transform.eulerAngles = new Vector3(0, 0, 0);
         ball.transform.position = server.transform.position + new Vector3(0, 8f, 0);
-
         ballRb.angularVelocity = Vector3.zero;
         ballRb.velocity = Vector3.zero;
+
     }
 
     public IEnumerable<VolleyballAgent> GetAgents()
