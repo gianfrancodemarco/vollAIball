@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1687302599",
+        "python_version": "3.7.12 (default, Jul 28 2022, 11:17:07) \n[GCC 9.4.0]",
+        "command_line_arguments": "/home/gianfranco/.local/bin/mlagents-learn ../config/Volleyball.yaml --run-id=v4.0.0 --force",
+        "mlagents_version": "0.29.0",
+        "mlagents_envs_version": "0.29.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.8.1+cu102",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1687302659"
+    },
+    "total": 60.067130998999346,
+    "count": 1,
+    "self": 0.004595174999849405,
+    "children": {
+        "run_training.setup": {
+            "total": 0.01255475699872477,
+            "count": 1,
+            "self": 0.01255475699872477
+        },
+        "TrainerController.start_learning": {
+            "total": 60.04998106700077,
+            "count": 1,
+            "self": 8.354599412996322e-05,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 60.049877744000696,
+                    "count": 1,
+                    "self": 60.049877744000696
+                },
+                "TrainerController._save_models": {
+                    "total": 1.977700594579801e-05,
+                    "count": 1,
+                    "self": 1.977700594579801e-05
+                }
+            }
+        }
+    }
+}
