@@ -126,15 +126,51 @@
                 "auxillary_file_paths": [
                     "results/v3.0.0-remove-last-hitter-check/Volleyball/Volleyball-6943668.pt"
                 ]
+            },
+            {
+                "steps": 6999974,
+                "file_path": "results/v3.0.0-remove-last-hitter-check/Volleyball/Volleyball-6999974.onnx",
+                "reward": null,
+                "creation_time": 1687452854.1248014,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-remove-last-hitter-check/Volleyball/Volleyball-6999974.pt"
+                ]
+            },
+            {
+                "steps": 6999992,
+                "file_path": "results/v3.0.0-remove-last-hitter-check/Volleyball/Volleyball-6999992.onnx",
+                "reward": -1.0,
+                "creation_time": 1687452900.6081026,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-remove-last-hitter-check/Volleyball/Volleyball-6999992.pt"
+                ]
+            },
+            {
+                "steps": 7002334,
+                "file_path": "results/v3.0.0-remove-last-hitter-check/Volleyball/Volleyball-7002334.onnx",
+                "reward": -0.423828125,
+                "creation_time": 1687452931.728907,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-remove-last-hitter-check/Volleyball/Volleyball-7002334.pt"
+                ]
+            },
+            {
+                "steps": 7007238,
+                "file_path": "results/v3.0.0-remove-last-hitter-check/Volleyball/Volleyball-7007238.onnx",
+                "reward": -0.47043010752688175,
+                "creation_time": 1687453003.7739298,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-remove-last-hitter-check/Volleyball/Volleyball-7007238.pt"
+                ]
             }
         ],
         "final_checkpoint": {
-            "steps": 6943668,
+            "steps": 7007238,
             "file_path": "results/v3.0.0-remove-last-hitter-check/Volleyball.onnx",
-            "reward": null,
-            "creation_time": 1687450976.4956987,
+            "reward": -0.47043010752688175,
+            "creation_time": 1687453003.7739298,
             "auxillary_file_paths": [
-                "results/v3.0.0-remove-last-hitter-check/Volleyball/Volleyball-6943668.pt"
+                "results/v3.0.0-remove-last-hitter-check/Volleyball/Volleyball-7007238.pt"
             ]
         }
     },
