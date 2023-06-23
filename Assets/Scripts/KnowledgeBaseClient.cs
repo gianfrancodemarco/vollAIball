@@ -45,6 +45,7 @@ public class KnowledgeBaseClient
                 Debug.LogError("Error: " + request.error);
             }
         }
+        request.Dispose();
     }
 
     private IEnumerator Post(string url, string body)
@@ -69,5 +70,6 @@ public class KnowledgeBaseClient
                 Debug.Log("Result:" + request.downloadHandler.text);
             }
         }
+        request.Dispose();
     }
 }
