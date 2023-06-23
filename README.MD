@@ -1,3 +1,6 @@
+v3.0.1-with-randomized-server-position/Volleyball:
+- They other agent learned to go into the server so thay touch 2 times the ball
+
 ## **v2.0.0**
 
 Goal: enforce more volleyball rules

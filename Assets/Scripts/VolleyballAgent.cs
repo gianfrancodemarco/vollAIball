@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
@@ -14,11 +13,11 @@ public class VolleyballAgent : Agent
 
     private Rigidbody agentRb;
     private Rigidbody ballRb;
-    private BehaviorParameters behaviorParameters;    
+    private BehaviorParameters behaviorParameters;
     private VolleyballSettings volleyballSettings;
     private VolleyballEnvController envController;
-    
-    private TensorBoardController tensorBoardController; 
+
+    private TensorBoardController tensorBoardController;
     private Vector3 jumpTargetPos;
     private Vector3 jumpStartingPos;
     private EnvironmentParameters resetParams;
@@ -83,8 +82,21 @@ public class VolleyballAgent : Agent
         }
     }
 
+    private void OnTriggerEnter(Collider c)
+    {
+        if (c.gameObject.tag.ToLower().Contains("agent"))
+        {
+            envController.ResolveEvent(
+                Event.AgentsCollision,
+                this,
+                c.gameObject.GetComponent<VolleyballAgent>()
+            );
+            tensorBoardController.ResolveEvent(Event.AgentsCollision);
+        }
+    }
+
     /// <summary>
-    /// Called when agent collides with the ball
+    /// Called when agent collides with something
     /// </summary>
     private void OnCollisionEnter(Collision c)
     {
@@ -194,9 +206,11 @@ public class VolleyballAgent : Agent
         sensor.AddObservation(this.transform.rotation.y);
 
         // Vector from agent to ball (direction to ball) (3 floats)
-        Vector3 toBall = new Vector3((ballRb.transform.position.x - this.transform.position.x)*agentRot, 
-        (ballRb.transform.position.y - this.transform.position.y),
-        (ballRb.transform.position.z - this.transform.position.z)*agentRot);
+        Vector3 toBall = new Vector3(
+            (ballRb.transform.position.x - this.transform.position.x) * agentRot,
+            (ballRb.transform.position.y - this.transform.position.y),
+            (ballRb.transform.position.z - this.transform.position.z) * agentRot
+        );
 
         sensor.AddObservation(toBall.normalized);
 

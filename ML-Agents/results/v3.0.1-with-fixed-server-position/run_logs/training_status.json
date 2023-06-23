@@ -1,0 +1,56 @@
+{
+    "Volleyball": {
+        "checkpoints": [
+            {
+                "steps": 499990,
+                "file_path": "results/v3.0.1-with-fixed-server-position/Volleyball/Volleyball-499990.onnx",
+                "reward": -0.25727272727272726,
+                "creation_time": 1687510875.4081793,
+                "auxillary_file_paths": [
+                    "results/v3.0.1-with-fixed-server-position/Volleyball/Volleyball-499990.pt"
+                ]
+            },
+            {
+                "steps": 974844,
+                "file_path": "results/v3.0.1-with-fixed-server-position/Volleyball/Volleyball-974844.onnx",
+                "reward": -0.16843971631205673,
+                "creation_time": 1687511389.4886694,
+                "auxillary_file_paths": [
+                    "results/v3.0.1-with-fixed-server-position/Volleyball/Volleyball-974844.pt"
+                ]
+            },
+            {
+                "steps": 999994,
+                "file_path": "results/v3.0.1-with-fixed-server-position/Volleyball/Volleyball-999994.onnx",
+                "reward": -0.1812227074235808,
+                "creation_time": 1687511490.809038,
+                "auxillary_file_paths": [
+                    "results/v3.0.1-with-fixed-server-position/Volleyball/Volleyball-999994.pt"
+                ]
+            },
+            {
+                "steps": 1015912,
+                "file_path": "results/v3.0.1-with-fixed-server-position/Volleyball/Volleyball-1015912.onnx",
+                "reward": null,
+                "creation_time": 1687511546.1713097,
+                "auxillary_file_paths": [
+                    "results/v3.0.1-with-fixed-server-position/Volleyball/Volleyball-1015912.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1015912,
+            "file_path": "results/v3.0.1-with-fixed-server-position/Volleyball.onnx",
+            "reward": null,
+            "creation_time": 1687511546.1713097,
+            "auxillary_file_paths": [
+                "results/v3.0.1-with-fixed-server-position/Volleyball/Volleyball-1015912.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.8.1+cu102"
+    }
+}
