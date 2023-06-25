@@ -66,8 +66,10 @@ public class KnowledgeBaseController : MonoBehaviour
                     StartCoroutine(AssertBaseAction("HitOutOfBounds"));
                     break;
                 case Event.HitBlueGoal:
+                    StartCoroutine(AssertBaseAction("HitBlueGoal"));
+                    break;
                 case Event.HitRedGoal:
-                    StartCoroutine(AssertBaseAction("HitGoal"));
+                    StartCoroutine(AssertBaseAction("HitRedGoal"));
                     break;
                 case Event.HitIntoBlueArea:
                     StartCoroutine(AssertBaseAction("HitIntoBlueArea"));

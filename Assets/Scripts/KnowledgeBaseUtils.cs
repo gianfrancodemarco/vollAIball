@@ -13,7 +13,8 @@ public static class KnowledgeBasePredicates
         {"PlaysInTeam", "playsInTeam(<player_name>, <team_name>)"},
         {"TouchPlayerAtAction", "touchPlayerAtAction(<player_name>, <episode_name>, <action_name>, <number_of_team_pass>)"},
         {"HitOutOfBounds", "hitOutOfBounds(<player_name>, <episode_name>, <action_name>)"},
-        {"HitGoal", "hitGoal(<player_name>, <episode_name>, <action_name>)"},
+        {"HitBlueGoal", "hitBlueGoal(<player_name>, <episode_name>, <action_name>)"},
+        {"HitRedGoal", "hitRedGoal(<player_name>, <episode_name>, <action_name>)"},
         {"HitIntoBlueArea", "hitIntoBlueArea(<player_name>, <episode_name>, <action_name>)"},
         {"HitIntoRedArea", "hitIntoRedArea(<player_name>, <episode_name>, <action_name>)"},
         {"HitWall", "hitWall(<player_name>, <episode_name>, <action_name>)"}
