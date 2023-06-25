@@ -19,6 +19,7 @@ public class VolleyballAgent : Agent
     private VolleyballEnvController envController;
     
     private TensorBoardController tensorBoardController; 
+    private KnowledgeBaseController knowledgeBaseController;
     private Vector3 jumpTargetPos;
     private Vector3 jumpStartingPos;
     private EnvironmentParameters resetParams;
@@ -35,6 +36,7 @@ public class VolleyballAgent : Agent
         isGrounded = false;
         envController = area.GetComponent<VolleyballEnvController>();
         tensorBoardController = FindObjectOfType<TensorBoardController>();
+        knowledgeBaseController = FindObjectOfType<KnowledgeBaseController>();
         playerUUID = transform.GetInstanceID();
     }
 
@@ -42,6 +44,7 @@ public class VolleyballAgent : Agent
     {
         base.EndEpisode();
         tensorBoardController.ResolveEvent(Event.EpisodeEnd);
+        knowledgeBaseController.ResolveEvent(Event.EpisodeEnd);
     }
 
     public override void Initialize()
