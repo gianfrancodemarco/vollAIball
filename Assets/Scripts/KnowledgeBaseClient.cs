@@ -26,6 +26,12 @@ public class KnowledgeBaseClient
         return Post(url, body);
     }
 
+    public IEnumerator GetMatchCommentary()
+    {
+        string url = backendUri + "/commentary";
+        return Get(url);
+    }
+
     public IEnumerator QueryFact(string query) { 
         string url = backendUri + "/query";
         string body = "{\"query\":\"" + query + "\"}";
@@ -70,6 +76,25 @@ public class KnowledgeBaseClient
                 Debug.Log("Result:" + request.downloadHandler.text);
             }
         }
+        request.Dispose();
+    }
+
+        private IEnumerator Get(string url)
+    {
+        UnityWebRequest request = UnityWebRequest.Get(url);
+        request.SetRequestHeader("Content-Type", "application/json");
+
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.ConnectionError)
+        {
+            Debug.LogError("Error: " + request.error);
+        }
+        else
+        {
+            Debug.Log("Result: " + request.downloadHandler.text);
+        }
+
         request.Dispose();
     }
 }

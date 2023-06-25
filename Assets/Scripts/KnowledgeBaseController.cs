@@ -26,6 +26,16 @@ public class KnowledgeBaseController : MonoBehaviour
         StartCoroutine(ResetKnowledgeBase());
         StartCoroutine(AssertPlayers());
         StartCoroutine(AssertTeams());
+        StartCoroutine(PollCommentary());
+    }
+
+    private IEnumerator PollCommentary()
+    {
+        while (true)
+        {
+            StartCoroutine(KnowledgeBaseClient.Instance.GetMatchCommentary());
+            yield return new WaitForSeconds(5f);
+        }
     }
 
     public void ResolveEvent(Event triggerEvent)
