@@ -1,0 +1,218 @@
+{
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.8.1+cu102"
+    },
+    "Volleyball": {
+        "checkpoints": [
+            {
+                "steps": 999992,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-999992.onnx",
+                "reward": null,
+                "creation_time": 1687772821.2081766,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-999992.pt"
+                ]
+            },
+            {
+                "steps": 1499991,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-1499991.onnx",
+                "reward": -0.2436750998668442,
+                "creation_time": 1687773715.5268939,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-1499991.pt"
+                ]
+            },
+            {
+                "steps": 1999995,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-1999995.onnx",
+                "reward": -0.23919636087945415,
+                "creation_time": 1687774584.634579,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-1999995.pt"
+                ]
+            },
+            {
+                "steps": 2499991,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-2499991.onnx",
+                "reward": -0.2398190045248869,
+                "creation_time": 1687775434.2013886,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-2499991.pt"
+                ]
+            },
+            {
+                "steps": 2999996,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-2999996.onnx",
+                "reward": -0.22580645161290322,
+                "creation_time": 1687776280.5960643,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-2999996.pt"
+                ]
+            },
+            {
+                "steps": 3499982,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-3499982.onnx",
+                "reward": -0.2181544633901705,
+                "creation_time": 1687777058.9844654,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-3499982.pt"
+                ]
+            },
+            {
+                "steps": 3999997,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-3999997.onnx",
+                "reward": -0.2037037037037037,
+                "creation_time": 1687777820.2447617,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-3999997.pt"
+                ]
+            },
+            {
+                "steps": 4499992,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-4499992.onnx",
+                "reward": -0.198943661971831,
+                "creation_time": 1687778557.4646974,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-4499992.pt"
+                ]
+            },
+            {
+                "steps": 4999984,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-4999984.onnx",
+                "reward": -0.16542553191489362,
+                "creation_time": 1687779264.3648393,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-4999984.pt"
+                ]
+            },
+            {
+                "steps": 5499985,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-5499985.onnx",
+                "reward": -0.13313609467455623,
+                "creation_time": 1687779966.7395246,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-5499985.pt"
+                ]
+            },
+            {
+                "steps": 5999991,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-5999991.onnx",
+                "reward": -0.13082437275985664,
+                "creation_time": 1687780640.8645031,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-5999991.pt"
+                ]
+            },
+            {
+                "steps": 6499990,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-6499990.onnx",
+                "reward": -0.11595547309833024,
+                "creation_time": 1687781272.1292202,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-6499990.pt"
+                ]
+            },
+            {
+                "steps": 6999984,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-6999984.onnx",
+                "reward": -0.10474860335195531,
+                "creation_time": 1687781915.926168,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-6999984.pt"
+                ]
+            },
+            {
+                "steps": 7499994,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-7499994.onnx",
+                "reward": -0.1267123287671233,
+                "creation_time": 1687782564.120002,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-7499994.pt"
+                ]
+            },
+            {
+                "steps": 7999986,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-7999986.onnx",
+                "reward": -0.07575757575757576,
+                "creation_time": 1687783222.4909232,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-7999986.pt"
+                ]
+            },
+            {
+                "steps": 8499986,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-8499986.onnx",
+                "reward": -0.0975609756097561,
+                "creation_time": 1687783870.1027772,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-8499986.pt"
+                ]
+            },
+            {
+                "steps": 8626328,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-8626328.onnx",
+                "reward": -0.09017857142857143,
+                "creation_time": 1687784171.832449,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-8626328.pt"
+                ]
+            },
+            {
+                "steps": 8999983,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-8999983.onnx",
+                "reward": -0.06888888888888889,
+                "creation_time": 1687785484.5200455,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-8999983.pt"
+                ]
+            },
+            {
+                "steps": 9499990,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-9499990.onnx",
+                "reward": -0.07950819672131147,
+                "creation_time": 1687786227.6487503,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-9499990.pt"
+                ]
+            },
+            {
+                "steps": 9826561,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-9826561.onnx",
+                "reward": -0.08095238095238096,
+                "creation_time": 1687787123.8834596,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-9826561.pt"
+                ]
+            },
+            {
+                "steps": 9867610,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-9867610.onnx",
+                "reward": null,
+                "creation_time": 1687787344.6930969,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-9867610.pt"
+                ]
+            },
+            {
+                "steps": 9908642,
+                "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-9908642.onnx",
+                "reward": null,
+                "creation_time": 1687787411.9716337,
+                "auxillary_file_paths": [
+                    "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-9908642.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 9908642,
+            "file_path": "results/v3.0.0-simplified-with-ball-mesh/Volleyball.onnx",
+            "reward": null,
+            "creation_time": 1687787411.9716337,
+            "auxillary_file_paths": [
+                "results/v3.0.0-simplified-with-ball-mesh/Volleyball/Volleyball-9908642.pt"
+            ]
+        }
+    }
+}

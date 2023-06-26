@@ -1,0 +1,614 @@
+{
+    "Volleyball": {
+        "checkpoints": [
+            {
+                "steps": 499994,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-499994.onnx",
+                "reward": -0.27578947577211593,
+                "creation_time": 1687565097.412779,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-499994.pt"
+                ]
+            },
+            {
+                "steps": 999998,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-999998.onnx",
+                "reward": -0.24442105504504422,
+                "creation_time": 1687565723.1161616,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-999998.pt"
+                ]
+            },
+            {
+                "steps": 1499988,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-1499988.onnx",
+                "reward": -0.19202127803037775,
+                "creation_time": 1687566346.4933264,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-1499988.pt"
+                ]
+            },
+            {
+                "steps": 1999972,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-1999972.onnx",
+                "reward": -0.14063018279931636,
+                "creation_time": 1687566940.3945746,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-1999972.pt"
+                ]
+            },
+            {
+                "steps": 2499992,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-2499992.onnx",
+                "reward": -0.12365591396069156,
+                "creation_time": 1687567530.9053733,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-2499992.pt"
+                ]
+            },
+            {
+                "steps": 2999992,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-2999992.onnx",
+                "reward": -0.08372092836124953,
+                "creation_time": 1687568127.5114508,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-2999992.pt"
+                ]
+            },
+            {
+                "steps": 3499976,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-3499976.onnx",
+                "reward": -0.05863636175001209,
+                "creation_time": 1687568714.6230507,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-3499976.pt"
+                ]
+            },
+            {
+                "steps": 3999998,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-3999998.onnx",
+                "reward": -0.058724427517283836,
+                "creation_time": 1687569298.586695,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-3999998.pt"
+                ]
+            },
+            {
+                "steps": 4499998,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-4499998.onnx",
+                "reward": -0.02598424854241018,
+                "creation_time": 1687569892.4547436,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-4499998.pt"
+                ]
+            },
+            {
+                "steps": 4999985,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-4999985.onnx",
+                "reward": -0.025458245771479947,
+                "creation_time": 1687570473.7984822,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-4999985.pt"
+                ]
+            },
+            {
+                "steps": 5499988,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-5499988.onnx",
+                "reward": -0.0028538783782557265,
+                "creation_time": 1687571055.5442414,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-5499988.pt"
+                ]
+            },
+            {
+                "steps": 5999994,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-5999994.onnx",
+                "reward": 0.02112676412077017,
+                "creation_time": 1687571637.1700222,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-5999994.pt"
+                ]
+            },
+            {
+                "steps": 6499992,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-6499992.onnx",
+                "reward": -0.004166663934787114,
+                "creation_time": 1687572226.756179,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-6499992.pt"
+                ]
+            },
+            {
+                "steps": 6999995,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-6999995.onnx",
+                "reward": 0.006024099635072501,
+                "creation_time": 1687572808.4931436,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-6999995.pt"
+                ]
+            },
+            {
+                "steps": 7499981,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-7499981.onnx",
+                "reward": 0.00713306130900141,
+                "creation_time": 1687573389.7987118,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-7499981.pt"
+                ]
+            },
+            {
+                "steps": 7999980,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-7999980.onnx",
+                "reward": -0.01666666443149249,
+                "creation_time": 1687573978.3458288,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-7999980.pt"
+                ]
+            },
+            {
+                "steps": 8499984,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-8499984.onnx",
+                "reward": 0.006912445838344262,
+                "creation_time": 1687574548.7285123,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-8499984.pt"
+                ]
+            },
+            {
+                "steps": 8999994,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-8999994.onnx",
+                "reward": 0.12428571773426873,
+                "creation_time": 1687575140.5600433,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-8999994.pt"
+                ]
+            },
+            {
+                "steps": 9499976,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-9499976.onnx",
+                "reward": 0.021875003051451024,
+                "creation_time": 1687575707.879688,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-9499976.pt"
+                ]
+            },
+            {
+                "steps": 9999982,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-9999982.onnx",
+                "reward": -0.004312113409353233,
+                "creation_time": 1687576287.4929216,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-9999982.pt"
+                ]
+            },
+            {
+                "steps": 10499984,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-10499984.onnx",
+                "reward": 0.031629396179994454,
+                "creation_time": 1687576878.251199,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-10499984.pt"
+                ]
+            },
+            {
+                "steps": 10999984,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-10999984.onnx",
+                "reward": 0.02910798557207618,
+                "creation_time": 1687577456.8788602,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-10999984.pt"
+                ]
+            },
+            {
+                "steps": 11499984,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-11499984.onnx",
+                "reward": 0.026041669208401192,
+                "creation_time": 1687578034.561375,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-11499984.pt"
+                ]
+            },
+            {
+                "steps": 11999986,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-11999986.onnx",
+                "reward": 0.0032520343254252176,
+                "creation_time": 1687578623.4228058,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-11999986.pt"
+                ]
+            },
+            {
+                "steps": 12499972,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-12499972.onnx",
+                "reward": 0.024235810254859092,
+                "creation_time": 1687579202.5562751,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-12499972.pt"
+                ]
+            },
+            {
+                "steps": 12999804,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-12999804.onnx",
+                "reward": 0.05240964207304529,
+                "creation_time": 1687579790.20694,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-12999804.pt"
+                ]
+            },
+            {
+                "steps": 13499978,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-13499978.onnx",
+                "reward": 0.013570489177826365,
+                "creation_time": 1687580367.7135696,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-13499978.pt"
+                ]
+            },
+            {
+                "steps": 13999780,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-13999780.onnx",
+                "reward": 0.018181823137583153,
+                "creation_time": 1687580963.0602505,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-13999780.pt"
+                ]
+            },
+            {
+                "steps": 14499980,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-14499980.onnx",
+                "reward": -0.00833333121278347,
+                "creation_time": 1687581535.3594172,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-14499980.pt"
+                ]
+            },
+            {
+                "steps": 14999993,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-14999993.onnx",
+                "reward": 0.05044883567191112,
+                "creation_time": 1687582108.9574857,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-14999993.pt"
+                ]
+            },
+            {
+                "steps": 15499988,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-15499988.onnx",
+                "reward": 0.050000015646219254,
+                "creation_time": 1687582694.6921613,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-15499988.pt"
+                ]
+            },
+            {
+                "steps": 15999974,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-15999974.onnx",
+                "reward": 0.020494701584320606,
+                "creation_time": 1687583256.9502373,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-15999974.pt"
+                ]
+            },
+            {
+                "steps": 16499977,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-16499977.onnx",
+                "reward": 0.1533333440621694,
+                "creation_time": 1687583823.8916607,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-16499977.pt"
+                ]
+            },
+            {
+                "steps": 16999994,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-16999994.onnx",
+                "reward": 0.01279461428974614,
+                "creation_time": 1687584387.8386455,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-16999994.pt"
+                ]
+            },
+            {
+                "steps": 17499996,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-17499996.onnx",
+                "reward": -0.006914892385826044,
+                "creation_time": 1687584950.938195,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-17499996.pt"
+                ]
+            },
+            {
+                "steps": 17999516,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-17999516.onnx",
+                "reward": 0.0006666686137517294,
+                "creation_time": 1687585527.494506,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-17999516.pt"
+                ]
+            },
+            {
+                "steps": 18499024,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-18499024.onnx",
+                "reward": 0.05045454717156562,
+                "creation_time": 1687586091.847831,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-18499024.pt"
+                ]
+            },
+            {
+                "steps": 18999808,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-18999808.onnx",
+                "reward": 0.02785714380443096,
+                "creation_time": 1687586659.3674357,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-18999808.pt"
+                ]
+            },
+            {
+                "steps": 19499508,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-19499508.onnx",
+                "reward": 0.01013513609162859,
+                "creation_time": 1687587222.8594542,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-19499508.pt"
+                ]
+            },
+            {
+                "steps": 19999992,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-19999992.onnx",
+                "reward": 0.018828453628587923,
+                "creation_time": 1687587797.829125,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-19999992.pt"
+                ]
+            },
+            {
+                "steps": 20499884,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-20499884.onnx",
+                "reward": 0.03915094503394838,
+                "creation_time": 1687588358.8242178,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-20499884.pt"
+                ]
+            },
+            {
+                "steps": 20999872,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-20999872.onnx",
+                "reward": 0.03230769462310351,
+                "creation_time": 1687588921.6937053,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-20999872.pt"
+                ]
+            },
+            {
+                "steps": 21499400,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-21499400.onnx",
+                "reward": 0.07314815137673307,
+                "creation_time": 1687589475.399866,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-21499400.pt"
+                ]
+            },
+            {
+                "steps": 21999796,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-21999796.onnx",
+                "reward": 0.02380952513998463,
+                "creation_time": 1687590030.5010064,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-21999796.pt"
+                ]
+            },
+            {
+                "steps": 22499995,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-22499995.onnx",
+                "reward": 0.030303035721634373,
+                "creation_time": 1687590594.4135997,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-22499995.pt"
+                ]
+            },
+            {
+                "steps": 22999985,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-22999985.onnx",
+                "reward": 0.051655629514068956,
+                "creation_time": 1687591145.8031607,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-22999985.pt"
+                ]
+            },
+            {
+                "steps": 23499136,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-23499136.onnx",
+                "reward": 0.010769234081873526,
+                "creation_time": 1687591691.4542816,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-23499136.pt"
+                ]
+            },
+            {
+                "steps": 23999424,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-23999424.onnx",
+                "reward": 0.05266666995982329,
+                "creation_time": 1687592251.846698,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-23999424.pt"
+                ]
+            },
+            {
+                "steps": 24052508,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-24052508.onnx",
+                "reward": null,
+                "creation_time": 1687592307.900376,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-24052508.pt"
+                ]
+            },
+            {
+                "steps": 24499996,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-24499996.onnx",
+                "reward": 0.003373016839817403,
+                "creation_time": 1687605429.0528886,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-24499996.pt"
+                ]
+            },
+            {
+                "steps": 24999972,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-24999972.onnx",
+                "reward": 0.03976834041846765,
+                "creation_time": 1687606014.748025,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-24999972.pt"
+                ]
+            },
+            {
+                "steps": 25499992,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-25499992.onnx",
+                "reward": 0.03783783880439964,
+                "creation_time": 1687606606.877898,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-25499992.pt"
+                ]
+            },
+            {
+                "steps": 25999772,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-25999772.onnx",
+                "reward": 0.038684209612639325,
+                "creation_time": 1687607166.380744,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-25999772.pt"
+                ]
+            },
+            {
+                "steps": 26499981,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-26499981.onnx",
+                "reward": 0.041860468685626984,
+                "creation_time": 1687607737.3075485,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-26499981.pt"
+                ]
+            },
+            {
+                "steps": 26999978,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-26999978.onnx",
+                "reward": 0.024703088811556688,
+                "creation_time": 1687608301.0242832,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-26999978.pt"
+                ]
+            },
+            {
+                "steps": 27499982,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-27499982.onnx",
+                "reward": 0.09047619200178555,
+                "creation_time": 1687608904.5801332,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-27499982.pt"
+                ]
+            },
+            {
+                "steps": 27999997,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-27999997.onnx",
+                "reward": 0.016883118121654956,
+                "creation_time": 1687609499.887757,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-27999997.pt"
+                ]
+            },
+            {
+                "steps": 28244388,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-28244388.onnx",
+                "reward": null,
+                "creation_time": 1687609796.413645,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-28244388.pt"
+                ]
+            },
+            {
+                "steps": 28499998,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-28499998.onnx",
+                "reward": -0.0068601595930814115,
+                "creation_time": 1687610170.2428699,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-28499998.pt"
+                ]
+            },
+            {
+                "steps": 28999988,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-28999988.onnx",
+                "reward": -0.0017964073908543158,
+                "creation_time": 1687610801.5950587,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-28999988.pt"
+                ]
+            },
+            {
+                "steps": 29499958,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-29499958.onnx",
+                "reward": 0.008045971993057207,
+                "creation_time": 1687611443.7489128,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-29499958.pt"
+                ]
+            },
+            {
+                "steps": 29999988,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-29999988.onnx",
+                "reward": 0.0007499988563358784,
+                "creation_time": 1687612073.8014085,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-29999988.pt"
+                ]
+            },
+            {
+                "steps": 30499984,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-30499984.onnx",
+                "reward": 0.020867767597525573,
+                "creation_time": 1687612700.8784885,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-30499984.pt"
+                ]
+            },
+            {
+                "steps": 30999772,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-30999772.onnx",
+                "reward": 0.02607143156762634,
+                "creation_time": 1687613374.8204663,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-30999772.pt"
+                ]
+            },
+            {
+                "steps": 31499998,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-31499998.onnx",
+                "reward": -0.5923423471192161,
+                "creation_time": 1687614107.403831,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-31499998.pt"
+                ]
+            },
+            {
+                "steps": 31874520,
+                "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-31874520.onnx",
+                "reward": 0.021666667920847735,
+                "creation_time": 1687614667.1343484,
+                "auxillary_file_paths": [
+                    "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-31874520.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 31874520,
+            "file_path": "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball.onnx",
+            "reward": 0.021666667920847735,
+            "creation_time": 1687614667.1343484,
+            "auxillary_file_paths": [
+                "results/v3.0.3-colliders-penalty-bigger-netword/Volleyball/Volleyball-31874520.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.8.1+cu102"
+    }
+}

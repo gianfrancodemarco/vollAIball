@@ -202,35 +202,16 @@ public class VolleyballAgent : Agent
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        // Agent rotation (1 float)
-        sensor.AddObservation(this.transform.rotation.y);
-
-        // Vector from agent to ball (direction to ball) (3 floats)
-        Vector3 toBall = new Vector3(
-            (ballRb.transform.position.x - this.transform.position.x) * agentRot,
-            (ballRb.transform.position.y - this.transform.position.y),
-            (ballRb.transform.position.z - this.transform.position.z) * agentRot
-        );
-
-        sensor.AddObservation(toBall.normalized);
-
-        // Distance from the ball (1 float)
-        sensor.AddObservation(toBall.normalized);
-        sensor.AddObservation(toBall.magnitude);
-
-        // Ball velocity (3 floats)
+        // Ball position and velocity (6 floats)
+        sensor.AddObservation(ball.transform.position);
         sensor.AddObservation(ballRb.velocity.y);
         sensor.AddObservation(ballRb.velocity.z * agentRot);
         sensor.AddObservation(ballRb.velocity.x * agentRot);
 
-        // Add position, velocity and rotation for all agents
-        foreach (VolleyballAgent agent in envController.GetAgents())
-        {
-            Rigidbody oppositeAgentRb = agent.GetComponent<Rigidbody>();
-            sensor.AddObservation(agent.GetComponent<Rigidbody>().position);
-            sensor.AddObservation(agent.GetComponent<Rigidbody>().velocity);
-            sensor.AddObservation(agent.GetComponent<Rigidbody>().rotation);
-        }
+        // Agent position, velocity and rotation (5 floats)
+        sensor.AddObservation(transform.position);
+        sensor.AddObservation(GetComponent<Rigidbody>().velocity);
+        sensor.AddObservation(GetComponent<Rigidbody>().rotation);
     }
 
     // For human controller
