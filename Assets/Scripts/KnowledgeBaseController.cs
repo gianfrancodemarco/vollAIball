@@ -33,7 +33,7 @@ public class KnowledgeBaseController : MonoBehaviour
     {
         while (true)
         {
-            StartCoroutine(KnowledgeBaseClient.Instance.GetMatchCommentary());
+            StartCoroutine(KnowledgeBaseClient.Instance.GetMatchNarrative());
             yield return new WaitForSeconds(5f);
         }
     }
