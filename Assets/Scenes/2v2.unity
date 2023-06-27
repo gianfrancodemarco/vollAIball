@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571343, b: 0.30692208, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -322,10 +322,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183629482}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &183629487
 MonoBehaviour:
@@ -475,6 +475,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: redGoal
       objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5501864745727209264, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Name
       value: RedAgent - 1
@@ -537,7 +553,7 @@ PrefabInstance:
       objectReference: {fileID: 1594805509}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
-      value: 0.2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -614,6 +630,22 @@ PrefabInstance:
     - target: {fileID: 7954672815851726371, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Name
       value: BlueAgent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BehaviorType
@@ -722,10 +754,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 326368744}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &326368749
 MonoBehaviour:
@@ -870,10 +902,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329297872}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &329297877
 MonoBehaviour:
@@ -1163,10 +1195,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443376951}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &443376956
 MonoBehaviour:
@@ -1301,6 +1333,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: redGoal
       objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5501864745727209264, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Name
       value: RedAgent - 1
@@ -1363,7 +1411,7 @@ PrefabInstance:
       objectReference: {fileID: 231348040}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
-      value: 0.2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -1440,6 +1488,22 @@ PrefabInstance:
     - target: {fileID: 7954672815851726371, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Name
       value: BlueAgent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BehaviorType
@@ -1558,10 +1622,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545417003}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &545417008
 MonoBehaviour:
@@ -1872,10 +1936,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 623454060}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &623454065
 MonoBehaviour:
@@ -2195,10 +2259,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787085862}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &787085867
 MonoBehaviour:
@@ -2343,10 +2407,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805272278}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &805272283
 MonoBehaviour:
@@ -2535,6 +2599,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: redGoal
       objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5501864745727209264, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Name
       value: RedAgent - 1
@@ -2597,7 +2677,7 @@ PrefabInstance:
       objectReference: {fileID: 109140358}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
-      value: 0.2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -2641,15 +2721,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2674,6 +2754,22 @@ PrefabInstance:
     - target: {fileID: 7954672815851726371, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Name
       value: BlueAgent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BehaviorType
@@ -3143,10 +3239,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023134601}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1023134606
 MonoBehaviour:
@@ -3275,6 +3371,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: redGoal
       objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5501864745727209264, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Name
       value: RedAgent - 1
@@ -3337,7 +3449,7 @@ PrefabInstance:
       objectReference: {fileID: 1163798189}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
-      value: 0.2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -3381,15 +3493,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3414,6 +3526,22 @@ PrefabInstance:
     - target: {fileID: 7954672815851726371, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Name
       value: BlueAgent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BehaviorType
@@ -3583,6 +3711,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: redGoal
       objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5501864745727209264, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Name
       value: RedAgent - 1
@@ -3645,7 +3789,7 @@ PrefabInstance:
       objectReference: {fileID: 450754059}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
-      value: 0.2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -3689,15 +3833,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3722,6 +3866,22 @@ PrefabInstance:
     - target: {fileID: 7954672815851726371, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Name
       value: BlueAgent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BehaviorType
@@ -3927,10 +4087,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305218890}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1305218895
 MonoBehaviour:
@@ -4049,6 +4209,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: redGoal
       objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5501864745727209264, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Name
       value: RedAgent - 1
@@ -4111,7 +4287,7 @@ PrefabInstance:
       objectReference: {fileID: 1265612910}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
-      value: 0.2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -4155,15 +4331,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4188,6 +4364,22 @@ PrefabInstance:
     - target: {fileID: 7954672815851726371, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Name
       value: BlueAgent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BehaviorType
@@ -4391,10 +4583,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1520654427}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1520654432
 MonoBehaviour:
@@ -4834,10 +5026,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753152225}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1753152230
 MonoBehaviour:
@@ -4987,10 +5179,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787620912}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1787620917
 MonoBehaviour:
@@ -5243,10 +5435,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937368982}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1937368987
 MonoBehaviour:
@@ -5401,10 +5593,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989046759}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1989046764
 MonoBehaviour:
@@ -5523,6 +5715,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: redGoal
       objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5501864745727209264, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Name
       value: RedAgent - 1
@@ -5585,7 +5793,7 @@ PrefabInstance:
       objectReference: {fileID: 1534140376}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
-      value: 0.2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -5629,15 +5837,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5662,6 +5870,22 @@ PrefabInstance:
     - target: {fileID: 7954672815851726371, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Name
       value: BlueAgent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BehaviorType
@@ -5775,10 +5999,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1999915956}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1999915961
 MonoBehaviour:
@@ -5922,6 +6146,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: redGoal
       objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485176692513050270, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5501864745727209264, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Name
       value: RedAgent - 1
@@ -5984,7 +6224,7 @@ PrefabInstance:
       objectReference: {fileID: 1096716531}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
-      value: 0.2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -6020,7 +6260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6028,15 +6268,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6061,6 +6301,22 @@ PrefabInstance:
     - target: {fileID: 7954672815851726371, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Name
       value: BlueAgent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Size.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BehaviorType

@@ -29,7 +29,8 @@ public enum Event
     HitBlueAgent = 5,
     HitRedAgent = 6,
     HitWall = 7,
-    EpisodeEnd = 8
+    EpisodeEnd = 8,
+    AgentsCollision = 9,
 }
 
 public class VolleyballEnvController : MonoBehaviour
@@ -58,7 +59,6 @@ public class VolleyballEnvController : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = timeScale;
         // Used to control agent & ball starting positions
         ballRb = ball.GetComponent<Rigidbody>();
 
@@ -80,6 +80,15 @@ public class VolleyballEnvController : MonoBehaviour
         hitterHistory.Add(agent);
     }
 
+    public void ResolveEvent(Event triggerEvent, VolleyballAgent triggerer, VolleyballAgent other){
+        switch (triggerEvent){
+            case Event.AgentsCollision:
+                triggerer.SetReward(-0.1f);
+                other.SetReward(-0.1f);
+                break;
+        }
+    }
+
     /// <summary>
     /// Resolves scenarios when ball enters a trigger and assigns rewards.
     /// Example reward functions are shown below.
@@ -95,7 +104,7 @@ public class VolleyballEnvController : MonoBehaviour
             case Event.HitBlueAgent:
                 if (IsDoubleTouch())
                 {
-                    lastHitter.AddReward(-1f);
+                    lastHitter.SetReward(-0.5f);
                     EndAllAgentsEpisode();
                     ResetScene();
                 }
@@ -106,13 +115,13 @@ public class VolleyballEnvController : MonoBehaviour
                     {
                         // NOTE: Second to last hitter is the one who should have hit the ball in the other field, so he gets a negative reward
                         VolleyballAgent secondToLastHitter = hitterHistory[hitterHistory.Count - 2];
-                        secondToLastHitter.AddReward(-1f);
+                        secondToLastHitter.SetReward(-1f);
                         EndAllAgentsEpisode();
                         ResetScene();
                     }
                     else
                     {
-                        lastHitter.AddReward(0.25f + 0.25f * numberOfTeamTouches);
+                        lastHitter.AddReward(0.1f + 0.1f * numberOfTeamTouches);
                     }
                 }
                 break;
@@ -120,7 +129,7 @@ public class VolleyballEnvController : MonoBehaviour
                 if (lastHitter != null)
                 {
                     // apply penalty to agent
-                    lastHitter.AddReward(-1.0f);
+                    lastHitter.SetReward(-1.0f);
                 }
                 EndAllAgentsEpisode();
                 ResetScene();
@@ -129,10 +138,10 @@ public class VolleyballEnvController : MonoBehaviour
             case Event.HitBlueGoal:
                 // Red took the goal, so it will be penalized
                 // Blue will get a reward only if it did something
-                ApplyRewardToTeam(Team.Red, -1f);
+                ApplyRewardToTeam(Team.Red, -0.5f);
                 if (PlayerOfTeamHitBall(Team.Blue))
                 {
-                    ApplyRewardToTeam(Team.Blue, 1f);
+                    ApplyRewardToTeam(Team.Blue, 0.5f);
                 }
                 EndAllAgentsEpisode();
                 ResetScene();
@@ -141,10 +150,10 @@ public class VolleyballEnvController : MonoBehaviour
             case Event.HitRedGoal:
                 // Blue took the goal, so it will be penalized
                 // Red will get a reward only if it did something
-                ApplyRewardToTeam(Team.Blue, -1f);
+                ApplyRewardToTeam(Team.Blue, -0.5f);
                 if (PlayerOfTeamHitBall(Team.Red))
                 {
-                    ApplyRewardToTeam(Team.Red, 1f);
+                    ApplyRewardToTeam(Team.Red, 0.5f);
                 }
                 EndAllAgentsEpisode();
                 ResetScene();
@@ -168,7 +177,7 @@ public class VolleyballEnvController : MonoBehaviour
             case Event.HitWall:
                 if (lastHitter != null)
                 {
-                    lastHitter.AddReward(-1f);
+                    lastHitter.SetReward(-1f);
                     EndAllAgentsEpisode();
                     ResetScene();
                 }
@@ -189,6 +198,7 @@ public class VolleyballEnvController : MonoBehaviour
     /// </summary>
     public void ResetScene()
     {
+        Time.timeScale = timeScale;
         hitterHistory.Clear();
         ballSpawnSide = -1 * ballSpawnSide;
 
@@ -216,9 +226,9 @@ public class VolleyballEnvController : MonoBehaviour
             agent.GetComponent<Rigidbody>().velocity = default(Vector3);
         }
 
-        server.transform.localPosition = new Vector3(server.agentRot * (-5f), 0, server.agentRot * (-5f));
+        server.transform.localPosition = new Vector3(server.agentRot * Random.Range(-5f, -3f), 0, server.agentRot * Random.Range(-5f, -3f));
         server.transform.eulerAngles = new Vector3(0, 0, 0);
-        ball.transform.position = server.transform.position + new Vector3(0, 8f, 0);
+        ball.transform.position = server.transform.position + new Vector3(Random.Range(-1f, 1f), 8f, server.agentRot * Random.Range(0f, 2f));
         ballRb.angularVelocity = Vector3.zero;
         ballRb.velocity = Vector3.zero;
 
@@ -258,7 +268,7 @@ public class VolleyballEnvController : MonoBehaviour
     {
         foreach (var agent in GetAgentsInTeam(teamId))
         {
-            agent.AddReward(reward);
+            agent.SetReward(reward);
         }
     }
 
