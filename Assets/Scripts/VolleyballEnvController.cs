@@ -251,7 +251,7 @@ public class VolleyballEnvController : MonoBehaviour
 
     private bool IsDoubleTouch()
     {
-        return hitterHistory.Count > 1 && hitterHistory[^1].UUID == hitterHistory[^2].UUID;
+        return hitterHistory.Count > 1 && hitterHistory[^1].name == hitterHistory[^2].name;
     }
 
     private void ApplyRewardToTeam(Team teamId, float reward)

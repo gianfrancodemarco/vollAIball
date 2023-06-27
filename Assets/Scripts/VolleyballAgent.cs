@@ -25,11 +25,6 @@ public class VolleyballAgent : Agent
     private EnvironmentParameters resetParams;
     private bool isGrounded;
     public float agentRot;
-    private int playerUUID;
-    public int UUID
-    {
-        get { return playerUUID; }
-    }
 
     void Start()
     {
@@ -37,7 +32,6 @@ public class VolleyballAgent : Agent
         envController = area.GetComponent<VolleyballEnvController>();
         tensorBoardController = FindObjectOfType<TensorBoardController>();
         knowledgeBaseController = FindObjectOfType<KnowledgeBaseController>();
-        playerUUID = transform.GetInstanceID();
     }
 
     public new void EndEpisode()

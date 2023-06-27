@@ -121,13 +121,13 @@ public class KnowledgeBaseController : MonoBehaviour
         foreach (VolleyballAgent player in envController.AgentsList)
         {
             string fact = KnowledgeBasePredicates.predicateMap["Player"]
-                .Replace("<player_name>", player.UUID.ToString());
+                .Replace("<player_name>", name);
                 
             yield return new WaitForSeconds(0.010f);
             StartCoroutine(KnowledgeBaseClient.Instance.SaveFact(fact));
 
             fact = KnowledgeBasePredicates.predicateMap["PlaysInTeam"]
-                .Replace("<player_name>", player.UUID.ToString())
+                .Replace("<player_name>", name)
                 .Replace("<team_name>", TeamMap.teamMap[player.teamId]);
             yield return new WaitForSeconds(0.010f);
             StartCoroutine(KnowledgeBaseClient.Instance.SaveFact(fact));
@@ -146,7 +146,7 @@ public class KnowledgeBaseController : MonoBehaviour
         }
 
         string fact = KnowledgeBasePredicates.predicateMap["TouchPlayerAtAction"]
-            .Replace("<player_name>", player.UUID.ToString())
+            .Replace("<player_name>", player.name)
             .Replace("<episode_name>", episode.ToString())
             .Replace("<action_name>", action.ToString())
             .Replace("<number_of_team_pass>", number_of_team_pass.ToString());
@@ -164,7 +164,7 @@ public class KnowledgeBaseController : MonoBehaviour
         List<VolleyballAgent> HitterHistory = envController.GetHitterHistory();
         VolleyballAgent player = HitterHistory[^1];
         string fact = KnowledgeBasePredicates.predicateMap[assertKey]
-            .Replace("<player_name>", player.UUID.ToString())
+            .Replace("<player_name>", player.name)
             .Replace("<episode_name>", episode.ToString())
             .Replace("<action_name>", action.ToString());
         yield return new WaitForSeconds(0.010f);
