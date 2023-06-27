@@ -469,6 +469,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &873360462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 873360464}
+  - component: {fileID: 873360463}
+  m_Layer: 0
+  m_Name: KnowledgeBaseController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &873360463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873360462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158d9a83735a0bedebc9f4b292a64a1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &873360464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873360462}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.91946745, y: 4.392906, z: -1.2793382}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,6 +723,10 @@ PrefabInstance:
       propertyPath: redGoal
       value: 
       objectReference: {fileID: 1211414981}
+    - target: {fileID: 1254629476493177227, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Name
+      value: BlueGoal
+      objectReference: {fileID: 0}
     - target: {fileID: 1311826851859346179, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -695,6 +743,18 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300004, guid: c71923256946c49c593eeeb3adb0590b, type: 3}
+    - target: {fileID: 1319780535009680813, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319780535009680813, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1319780535009680813, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4260762751858255988, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -741,7 +801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5501864745727209264, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Name
-      value: RedAgent - 1
+      value: gianfranco
       objectReference: {fileID: 0}
     - target: {fileID: 5501864745727209264, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_TagString
@@ -772,6 +832,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: 04237c0f3bfaaf84e9b69bba259d42d5, type: 3}
+    - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BehaviorType
       value: 0
       objectReference: {fileID: 0}
@@ -801,7 +865,7 @@ PrefabInstance:
       objectReference: {fileID: 1211414985}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: MaxEnvironmentSteps
@@ -829,7 +893,7 @@ PrefabInstance:
       objectReference: {fileID: 1211414985}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -881,7 +945,7 @@ PrefabInstance:
       objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7954672815851726371, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Name
-      value: BlueAgent
+      value: ciccio
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726553, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Size.x
@@ -899,6 +963,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 5022602860645237092, guid: 04237c0f3bfaaf84e9b69bba259d42d5, type: 3}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BehaviorType
       value: 0

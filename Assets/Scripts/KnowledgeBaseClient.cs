@@ -46,14 +46,14 @@ public class KnowledgeBaseClient
     // Callback to act on our response data
 	private void ResponseCallback(string data)
 	{
-		Debug.Log(data);
+		//Debug.Log(data);
         NarrativeDTO narrative = JsonUtility.FromJson<NarrativeDTO>(data);
         HashSet<String> response = narrative.response.ToHashSet();
         HashSet<String> newFacts = response.Except(facts).ToHashSet();
-        if (newFacts.Count > 0){
-            Debug.Log("New facts: " + String.Join("\nNarrator:", newFacts.Except(facts)));
-            facts = newFacts;
+        foreach (String fact in newFacts){
+            Debug.Log("Narrator: " + fact); 
         }
+        facts = response;
 	}
 
     public IEnumerator QueryFact(string query) { 
@@ -97,7 +97,7 @@ public class KnowledgeBaseClient
             }
             else
             {
-                Debug.Log("Result:" + request.downloadHandler.text);
+                //Debug.Log("Result:" + request.downloadHandler.text);
             }
         }
         request.Dispose();
@@ -116,7 +116,6 @@ public class KnowledgeBaseClient
         }
         else
         {
-            Debug.Log("Result: " + request.downloadHandler.text);
             responseCallback(request.downloadHandler.text);
         }
 
