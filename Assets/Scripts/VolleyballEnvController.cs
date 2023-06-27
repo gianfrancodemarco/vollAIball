@@ -9,6 +9,16 @@ public enum Team
     Default = 2
 }
 
+public static class TeamMap
+{
+    public static Dictionary<Team, string> teamMap = new Dictionary<Team, string>()
+    {
+        { Team.Blue, "blue" },
+        { Team.Red, "red" },
+        { Team.Default, "default" }
+    };
+}
+
 public enum Event
 {
     HitRedGoal = 0,
@@ -19,11 +29,13 @@ public enum Event
     HitBlueAgent = 5,
     HitRedAgent = 6,
     HitWall = 7,
-    EpisodeEnd = 8
+    EpisodeEnd = 8,
+    AgentsCollision = 9,
 }
 
 public class VolleyballEnvController : MonoBehaviour
 {
+    public float timeScale;
     int ballSpawnSide;
 
     VolleyballSettings volleyballSettings;
@@ -43,13 +55,10 @@ public class VolleyballEnvController : MonoBehaviour
 
     private List<VolleyballAgent> hitterHistory = new List<VolleyballAgent>();
 
-    // private int resetTimer;
-
     public int MaxEnvironmentSteps;
 
     void Start()
     {
-        //Time.timeScale = 0.5f;
         // Used to control agent & ball starting positions
         ballRb = ball.GetComponent<Rigidbody>();
 
@@ -71,6 +80,15 @@ public class VolleyballEnvController : MonoBehaviour
         hitterHistory.Add(agent);
     }
 
+    public void ResolveEvent(Event triggerEvent, VolleyballAgent triggerer, VolleyballAgent other){
+        switch (triggerEvent){
+            case Event.AgentsCollision:
+                triggerer.SetReward(-0.1f);
+                other.SetReward(-0.1f);
+                break;
+        }
+    }
+
     /// <summary>
     /// Resolves scenarios when ball enters a trigger and assigns rewards.
     /// Example reward functions are shown below.
@@ -86,21 +104,24 @@ public class VolleyballEnvController : MonoBehaviour
             case Event.HitBlueAgent:
                 if (IsDoubleTouch())
                 {
-                    lastHitter.AddReward(-1f);
+                    lastHitter.SetReward(-0.5f);
                     EndAllAgentsEpisode();
                     ResetScene();
                 }
                 else
                 {
                     int numberOfTeamTouches = GetNumberOfTeamTouches();
-                    if (numberOfTeamTouches > 3){
+                    if (numberOfTeamTouches > 3)
+                    {
                         // NOTE: Second to last hitter is the one who should have hit the ball in the other field, so he gets a negative reward
                         VolleyballAgent secondToLastHitter = hitterHistory[hitterHistory.Count - 2];
-                        secondToLastHitter.AddReward(-1);
+                        secondToLastHitter.SetReward(-1f);
                         EndAllAgentsEpisode();
                         ResetScene();
-                    } else {
-                        lastHitter.AddReward(0.25f + 0.25f * numberOfTeamTouches);
+                    }
+                    else
+                    {
+                        lastHitter.AddReward(0.1f + 0.1f * numberOfTeamTouches);
                     }
                 }
                 break;
@@ -108,31 +129,31 @@ public class VolleyballEnvController : MonoBehaviour
                 if (lastHitter != null)
                 {
                     // apply penalty to agent
-                    lastHitter.AddReward(-0.5f);
+                    lastHitter.SetReward(-1.0f);
                 }
                 EndAllAgentsEpisode();
                 ResetScene();
                 break;
 
             case Event.HitBlueGoal:
-                // blue scores
-                // NOTE: we probably can remove the check on the team id here
-                if (lastHitter != null && lastHitter.teamId == Team.Blue)
+                // Red took the goal, so it will be penalized
+                // Blue will get a reward only if it did something
+                ApplyRewardToTeam(Team.Red, -0.5f);
+                if (PlayerOfTeamHitBall(Team.Blue))
                 {
-                    lastHitter.AddReward(1f);
-                    ApplyRewardToTeam(Team.Red, -1f);
+                    ApplyRewardToTeam(Team.Blue, 0.5f);
                 }
                 EndAllAgentsEpisode();
                 ResetScene();
                 break;
 
             case Event.HitRedGoal:
-                // red scores
-                // NOTE: we probably can remove the check on the team id here
-                if (lastHitter != null && lastHitter.teamId == Team.Red)
+                // Blue took the goal, so it will be penalized
+                // Red will get a reward only if it did something
+                ApplyRewardToTeam(Team.Blue, -0.5f);
+                if (PlayerOfTeamHitBall(Team.Red))
                 {
-                    lastHitter.AddReward(1f);
-                    ApplyRewardToTeam(Team.Blue, -1f);
+                    ApplyRewardToTeam(Team.Red, 0.5f);
                 }
                 EndAllAgentsEpisode();
                 ResetScene();
@@ -142,7 +163,7 @@ public class VolleyballEnvController : MonoBehaviour
                 // NOTE: we probably can remove the check on the team id here
                 if (lastHitter != null && lastHitter.teamId == Team.Red)
                 {
-                    lastHitter.AddReward(0.2f);
+                    lastHitter.AddReward(0.5f);
                 }
                 break;
 
@@ -150,13 +171,13 @@ public class VolleyballEnvController : MonoBehaviour
                 // NOTE: we probably can remove the check on the team id here
                 if (lastHitter != null && lastHitter.teamId == Team.Blue)
                 {
-                    lastHitter.AddReward(0.2f);
+                    lastHitter.AddReward(0.5f);
                 }
                 break;
             case Event.HitWall:
                 if (lastHitter != null)
                 {
-                    lastHitter.AddReward(-1f);
+                    lastHitter.SetReward(-1f);
                     EndAllAgentsEpisode();
                     ResetScene();
                 }
@@ -177,16 +198,27 @@ public class VolleyballEnvController : MonoBehaviour
     /// </summary>
     public void ResetScene()
     {
-        // resetTimer = 0;
-
+        Time.timeScale = timeScale;
         hitterHistory.Clear();
+        ballSpawnSide = -1 * ballSpawnSide;
 
-        // TODO: Discriminate between server and not-server
+        //Ball spawn position is hover one of the agents
+        VolleyballAgent server = null;
+        if (ballSpawnSide == 1)
+        {
+            // 0 and 2 must be on serving position   
+            server = AgentsList[Random.Range(0, 2)];
+        }
+        else
+        {
+            server = AgentsList[Random.Range(2, 4)];
+        }
+
         foreach (var agent in AgentsList)
         {
             // randomise starting positions
-            var randomPosX = Random.Range(-4f, 4f);
-            var randomPosZ = Random.Range(-4f, 4f);
+            var randomPosX = Random.Range(-2f, 2f);
+            var randomPosZ = Random.Range(-2f, 2f);
 
             agent.transform.localPosition = new Vector3(randomPosX, 0, randomPosZ);
             agent.transform.eulerAngles = new Vector3(0, 0, 0);
@@ -194,39 +226,12 @@ public class VolleyballEnvController : MonoBehaviour
             agent.GetComponent<Rigidbody>().velocity = default(Vector3);
         }
 
-        // reset ball to starting conditions
-        ResetBall();
-    }
-
-    /// <summary>
-    /// Reset ball spawn conditions
-    /// </summary>
-    private void ResetBall()
-    {
-        //var randomPosX = Random.Range(-2f, 2f);
-        //var randomPosZ = Random.Range(6f, 10f);
-        //var randomPosY = Random.Range(6f, 8f);
-
-        // alternate ball spawn sàide
-        // -1 = spawn blue side, 1 = spawn red side
-        ballSpawnSide = -1 * ballSpawnSide;
-
-        //Ball spawn position is hover one of the agents
-        VolleyballAgent server = null;
-        if (ballSpawnSide == 1)
-        {
-            // 0 and 2 must be on serving position
-            server = AgentsList[0];
-        }
-        else
-        {
-            server = AgentsList[2];
-        }
-
-        ball.transform.position = server.transform.position + new Vector3(0, 8f, 0);
-
+        server.transform.localPosition = new Vector3(server.agentRot * Random.Range(-5f, -3f), 0, server.agentRot * Random.Range(-5f, -3f));
+        server.transform.eulerAngles = new Vector3(0, 0, 0);
+        ball.transform.position = server.transform.position + new Vector3(Random.Range(-1f, 1f), 8f, server.agentRot * Random.Range(0f, 2f));
         ballRb.angularVelocity = Vector3.zero;
         ballRb.velocity = Vector3.zero;
+
     }
 
     public IEnumerable<VolleyballAgent> GetAgents()
@@ -249,16 +254,21 @@ public class VolleyballEnvController : MonoBehaviour
         return hitterHistory;
     }
 
+    public bool PlayerOfTeamHitBall(Team teamId)
+    {
+        return hitterHistory.Count > 0 && hitterHistory.Any(agent => agent.teamId == teamId);
+    }
+
     private bool IsDoubleTouch()
     {
-        return hitterHistory.Count > 1 && hitterHistory[^1].UUID == hitterHistory[^2].UUID;
+        return hitterHistory.Count > 1 && hitterHistory[^1].name == hitterHistory[^2].name;
     }
 
     private void ApplyRewardToTeam(Team teamId, float reward)
     {
         foreach (var agent in GetAgentsInTeam(teamId))
         {
-            agent.AddReward(reward);
+            agent.SetReward(reward);
         }
     }
 
@@ -267,12 +277,14 @@ public class VolleyballEnvController : MonoBehaviour
         //This function is called after a touch, so we start from 1
         int teamTouches = 1;
         Team currentTeamId = hitterHistory[^1].teamId;
-        
-        if (hitterHistory.Count > 1 && currentTeamId == hitterHistory[^2].teamId){
+
+        if (hitterHistory.Count > 1 && currentTeamId == hitterHistory[^2].teamId)
+        {
             teamTouches += 1;
         }
 
-        if (hitterHistory.Count > 2 && currentTeamId == hitterHistory[^3].teamId){
+        if (hitterHistory.Count > 2 && currentTeamId == hitterHistory[^3].teamId)
+        {
             teamTouches += 1;
         }
 

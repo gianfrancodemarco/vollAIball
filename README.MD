@@ -31,7 +31,6 @@ Goal: set 2v2 game enviroment
 Goal: Removed statistics tracking when ball spawns and no agents touch it.
 
 <br>
-
 ## **v2.0.0**
 
 Goal: enforce more volleyball rules

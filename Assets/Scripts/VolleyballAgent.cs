@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
@@ -18,32 +16,28 @@ public class VolleyballAgent : Agent
     private BehaviorParameters behaviorParameters;
     private VolleyballSettings volleyballSettings;
     private VolleyballEnvController envController;
+    private TensorBoardController tensorBoardController; 
+    private KnowledgeBaseController knowledgeBaseController;
 
-    private TensorBoardController tensorBoardController;
     private Vector3 jumpTargetPos;
     private Vector3 jumpStartingPos;
     private EnvironmentParameters resetParams;
-
     private bool isGrounded;
-    private float agentRot;
-    private int playerUUID;
-    public int UUID
-    {
-        get { return playerUUID; }
-    }
+    public float agentRot;
 
     void Start()
     {
         isGrounded = false;
         envController = area.GetComponent<VolleyballEnvController>();
         tensorBoardController = FindObjectOfType<TensorBoardController>();
-        playerUUID = transform.GetInstanceID();
+        knowledgeBaseController = FindObjectOfType<KnowledgeBaseController>();
     }
 
     public new void EndEpisode()
     {
         base.EndEpisode();
         tensorBoardController.ResolveEvent(Event.EpisodeEnd);
+        knowledgeBaseController.ResolveEvent(Event.EpisodeEnd);
     }
 
     public override void Initialize()
@@ -85,8 +79,21 @@ public class VolleyballAgent : Agent
         }
     }
 
+    private void OnTriggerEnter(Collider c)
+    {
+        if (c.gameObject.tag.ToLower().Contains("agent"))
+        {
+            envController.ResolveEvent(
+                Event.AgentsCollision,
+                this,
+                c.gameObject.GetComponent<VolleyballAgent>()
+            );
+            tensorBoardController.ResolveEvent(Event.AgentsCollision);
+        }
+    }
+
     /// <summary>
-    /// Called when agent collides with the ball
+    /// Called when agent collides with something
     /// </summary>
     private void OnCollisionEnter(Collision c)
     {
@@ -201,6 +208,8 @@ public class VolleyballAgent : Agent
             (ballRb.transform.position.y - this.transform.position.y),
             (ballRb.transform.position.z - this.transform.position.z) * agentRot
         );
+
+        sensor.AddObservation(toBall.normalized);
 
         // Distance from the ball (1 float)
         sensor.AddObservation(toBall.normalized);
