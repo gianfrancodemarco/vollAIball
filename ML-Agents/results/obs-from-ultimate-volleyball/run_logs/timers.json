@@ -1,0 +1,47 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1687892875",
+        "python_version": "3.7.12 (default, Jul 28 2022, 11:17:07) \n[GCC 9.4.0]",
+        "command_line_arguments": "/home/gianfranco/.local/bin/mlagents-learn ../config/Volleyball.yaml --run=obs-from-ultimate-volleyball --resume",
+        "mlagents_version": "0.29.0",
+        "mlagents_envs_version": "0.29.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.8.1+cu102",
+        "numpy_version": "1.21.2",
+        "end_time_seconds": "1687892875"
+    },
+    "total": 0.08942406300047878,
+    "count": 1,
+    "self": 0.009263661006116308,
+    "children": {
+        "run_training.setup": {
+            "total": 0.014196941992850043,
+            "count": 1,
+            "self": 0.014196941992850043
+        },
+        "TrainerController.start_learning": {
+            "total": 0.06596346000151243,
+            "count": 1,
+            "self": 0.000568137998925522,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 0.06537234899587929,
+                    "count": 1,
+                    "self": 0.06537234899587929
+                },
+                "trainer_threads": {
+                    "total": 3.3990072552114725e-06,
+                    "count": 1,
+                    "self": 3.3990072552114725e-06
+                },
+                "TrainerController._save_models": {
+                    "total": 1.9573999452404678e-05,
+                    "count": 1,
+                    "self": 1.9573999452404678e-05
+                }
+            }
+        }
+    }
+}
