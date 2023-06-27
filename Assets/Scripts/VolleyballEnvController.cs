@@ -55,6 +55,7 @@ public class VolleyballEnvController : MonoBehaviour
 
     private List<VolleyballAgent> hitterHistory = new List<VolleyballAgent>();
 
+    private int resetTimer;
     public int MaxEnvironmentSteps;
 
     void Start()
@@ -70,6 +71,22 @@ public class VolleyballEnvController : MonoBehaviour
         volleyballSettings = FindObjectOfType<VolleyballSettings>();
 
         ResetScene();
+    }
+
+    /// <summary>
+    /// Called every step. Control max env steps.
+    /// </summary>
+    void FixedUpdate()
+    {
+        resetTimer += 1;
+        if (resetTimer >= MaxEnvironmentSteps && MaxEnvironmentSteps > 0)
+        {
+            foreach (VolleyballAgent agent in AgentsList)
+            {
+                agent.EpisodeInterrupted();
+            }
+            ResetScene();
+        }
     }
 
     /// <summary>
@@ -102,12 +119,12 @@ public class VolleyballEnvController : MonoBehaviour
         {
             case Event.HitRedAgent:
             case Event.HitBlueAgent:
-                // if (IsDoubleTouch())
-                // {
-                //     lastHitter.SetReward(-0.5f);
-                //     EndAllAgentsEpisode();
-                //     ResetScene();
-                // }
+                if (IsDoubleTouch())
+                {
+                    lastHitter.SetReward(-1f);
+                    EndAllAgentsEpisode();
+                    ResetScene();
+                }
                 // else
                 // {
                 //     int numberOfTeamTouches = GetNumberOfTeamTouches();
@@ -163,18 +180,20 @@ public class VolleyballEnvController : MonoBehaviour
 
             case Event.HitIntoBlueArea:
                 // NOTE: we probably can remove the check on the team id here
-                if (lastHitter != null && lastHitter.teamId == Team.Red)
-                {
-                    lastHitter.AddReward(1);
-                }
+                ApplyRewardToTeam(Team.Red, 1f);
+                // if (lastHitter != null && lastHitter.teamId == Team.Red)
+                // {
+                //     lastHitter.AddReward(1);
+                // }
                 break;
 
             case Event.HitIntoRedArea:
                 // NOTE: we probably can remove the check on the team id here
-                if (lastHitter != null && lastHitter.teamId == Team.Blue)
-                {
-                    lastHitter.AddReward(1);
-                }
+                ApplyRewardToTeam(Team.Blue, 1f);
+                // if (lastHitter != null && lastHitter.teamId == Team.Blue)
+                // {
+                //     lastHitter.AddReward(1);
+                // }
                 break;
             case Event.HitWall:
                 // if (lastHitter != null)
@@ -200,8 +219,11 @@ public class VolleyballEnvController : MonoBehaviour
     /// </summary>
     public void ResetScene()
     {
+        resetTimer = 0;
         Time.timeScale = timeScale;
         hitterHistory.Clear();
+        
+        
         ballSpawnSide = -1 * ballSpawnSide;
 
         //Ball spawn position is hover one of the agents

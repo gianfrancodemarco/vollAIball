@@ -408,7 +408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7941359714215150284, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -433,6 +433,10 @@ PrefabInstance:
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: MaxEnvironmentSteps
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -532,7 +536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726559, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -708,7 +712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7941359714215150284, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -733,6 +737,10 @@ PrefabInstance:
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: MaxEnvironmentSteps
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -832,7 +840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726559, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1008,7 +1016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7941359714215150284, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1033,6 +1041,10 @@ PrefabInstance:
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: MaxEnvironmentSteps
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -1132,7 +1144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726559, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1308,7 +1320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7941359714215150284, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1333,6 +1345,10 @@ PrefabInstance:
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: MaxEnvironmentSteps
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -1360,7 +1376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -36.3
+      value: -36.300003
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1432,7 +1448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726559, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1608,7 +1624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7941359714215150284, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1633,6 +1649,10 @@ PrefabInstance:
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: MaxEnvironmentSteps
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -1732,7 +1752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726559, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1992,7 +2012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7941359714215150284, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2017,6 +2037,10 @@ PrefabInstance:
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: MaxEnvironmentSteps
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -2116,7 +2140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726559, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2386,7 +2410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7941359714215150284, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2411,6 +2435,10 @@ PrefabInstance:
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: MaxEnvironmentSteps
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -2510,7 +2538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726559, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2686,7 +2714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7941359714215150284, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2711,6 +2739,10 @@ PrefabInstance:
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: MaxEnvironmentSteps
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -2810,7 +2842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726559, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3133,7 +3165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7941359714215150284, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3158,6 +3190,10 @@ PrefabInstance:
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: MaxEnvironmentSteps
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -3185,7 +3221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -36.3
+      value: -36.300003
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958407, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3257,7 +3293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726559, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3477,7 +3513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7941359714215150284, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3502,6 +3538,10 @@ PrefabInstance:
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: MaxEnvironmentSteps
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -3601,7 +3641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726559, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3777,7 +3817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7941359714215150284, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3802,6 +3842,10 @@ PrefabInstance:
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: MaxEnvironmentSteps
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -3901,7 +3945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726559, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4077,7 +4121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7941359714215150284, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4102,6 +4146,10 @@ PrefabInstance:
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: MaxEnvironmentSteps
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -4201,7 +4249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726559, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4377,7 +4425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7941359714215150284, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4402,6 +4450,10 @@ PrefabInstance:
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: MaxEnvironmentSteps
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -4501,7 +4553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726559, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4677,7 +4729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7941359714215150284, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4702,6 +4754,10 @@ PrefabInstance:
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: MaxEnvironmentSteps
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -4801,7 +4857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726559, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4977,7 +5033,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7941359714215150284, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5002,6 +5058,10 @@ PrefabInstance:
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: MaxEnvironmentSteps
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -5101,7 +5161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726559, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5277,7 +5337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7756907178769414777, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7941359714215150284, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5302,6 +5362,10 @@ PrefabInstance:
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: timeScale
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: MaxEnvironmentSteps
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815519958406, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: AgentsList.Array.size
@@ -5401,7 +5465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726557, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7954672815851726559, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_LocalPosition.x
