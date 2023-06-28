@@ -37,7 +37,11 @@ public class VolleyballAgent : Agent
     {
         base.EndEpisode();
         tensorBoardController.ResolveEvent(Event.EpisodeEnd);
-        knowledgeBaseController.ResolveEvent(Event.EpisodeEnd);
+
+        if (knowledgeBaseController != null){
+            knowledgeBaseController.ResolveEvent(Event.EpisodeEnd);
+        }
+        
     }
 
     public override void Initialize()

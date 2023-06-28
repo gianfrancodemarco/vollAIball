@@ -180,15 +180,258 @@
                 "auxillary_file_paths": [
                     "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-9662596.pt"
                 ]
+            },
+            {
+                "steps": 65499981,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-65499981.onnx",
+                "reward": 1.0,
+                "creation_time": 1687936828.0740273,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-65499981.pt"
+                ]
+            },
+            {
+                "steps": 65499995,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-65499995.onnx",
+                "reward": 1.0,
+                "creation_time": 1687936836.8534234,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-65499995.pt"
+                ]
+            },
+            {
+                "steps": 65999888,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-65999888.onnx",
+                "reward": 1.5058823529411764,
+                "creation_time": 1687937317.890624,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-65999888.pt"
+                ]
+            },
+            {
+                "steps": 66499921,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-66499921.onnx",
+                "reward": 1.411764705882353,
+                "creation_time": 1687937786.4677122,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-66499921.pt"
+                ]
+            },
+            {
+                "steps": 66999946,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-66999946.onnx",
+                "reward": 1.5680933852140078,
+                "creation_time": 1687938254.892984,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-66999946.pt"
+                ]
+            },
+            {
+                "steps": 67499793,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-67499793.onnx",
+                "reward": 0.95,
+                "creation_time": 1687938731.4655697,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-67499793.pt"
+                ]
+            },
+            {
+                "steps": 67999931,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-67999931.onnx",
+                "reward": 1.3656716417910448,
+                "creation_time": 1687939198.1999002,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-67999931.pt"
+                ]
+            },
+            {
+                "steps": 68499969,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-68499969.onnx",
+                "reward": 1.5545454545454545,
+                "creation_time": 1687939666.6288445,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-68499969.pt"
+                ]
+            },
+            {
+                "steps": 68999965,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-68999965.onnx",
+                "reward": 0.8636363636363636,
+                "creation_time": 1687940142.3273587,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-68999965.pt"
+                ]
+            },
+            {
+                "steps": 69499985,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-69499985.onnx",
+                "reward": 1.4901960784313726,
+                "creation_time": 1687940609.5494366,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-69499985.pt"
+                ]
+            },
+            {
+                "steps": 69999888,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-69999888.onnx",
+                "reward": 1.5945945945945945,
+                "creation_time": 1687941074.066822,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-69999888.pt"
+                ]
+            },
+            {
+                "steps": 70499849,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-70499849.onnx",
+                "reward": 1.4221453287197232,
+                "creation_time": 1687941542.8285608,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-70499849.pt"
+                ]
+            },
+            {
+                "steps": 70999940,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-70999940.onnx",
+                "reward": 1.7719298245614035,
+                "creation_time": 1687942017.500523,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-70999940.pt"
+                ]
+            },
+            {
+                "steps": 71499994,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-71499994.onnx",
+                "reward": 1.2447552447552448,
+                "creation_time": 1687942487.9238722,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-71499994.pt"
+                ]
+            },
+            {
+                "steps": 71999959,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-71999959.onnx",
+                "reward": 1.354978354978355,
+                "creation_time": 1687942954.9424832,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-71999959.pt"
+                ]
+            },
+            {
+                "steps": 72499922,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-72499922.onnx",
+                "reward": 1.3843648208469055,
+                "creation_time": 1687943425.0683718,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-72499922.pt"
+                ]
+            },
+            {
+                "steps": 72999979,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-72999979.onnx",
+                "reward": 1.2658227848101267,
+                "creation_time": 1687943902.8223324,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-72999979.pt"
+                ]
+            },
+            {
+                "steps": 73499959,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-73499959.onnx",
+                "reward": 1.4642857142857142,
+                "creation_time": 1687944371.194182,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-73499959.pt"
+                ]
+            },
+            {
+                "steps": 73999908,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-73999908.onnx",
+                "reward": 1.708133971291866,
+                "creation_time": 1687944840.9851758,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-73999908.pt"
+                ]
+            },
+            {
+                "steps": 74499989,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-74499989.onnx",
+                "reward": 0.75,
+                "creation_time": 1687945363.0156772,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-74499989.pt"
+                ]
+            },
+            {
+                "steps": 74999971,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-74999971.onnx",
+                "reward": 1.3333333333333333,
+                "creation_time": 1687945841.7654548,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-74999971.pt"
+                ]
+            },
+            {
+                "steps": 75499919,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-75499919.onnx",
+                "reward": 1.4444444444444444,
+                "creation_time": 1687946321.489876,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-75499919.pt"
+                ]
+            },
+            {
+                "steps": 75999864,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-75999864.onnx",
+                "reward": 1.6816143497757847,
+                "creation_time": 1687946821.4030445,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-75999864.pt"
+                ]
+            },
+            {
+                "steps": 76499939,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-76499939.onnx",
+                "reward": 2.076923076923077,
+                "creation_time": 1687947326.6173558,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-76499939.pt"
+                ]
+            },
+            {
+                "steps": 76999981,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-76999981.onnx",
+                "reward": 1.0364963503649636,
+                "creation_time": 1687947811.2749856,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-76999981.pt"
+                ]
+            },
+            {
+                "steps": 77499999,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-77499999.onnx",
+                "reward": 1.975609756097561,
+                "creation_time": 1687948379.4824452,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-77499999.pt"
+                ]
+            },
+            {
+                "steps": 77590721,
+                "file_path": "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-77590721.onnx",
+                "reward": 0.3333333333333333,
+                "creation_time": 1687948477.713488,
+                "auxillary_file_paths": [
+                    "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-77590721.pt"
+                ]
             }
         ],
         "final_checkpoint": {
-            "steps": 9662596,
+            "steps": 77590721,
             "file_path": "results/obs-from-ultimate-volleyball/Volleyball.onnx",
-            "reward": null,
-            "creation_time": 1687868586.547158,
+            "reward": 0.3333333333333333,
+            "creation_time": 1687948477.713488,
             "auxillary_file_paths": [
-                "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-9662596.pt"
+                "results/obs-from-ultimate-volleyball/Volleyball/Volleyball-77590721.pt"
             ]
         }
     },
