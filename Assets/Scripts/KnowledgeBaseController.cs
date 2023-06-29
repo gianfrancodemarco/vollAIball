@@ -15,8 +15,8 @@ public class KnowledgeBaseController : MonoBehaviour
 
     /// Keeps track of the current action
     /// When the player from a different team touches the ball, the action is incremented
-    private int point = 1;
-    private int action = 1;
+    private int point = 0;
+    private int action = 0;
     private int touch = 0;
 
     void Start()
@@ -36,7 +36,7 @@ public class KnowledgeBaseController : MonoBehaviour
         while (true)
         {
             StartCoroutine(KnowledgeBaseClient.Instance.GetMatchNarrative());
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 
@@ -50,11 +50,16 @@ public class KnowledgeBaseController : MonoBehaviour
             // Logic for point, action and touch management
             switch (triggerEvent)
             {
-                case Event.HitWall:
+                case Event.DoubleTouch:
                 case Event.HitBlueGoal:
                 case Event.HitRedGoal:
                 case Event.HitOutOfBounds:
                     point++;
+                    action = 0;
+                    touch = 0;
+                    if (triggerEvent == Event.DoubleTouch){
+                        StartCoroutine(AssertBaseAction("DoubleTouch"));
+                    }
                     break;
                 case Event.HitRedAgent:
                 case Event.HitBlueAgent:

@@ -41,7 +41,7 @@ public class TensorBoardController : MonoBehaviour {
                 break;
             case Event.EpisodeEnd:
                 //Each field will add the same episode 4 times
-                statsRecorder.Add("Statistics/numberOfEndEpisode", 0.25f, StatAggregationMethod.Sum);
+                statsRecorder.Add("Statistics/numberOfEndEpisode", 1f, StatAggregationMethod.Sum);
                 break;
             case Event.AgentsCollision:
                 statsRecorder.Add("Statistics/numberOfAgentsCollision", 1, StatAggregationMethod.Sum);

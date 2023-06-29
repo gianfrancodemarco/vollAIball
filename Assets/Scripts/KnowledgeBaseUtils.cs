@@ -17,7 +17,8 @@ public static class KnowledgeBasePredicates
         {"HitRedGoal", "hitredgoal(<player_name>, <point>, <action>)"},
         {"HitIntoBlueArea", "hitintobluearea(<player_name>, <point>, <action>)"},
         {"HitIntoRedArea", "hitintoredarea(<player_name>, <point>, <action>)"},
-        {"HitWall", "hitwall(<player_name>, <point>, <action>)"}
+        {"HitWall", "hitwall(<player_name>, <point>, <action>)"},
+        {"DoubleTouch", "doubletouch(<player_name>, <point>, <action>)"}
     };
 
 }

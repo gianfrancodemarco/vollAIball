@@ -26,7 +26,6 @@ public class VolleyballController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {   
-
         if (collision.gameObject.CompareTag("blueAgent"))
         {
             // ball hit blue goal (red side court)
@@ -34,6 +33,7 @@ public class VolleyballController : MonoBehaviour
             TrackTensorBoardEvent(Event.HitBlueAgent);
             TrackInKnowledgeBase(Event.HitBlueAgent);
             envController.ResolveEvent(Event.HitBlueAgent);
+
         }
         else if (collision.gameObject.CompareTag("redAgent"))
         {
@@ -48,6 +48,14 @@ public class VolleyballController : MonoBehaviour
             TrackTensorBoardEvent(Event.HitWall);
             TrackInKnowledgeBase(Event.HitWall);
             envController.ResolveEvent(Event.HitWall);
+        }
+
+        if (collision.gameObject.CompareTag("blueAgent") || collision.gameObject.CompareTag("redAgent")){
+            if (envController.IsDoubleTouch()){
+                TrackTensorBoardEvent(Event.DoubleTouch);
+                TrackInKnowledgeBase(Event.DoubleTouch);
+                envController.ResolveEvent(Event.DoubleTouch);        
+            }
         }
     }
 
