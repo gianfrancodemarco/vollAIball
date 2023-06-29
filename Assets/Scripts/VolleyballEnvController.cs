@@ -125,22 +125,22 @@ public class VolleyballEnvController : MonoBehaviour
                     EndAllAgentsEpisode();
                     ResetScene();
                 }
-                // else
-                // {
-                //     int numberOfTeamTouches = GetNumberOfTeamTouches();
-                //     if (numberOfTeamTouches > 3)
-                //     {
-                //         // NOTE: Second to last hitter is the one who should have hit the ball in the other field, so he gets a negative reward
-                //         VolleyballAgent secondToLastHitter = hitterHistory[hitterHistory.Count - 2];
-                //         secondToLastHitter.SetReward(-1f);
-                //         EndAllAgentsEpisode();
-                //         ResetScene();
-                //     }
-                //     else
-                //     {
-                //         lastHitter.AddReward(0.1f + 0.1f * numberOfTeamTouches);
-                //     }
-                // }
+                else
+                {
+                    int numberOfTeamTouches = GetNumberOfTeamTouches();
+                    if (numberOfTeamTouches > 3)
+                    {
+                        // NOTE: Second to last hitter is the one who should have hit the ball in the other field, so he gets a negative reward
+                        VolleyballAgent secondToLastHitter = hitterHistory[hitterHistory.Count - 2];
+                        secondToLastHitter.SetReward(-1f);
+                        EndAllAgentsEpisode();
+                        ResetScene();
+                    }
+                    // else
+                    // {
+                    //     lastHitter.AddReward(0.1f + 0.1f * numberOfTeamTouches);
+                    // }
+                }
                 break;
             case Event.HitOutOfBounds:
                 if (lastHitter != null)

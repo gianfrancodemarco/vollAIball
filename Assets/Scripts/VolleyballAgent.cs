@@ -223,6 +223,20 @@ public class VolleyballAgent : Agent
         sensor.AddObservation(ballRb.velocity.y);
         sensor.AddObservation(ballRb.velocity.z*agentRot);
         sensor.AddObservation(ballRb.velocity.x*agentRot);
+
+        foreach (VolleyballAgent ally in envController.GetAgentsInTeam(teamId)){
+            if (ally != this){
+                // Vector from agent to ally (direction to ally) (3 floats)
+                Vector3 toAlly = new Vector3((ally.transform.position.x - this.transform.position.x)*ally.agentRot, 
+                (ally.transform.position.y - this.transform.position.y),
+                (ally.transform.position.z - this.transform.position.z)*ally.agentRot);
+
+                sensor.AddObservation(toAlly.normalized);
+
+                // Ally velocity (3 floats)
+                sensor.AddObservation(ally.agentRb.velocity);
+            }
+        }
     }
 
     // For human controller
