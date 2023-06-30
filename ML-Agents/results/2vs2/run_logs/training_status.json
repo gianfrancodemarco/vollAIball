@@ -1,0 +1,461 @@
+{
+    "Volleyball": {
+        "checkpoints": [
+            {
+                "steps": 499995,
+                "file_path": "results/2vs2/Volleyball/Volleyball-499995.onnx",
+                "reward": -0.3803680981595092,
+                "creation_time": 1687949467.2079654,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-499995.pt"
+                ]
+            },
+            {
+                "steps": 999994,
+                "file_path": "results/2vs2/Volleyball/Volleyball-999994.onnx",
+                "reward": -0.37480314960629924,
+                "creation_time": 1687949989.4363348,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-999994.pt"
+                ]
+            },
+            {
+                "steps": 1499996,
+                "file_path": "results/2vs2/Volleyball/Volleyball-1499996.onnx",
+                "reward": -0.2893081761006289,
+                "creation_time": 1687950480.093678,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-1499996.pt"
+                ]
+            },
+            {
+                "steps": 1999998,
+                "file_path": "results/2vs2/Volleyball/Volleyball-1999998.onnx",
+                "reward": -0.28938906752411575,
+                "creation_time": 1687950951.16279,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-1999998.pt"
+                ]
+            },
+            {
+                "steps": 2499992,
+                "file_path": "results/2vs2/Volleyball/Volleyball-2499992.onnx",
+                "reward": -0.297244094488189,
+                "creation_time": 1687951421.7598622,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-2499992.pt"
+                ]
+            },
+            {
+                "steps": 2999986,
+                "file_path": "results/2vs2/Volleyball/Volleyball-2999986.onnx",
+                "reward": -0.2995391705069124,
+                "creation_time": 1687951912.165741,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-2999986.pt"
+                ]
+            },
+            {
+                "steps": 3499990,
+                "file_path": "results/2vs2/Volleyball/Volleyball-3499990.onnx",
+                "reward": -0.22735042735042735,
+                "creation_time": 1687952430.034363,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-3499990.pt"
+                ]
+            },
+            {
+                "steps": 3999984,
+                "file_path": "results/2vs2/Volleyball/Volleyball-3999984.onnx",
+                "reward": -0.2047817047817048,
+                "creation_time": 1687952933.6858428,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-3999984.pt"
+                ]
+            },
+            {
+                "steps": 4499988,
+                "file_path": "results/2vs2/Volleyball/Volleyball-4499988.onnx",
+                "reward": -0.17803030303030304,
+                "creation_time": 1687954136.676603,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-4499988.pt"
+                ]
+            },
+            {
+                "steps": 4999998,
+                "file_path": "results/2vs2/Volleyball/Volleyball-4999998.onnx",
+                "reward": -0.19289340101522842,
+                "creation_time": 1687956512.6744266,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-4999998.pt"
+                ]
+            },
+            {
+                "steps": 5499988,
+                "file_path": "results/2vs2/Volleyball/Volleyball-5499988.onnx",
+                "reward": -0.18983402489626555,
+                "creation_time": 1687958839.5364957,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-5499988.pt"
+                ]
+            },
+            {
+                "steps": 5999996,
+                "file_path": "results/2vs2/Volleyball/Volleyball-5999996.onnx",
+                "reward": -0.1794871794871795,
+                "creation_time": 1687959400.550962,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-5999996.pt"
+                ]
+            },
+            {
+                "steps": 6499988,
+                "file_path": "results/2vs2/Volleyball/Volleyball-6499988.onnx",
+                "reward": -0.1974921630094044,
+                "creation_time": 1687959917.8833163,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-6499988.pt"
+                ]
+            },
+            {
+                "steps": 6999972,
+                "file_path": "results/2vs2/Volleyball/Volleyball-6999972.onnx",
+                "reward": -0.16937119675456389,
+                "creation_time": 1687960459.468232,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-6999972.pt"
+                ]
+            },
+            {
+                "steps": 7499974,
+                "file_path": "results/2vs2/Volleyball/Volleyball-7499974.onnx",
+                "reward": -0.17006802721088435,
+                "creation_time": 1687961034.628754,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-7499974.pt"
+                ]
+            },
+            {
+                "steps": 7999975,
+                "file_path": "results/2vs2/Volleyball/Volleyball-7999975.onnx",
+                "reward": -0.18968133535660092,
+                "creation_time": 1687961648.7858195,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-7999975.pt"
+                ]
+            },
+            {
+                "steps": 8499988,
+                "file_path": "results/2vs2/Volleyball/Volleyball-8499988.onnx",
+                "reward": -0.5,
+                "creation_time": 1687962422.5488384,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-8499988.pt"
+                ]
+            },
+            {
+                "steps": 8999992,
+                "file_path": "results/2vs2/Volleyball/Volleyball-8999992.onnx",
+                "reward": -0.14328358208955225,
+                "creation_time": 1687963012.8440504,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-8999992.pt"
+                ]
+            },
+            {
+                "steps": 9499980,
+                "file_path": "results/2vs2/Volleyball/Volleyball-9499980.onnx",
+                "reward": -0.12121212121212122,
+                "creation_time": 1687963611.1351557,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-9499980.pt"
+                ]
+            },
+            {
+                "steps": 9999990,
+                "file_path": "results/2vs2/Volleyball/Volleyball-9999990.onnx",
+                "reward": -0.24358974358974358,
+                "creation_time": 1687964202.0742974,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-9999990.pt"
+                ]
+            },
+            {
+                "steps": 10499980,
+                "file_path": "results/2vs2/Volleyball/Volleyball-10499980.onnx",
+                "reward": -0.1718377088305489,
+                "creation_time": 1687964818.4178522,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-10499980.pt"
+                ]
+            },
+            {
+                "steps": 10999996,
+                "file_path": "results/2vs2/Volleyball/Volleyball-10999996.onnx",
+                "reward": -0.1875,
+                "creation_time": 1687965381.112495,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-10999996.pt"
+                ]
+            },
+            {
+                "steps": 11499984,
+                "file_path": "results/2vs2/Volleyball/Volleyball-11499984.onnx",
+                "reward": -0.1323529411764706,
+                "creation_time": 1687965983.9389746,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-11499984.pt"
+                ]
+            },
+            {
+                "steps": 11999997,
+                "file_path": "results/2vs2/Volleyball/Volleyball-11999997.onnx",
+                "reward": -0.16142557651991615,
+                "creation_time": 1687966495.3471112,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-11999997.pt"
+                ]
+            },
+            {
+                "steps": 12499987,
+                "file_path": "results/2vs2/Volleyball/Volleyball-12499987.onnx",
+                "reward": -0.15940224159402241,
+                "creation_time": 1687967082.107989,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-12499987.pt"
+                ]
+            },
+            {
+                "steps": 12999988,
+                "file_path": "results/2vs2/Volleyball/Volleyball-12999988.onnx",
+                "reward": -0.18041237113402062,
+                "creation_time": 1687967605.313839,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-12999988.pt"
+                ]
+            },
+            {
+                "steps": 13499986,
+                "file_path": "results/2vs2/Volleyball/Volleyball-13499986.onnx",
+                "reward": -0.1206896551724138,
+                "creation_time": 1687968100.4283829,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-13499986.pt"
+                ]
+            },
+            {
+                "steps": 13999992,
+                "file_path": "results/2vs2/Volleyball/Volleyball-13999992.onnx",
+                "reward": -0.12442396313364056,
+                "creation_time": 1687968573.6400764,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-13999992.pt"
+                ]
+            },
+            {
+                "steps": 14499990,
+                "file_path": "results/2vs2/Volleyball/Volleyball-14499990.onnx",
+                "reward": -0.08298755186721991,
+                "creation_time": 1687969055.0136783,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-14499990.pt"
+                ]
+            },
+            {
+                "steps": 14999977,
+                "file_path": "results/2vs2/Volleyball/Volleyball-14999977.onnx",
+                "reward": -0.13097345132743363,
+                "creation_time": 1687969525.9333782,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-14999977.pt"
+                ]
+            },
+            {
+                "steps": 15499988,
+                "file_path": "results/2vs2/Volleyball/Volleyball-15499988.onnx",
+                "reward": -0.12831858407079647,
+                "creation_time": 1687969997.569485,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-15499988.pt"
+                ]
+            },
+            {
+                "steps": 15999993,
+                "file_path": "results/2vs2/Volleyball/Volleyball-15999993.onnx",
+                "reward": -0.1368421052631579,
+                "creation_time": 1687970479.1172426,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-15999993.pt"
+                ]
+            },
+            {
+                "steps": 16499990,
+                "file_path": "results/2vs2/Volleyball/Volleyball-16499990.onnx",
+                "reward": -0.12779552715654952,
+                "creation_time": 1687970951.1907725,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-16499990.pt"
+                ]
+            },
+            {
+                "steps": 16999988,
+                "file_path": "results/2vs2/Volleyball/Volleyball-16999988.onnx",
+                "reward": -0.09594882729211088,
+                "creation_time": 1687971422.3536248,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-16999988.pt"
+                ]
+            },
+            {
+                "steps": 17499997,
+                "file_path": "results/2vs2/Volleyball/Volleyball-17499997.onnx",
+                "reward": -0.13119533527696792,
+                "creation_time": 1687971901.0818064,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-17499997.pt"
+                ]
+            },
+            {
+                "steps": 17999988,
+                "file_path": "results/2vs2/Volleyball/Volleyball-17999988.onnx",
+                "reward": -0.11287988422575977,
+                "creation_time": 1687972373.877458,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-17999988.pt"
+                ]
+            },
+            {
+                "steps": 18499983,
+                "file_path": "results/2vs2/Volleyball/Volleyball-18499983.onnx",
+                "reward": -0.08108108108108109,
+                "creation_time": 1687972867.4957242,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-18499983.pt"
+                ]
+            },
+            {
+                "steps": 18999970,
+                "file_path": "results/2vs2/Volleyball/Volleyball-18999970.onnx",
+                "reward": -0.104,
+                "creation_time": 1687973340.1340802,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-18999970.pt"
+                ]
+            },
+            {
+                "steps": 19499996,
+                "file_path": "results/2vs2/Volleyball/Volleyball-19499996.onnx",
+                "reward": -0.09295774647887324,
+                "creation_time": 1687973812.898405,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-19499996.pt"
+                ]
+            },
+            {
+                "steps": 19999993,
+                "file_path": "results/2vs2/Volleyball/Volleyball-19999993.onnx",
+                "reward": -0.09090909090909091,
+                "creation_time": 1687974292.2077103,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-19999993.pt"
+                ]
+            },
+            {
+                "steps": 20499986,
+                "file_path": "results/2vs2/Volleyball/Volleyball-20499986.onnx",
+                "reward": -0.0958904109589041,
+                "creation_time": 1687974762.547196,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-20499986.pt"
+                ]
+            },
+            {
+                "steps": 20999989,
+                "file_path": "results/2vs2/Volleyball/Volleyball-20999989.onnx",
+                "reward": -0.08655126498002663,
+                "creation_time": 1687975234.5439413,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-20999989.pt"
+                ]
+            },
+            {
+                "steps": 21499996,
+                "file_path": "results/2vs2/Volleyball/Volleyball-21499996.onnx",
+                "reward": 0.013513513513513514,
+                "creation_time": 1687975714.1738677,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-21499996.pt"
+                ]
+            },
+            {
+                "steps": 21999984,
+                "file_path": "results/2vs2/Volleyball/Volleyball-21999984.onnx",
+                "reward": -0.05042016806722689,
+                "creation_time": 1687976184.3505929,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-21999984.pt"
+                ]
+            },
+            {
+                "steps": 22499992,
+                "file_path": "results/2vs2/Volleyball/Volleyball-22499992.onnx",
+                "reward": -0.08279430789133248,
+                "creation_time": 1687976656.2582803,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-22499992.pt"
+                ]
+            },
+            {
+                "steps": 22582108,
+                "file_path": "results/2vs2/Volleyball/Volleyball-22582108.onnx",
+                "reward": -0.07645631067961164,
+                "creation_time": 1687976797.4805431,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-22582108.pt"
+                ]
+            },
+            {
+                "steps": 22999986,
+                "file_path": "results/2vs2/Volleyball/Volleyball-22999986.onnx",
+                "reward": -0.12979351032448377,
+                "creation_time": 1687977347.4219763,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-22999986.pt"
+                ]
+            },
+            {
+                "steps": 23499992,
+                "file_path": "results/2vs2/Volleyball/Volleyball-23499992.onnx",
+                "reward": -0.06398809523809523,
+                "creation_time": 1687977802.1075306,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-23499992.pt"
+                ]
+            },
+            {
+                "steps": 23534908,
+                "file_path": "results/2vs2/Volleyball/Volleyball-23534908.onnx",
+                "reward": -0.03723404255319149,
+                "creation_time": 1687977836.0222368,
+                "auxillary_file_paths": [
+                    "results/2vs2/Volleyball/Volleyball-23534908.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 23534908,
+            "file_path": "results/2vs2/Volleyball.onnx",
+            "reward": -0.03723404255319149,
+            "creation_time": 1687977836.0222368,
+            "auxillary_file_paths": [
+                "results/2vs2/Volleyball/Volleyball-23534908.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.8.1+cu102"
+    }
+}
