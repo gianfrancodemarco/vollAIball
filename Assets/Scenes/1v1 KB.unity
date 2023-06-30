@@ -722,7 +722,7 @@ Transform:
   m_GameObject: {fileID: 944441076}
   m_LocalRotation: {x: -0, y: -0.70066893, z: -0, w: 0.71348655}
   m_LocalPosition: {x: -9.45, y: 7, z: 0.039369}
-  m_LocalScale: {x: 25, y: 5, z: 0.5}
+  m_LocalScale: {x: 27, y: 5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1951213042}
@@ -1294,7 +1294,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452859950}
-  m_Text: This is VolleAIBall
+  m_Text: "                    \n      \n                   This is VolleAIBall"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
