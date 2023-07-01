@@ -31,6 +31,7 @@ public enum Event
     HitWall = 7,
     EpisodeEnd = 8,
     AgentsCollision = 9,
+    DoubleTouch = 10
 }
 
 public class VolleyballEnvController : MonoBehaviour
@@ -117,6 +118,11 @@ public class VolleyballEnvController : MonoBehaviour
         // VolleyballAgent secondToLastHitter = hitterHistory.Count > 1 ? hitterHistory[hitterHistory.Count - 2] : null;
         switch (triggerEvent)
         {
+            case Event.DoubleTouch:
+                lastHitter.SetReward(-1f);
+                EndAllAgentsEpisode();
+                ResetScene();
+                break;
             case Event.HitRedAgent:
             case Event.HitBlueAgent:
                 if (IsDoubleTouch())
@@ -283,7 +289,7 @@ public class VolleyballEnvController : MonoBehaviour
         return hitterHistory.Count > 0 && hitterHistory.Any(agent => agent.teamId == teamId);
     }
 
-    private bool IsDoubleTouch()
+    public bool IsDoubleTouch()
     {
         return hitterHistory.Count > 1 && hitterHistory[^1].name == hitterHistory[^2].name;
     }
