@@ -18,6 +18,8 @@ public class KnowledgeBaseController : MonoBehaviour
     private int point = 0;
     private int action = 0;
     private int touch = 0;
+    private HashSet<string> facts = new HashSet<string>();
+
 
     void Start()
     {
@@ -25,9 +27,9 @@ public class KnowledgeBaseController : MonoBehaviour
 
         StartCoroutine(ResetKnowledgeBase());
         StartCoroutine(AssertTeams());
-        StartCoroutine(KnowledgeBaseClient.Instance.GetMatchNarrative());
+        StartCoroutine(KnowledgeBaseClient.Instance.GetMatchNarrative(CommentaryCallback));
         StartCoroutine(AssertPlayers());
-        StartCoroutine(KnowledgeBaseClient.Instance.GetMatchNarrative());
+        StartCoroutine(KnowledgeBaseClient.Instance.GetMatchNarrative(CommentaryCallback));
         StartCoroutine(PollCommentary());
     }
 
@@ -35,10 +37,23 @@ public class KnowledgeBaseController : MonoBehaviour
     {
         while (true)
         {
-            StartCoroutine(KnowledgeBaseClient.Instance.GetMatchNarrative());
+            StartCoroutine(KnowledgeBaseClient.Instance.GetMatchNarrative(CommentaryCallback));
             yield return new WaitForSeconds(0.5f);
         }
     }
+
+    // Callback to act on our response data
+	private void CommentaryCallback(string data)
+	{
+		//Debug.Log(data);
+        NarrativeDTO narrative = JsonUtility.FromJson<NarrativeDTO>(data);
+        HashSet<String> response = narrative.response.ToHashSet();
+        HashSet<String> newFacts = response.Except(facts).ToHashSet();
+        CommentaryScreen commentaryScreen = FindObjectOfType<CommentaryScreen>();
+        commentaryScreen.AddNewFacts(newFacts);    
+        facts = response;
+	}
+
 
     public void ResolveEvent(Event triggerEvent)
     {

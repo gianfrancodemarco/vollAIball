@@ -3,9 +3,7 @@ using UnityEngine.Networking;
 using System.Text;
 using UnityEngine;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using System;
-using System.Linq;
 
 public class NarrativeDTO
 {
@@ -19,8 +17,6 @@ public class KnowledgeBaseClient
 
 	private KnowledgeBaseClient(){ }
     
-    private HashSet<string> facts = new HashSet<string>();
-
 	public int Coins { get; set; }
 
     private string backendUri = "localhost:5000";
@@ -38,52 +34,23 @@ public class KnowledgeBaseClient
         return Post(url, body);
     }
 
-    public IEnumerator GetMatchNarrative()
+    public IEnumerator GetMatchNarrative(System.Action<String> ResponseCallback)
     {
         string url = backendUri + "/narrative";
         return Get(url, ResponseCallback);
     }
 
-    // Callback to act on our response data
-	private void ResponseCallback(string data)
-	{
-		//Debug.Log(data);
-        NarrativeDTO narrative = JsonUtility.FromJson<NarrativeDTO>(data);
-        HashSet<String> response = ScreenProcessText(narrative.response.ToHashSet());
-        HashSet<String> newFacts = response.Except(facts).ToHashSet();
-
-        HashSet<String> CommentaryScreenFact = newFacts.Where(fact => !Regex.IsMatch(fact, "Red .* - .* Blue")).ToHashSet();
-        HashSet<String> ScoreScreenFact = newFacts.Except(CommentaryScreenFact).ToHashSet();
-
-        foreach (String fact in newFacts) {
-            Debug.Log("Narrator: " + fact); 
-            
-        }
-
-        foreach (String fact in CommentaryScreenFact) {
-            TextMesh textObject = GameObject.Find("Text").GetComponent<TextMesh>();
-            textObject.text = fact;
-        }
-
-        foreach (String fact in ScoreScreenFact) {
-            TextMesh textObject = GameObject.Find("ScoreText").GetComponent<TextMesh>();
-            textObject.text = fact;
-        }
-
-        facts = response;
-	}
-
     private HashSet<String> ScreenProcessText(HashSet<String> Predicates) {
-        HashSet<String> ProcessedPredicates = new HashSet<String>();
-        foreach (var predicate in Predicates) {
-            if (predicate.Contains("point")) {
-                ProcessedPredicates.Add(predicate.Replace("(point", "\n (point"));
-            } else {
-                ProcessedPredicates.Add(predicate);
-            }
+        // HashSet<String> ProcessedPredicates = new HashSet<String>();
+        // foreach (var predicate in Predicates) {
+        //     if (predicate.Contains("point")) {
+        //         ProcessedPredicates.Add(predicate.Replace("(point", "\n (point"));
+        //     } else {
+        //         ProcessedPredicates.Add(predicate);
+        //     }
             
-        }
-        return ProcessedPredicates;
+        // }
+        return Predicates;
     }
 
     public IEnumerator QueryFact(string query) { 
