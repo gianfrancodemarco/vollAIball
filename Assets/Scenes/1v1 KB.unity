@@ -943,6 +943,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueGoal
       objectReference: {fileID: 0}
+    - target: {fileID: 1302252221410205129, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 1302366214173405403, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 1302411001622756385, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c71923256946c49c593eeeb3adb0590b, type: 3}
+    - target: {fileID: 1302792344843533203, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c71923256946c49c593eeeb3adb0590b, type: 3}
     - target: {fileID: 1311826851859346179, guid: fed76ada46450914f86122b2893fe1bd, type: 3}
       propertyPath: m_Mesh
       value: 
