@@ -136,10 +136,10 @@ public class VolleyballEnvController : MonoBehaviour
                         EndAllAgentsEpisode();
                         ResetScene();
                     }
-                    // else
-                    // {
-                    //     lastHitter.AddReward(0.1f + 0.1f * numberOfTeamTouches);
-                    // }
+                    else
+                    {
+                        lastHitter.AddReward(0.1f + 0.1f * numberOfTeamTouches);
+                    }
                 }
                 break;
             case Event.HitOutOfBounds:
