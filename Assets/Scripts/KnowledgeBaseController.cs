@@ -27,9 +27,7 @@ public class KnowledgeBaseController : MonoBehaviour
 
         StartCoroutine(ResetKnowledgeBase());
         StartCoroutine(AssertTeams());
-        StartCoroutine(KnowledgeBaseClient.Instance.GetMatchNarrative(CommentaryCallback));
         StartCoroutine(AssertPlayers());
-        StartCoroutine(KnowledgeBaseClient.Instance.GetMatchNarrative(CommentaryCallback));
         StartCoroutine(PollCommentary());
     }
 
