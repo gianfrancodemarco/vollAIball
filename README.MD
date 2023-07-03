@@ -1,100 +1,14 @@
-## **v3.0.0**
+Unity Project for the project vollAIball.
+The backend is [here](https://github.com/gianfrancodemarco/vollAIballKB).
 
-Goal: set 2v2 game enviroment
-- Add incremental reward for team pass: 
-- Add negative reward and end episode for numberOfTeamTouches > 3
-
-### Rewards
-
-- *Agent do team pass*:
-  - number of pass <= 3
-    - Hitter: 0.25f + (0.25f * number of pass)
-  - number of pass > 3 (End episode)
-    - Hitter: -1 
-- *Agent double touch ball* (End episode): 
-  - Hitter: -1 
-- *Agent throws ball on wall*: 
-  - Hitter: -1 (End episode)
-- *Agent hits ball*: +0.1
-- *Agent throws ball out of bounds (End Episode)*: 
-  - Hitter: -0.5
-- *Agent throws ball into opponent half*:
-  - Hitter: +0.5
-- *Agent scores (End Episode)*:
-  - Hitter: +1
-  - Other: -1
-  
-<br>
-
-## **v2.0.1**
-
-Goal: Removed statistics tracking when ball spawns and no agents touch it.
+This project explores the realm of applying artificial intelligence (AI) techniques to train autonomous agents at the game of volleyball. 
+It consists of a Unity 3D environment, crafted on purpose, where agents are trained using the ML-Agents library and the Proximal Policy Optimization (PPO) algorithm. 
+Another vital component of the project is the Prolog Knowledge Base, acting as a narrator that provides detailed insights into the game’s events.
+These two main components are glued together by using a Python backend and rest APIs. 
+This project allowed to explore the possibility of integrating different AI systems, using modern tech stacks and providing variegated features.
 
 <br>
-## **v2.0.0**
-
-Goal: enforce more volleyball rules
-- The same agent should not hit the ball twice in a row
-- Hitting the wall is not allowed
-- Add opponent position to observations
-- Add tracking w/ Tensorboard of reward events per number of steps (e.g. number of hits, number of out of bounds, etc.) to have a better understanding of the reward function and its changes over time.
-
-### Rewards
-
-- *Agent double touch ball*: -0.1 (End episode)
-- *Agent throws ball on wall*: -1 (End episode)
-- *Agent hits ball*: +0.1
-- *Agent throws ball out of bounds (End Episode)*: 
-  - Hitter: -0.5
-- *Agent throws ball into opponent half*:
-  - Hitter: +0.5
-- *Agent scores (End Episode)*:
-  - Hitter: +1
-  - Other: -1
-
-
-<br>
-
-## **v1.1.0**
-
-Rewards for hitting the ball into the other half are now more bland.
-
-The agents also get bigger negative reward if they throw the ball out of bounds; the opponent doesn't get a positive reward for this.
-
-From 26,5M steps:
-- Agents start from a random position, but ball starts above above server.
-
-<br>
-
-### **Rewards**: 
-
-- *Agent hits ball*: +0.1
-- *Agent throws ball out of bounds (End Episode)*: 
-  - Hitter: -0.5
-- *Agent throws ball into opponent half*:
-  - Hitter: +0.5
-- *Agent scores (End Episode)*:
-  - Hitter: +1
-  - Other: -1
-
-<br><br>
-
-<br>
-
-## **v1.0.0**
-
-### **Rewards**: 
-
-- *Agent hits ball*: +0.1
-- *Agent throws ball out of bounds (End Episode)*: 
-  - Hitter: -0.1
-  - Other: +0.1
-- *Agent throws ball into opponent half*:
-  - Hitter: +1
-- *Agent scores (End Episode)*:
-  - Hitter: +1
-  - Other: -1
-
-
-After 50M steps:
-The agents now start at 0.01f Y instead of Range(0.5f, 3.75f); 
+<div style="text-align:center">
+  <img src="docs/imgs/software_architecture%20(1).jpg" alt="Software architecture" width="400"/>
+  <p><i>The software architecture of the project</i></p>
+</div>
