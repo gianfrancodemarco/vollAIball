@@ -125,13 +125,6 @@ public class VolleyballEnvController : MonoBehaviour
                 break;
             case Event.HitRedAgent:
             case Event.HitBlueAgent:
-                if (IsDoubleTouch())
-                {
-                    lastHitter.SetReward(-1f);
-                    EndAllAgentsEpisode();
-                    ResetScene();
-                }
-                else
                 {
                     int numberOfTeamTouches = GetNumberOfTeamTouches();
                     if (numberOfTeamTouches > 3)

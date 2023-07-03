@@ -15,9 +15,9 @@ public class KnowledgeBaseController : MonoBehaviour
 
     /// Keeps track of the current action
     /// When the player from a different team touches the ball, the action is incremented
-    private int point = 0;
-    private int action = 0;
-    private int touch = 0;
+    private int point = 1;
+    private int action = 1;
+    private int touch = 1;
     private HashSet<string> facts = new HashSet<string>();
 
 
@@ -67,12 +67,12 @@ public class KnowledgeBaseController : MonoBehaviour
                 case Event.HitBlueGoal:
                 case Event.HitRedGoal:
                 case Event.HitOutOfBounds:
-                    point++;
-                    action = 0;
-                    touch = 0;
                     if (triggerEvent == Event.DoubleTouch){
                         StartCoroutine(AssertBaseAction("DoubleTouch"));
                     }
+                    point++;
+                    action = 0;
+                    touch = 0;
                     break;
                 case Event.HitRedAgent:
                 case Event.HitBlueAgent:
